@@ -38,23 +38,108 @@
 %
 %
 \title{Lecture 1: Course Introduction and History of solar and stellar research}
-\author{\texorpdfstring{\sepia{Petri K\"{a}p\"{y}la Ivan Mili\'{c}}\newline\blue{\url{kapyla, milic@leibniz-kis.de}}}{}}
+\author{\texorpdfstring{\sepia{Petri K\"{a}pyl\"{a} Ivan Mili\'{c}}\newline\blue{\url{pkapyla, milic@leibniz-kis.de}}}{}}
 \institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
 \date{\today}
 %
 \begin{document}
 \frame{\titlepage}
+
+\section{Course organization and curriculum}
+\frame{
+\frametitle{Why the Sun and the stars?}
+	\begin{itemize}
+		\item The aim of this course is to show you how the Sun and stars ``work''. That is, what physical principles determine their structure, evolution, observable characteristics and phenomena taking place inside. 
+		\item It is a mostly theoretical / computational course - but we will make connections to the observables (today, for example).
+		\item Stars are building blocks of the universe (stars make up galaxies, which make up the large-scale structure).
+		\item Stars generate magnetic fields, host planets, create elements heavier than Helium, trigger creation of other stars - and are, in general, very cool thing to research.
+		\item The Sun gives Earth \emph{a lot} of energy, determines the space weather conditions and, from a more fundamental aspect - gives us insight into how other stars function.
+	\end{itemize}
+}
+%
+\frame{
+\frametitle{Who are we and what do we do?}
+	\begin{itemize}
+		\item We come from Institute for Solar Physics - KIS.
+		\item KIS conducts fundamental research on the Sun and similar(ish) stars, develops instruments and computer codes and operates telescopes and the science data center (SDC).
+		\item In practice, our institute works mostly on:
+		\begin{itemize}
+			\item High-resolution observations of the solar ``surface'' phenomena. 
+			\item Diagnosing physical properties of the solar surface, most importantly the magnetic fields.
+			\item Understanding the convection in Sun and other stars. 
+			\item Reproducing solar and stellar interiors and surface phenomena using numerical simulations.
+		\end{itemize}
+		\item And the two of us... \q{Present and discuss 5 mins}.
+	\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{How will this course work}
+	\begin{itemize}
+		\item Lectures once per week (2 $\times$ 45 min): 12 lectures + 1 general practice session at the end, before the exam.
+		\item Hands-on exercises once per week (2 $\times$ 45 min): calculations / derivations on the blackboard or numerical calculations / data manipulation in \emph{python}
+		\item 4 Homeworks (HW) covering similar material to handson. You will have 2-weeks per homework.
+		\item So, it would be good if you had an access to a computer, in order to complete the HW. Would be nice to type it up and send it as pdf. Reach out if there are issues. 
+	\end{itemize}
+}
+%
+\frame{
+\frametitle{Grading}
+	\begin{itemize}
+		\item Attendance - 10\% - this is to motivate you to come. 
+		\item Homework - 40\% 
+		\item Final exam - 60\%
+		\item That's right - you can score more than 100\% - this gives you some flexibility. 
+		\item There is no ``curve grading''.
+		\item Whenever there is an issue - ask. You can reach out to us via e-mail or even phone :-)
+	\end{itemize}
+}
+%
+\frame{
+\frametitle{Literature/materials}
+	\begin{itemize}
+		\item ``An introduction to the theory of stellar structure and evolution'', Dina Prialnik, 2007, CUP
+		\item ``The Sun: an introduction'', Michael Stix, 2002, Springer
+		\item When needed: research papers and texts. It would be good to familiarize yourself with some services:
+		\item One is \href{https://ui.adsabs.harvard.edu/}{ADS} - a searchable database of astronomical papers
+		\item The other is \href{https://github.com/}{github} - a repository for codes
+		\item Finally, there is \href{https://www.overleaf.com/}{overleaf} - an online manuscript editor / manager
+	\end{itemize}
+}
+%
+\frame{
+\frametitle{To summarize}
+	\begin{itemize}
+		\item Whatever you can't find, are unsure about, or don't understand - ask! 
+		\item The goal is to learn new things and hopefully have some fun. 
+		\item You are welcome to come see our institute, talk to us about science, ask us for research projects, etc.
+		\item \q{Do you have any questions? (Use this time to collect the contacts and establish a mailing list)}.
+		\item \q{Note: currently KIS IT is down due to the move}. Slides are \href{https://github.com/ivanzmilic/taipss}{at a public github}.
+	\end{itemize}
+}
 %
 \section{General astrophysical concepts}
+\frame{
+\frametitle{Astrophysics}
+	Astrophysics is (literally) physics of stars. It also studies: planets, small bodies, galaxies, interstellar and intergallactic medium, etc. It gives us an opportunity to apply almost all fields of physics, to understand these specfic objects. It involves concepts from many other sciences:
+	\begin{itemize}
+		\item Physics: quantum, atomic, molecular, nuclear, thermodynamics, fluid dynamics, magnetohydrodynamics, relativity. 
+		\item Chemistry, biology.
+		\item Applied mathematics, optics, photonics, solid state (detectors, etc).
+		\item Also involves/overlaps with: cosmology, celestial mechanics, particle physics...
+	\end{itemize}
+}
+
 \frame
 {
 \frametitle{Uniqueness of astrophysics}
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
-\item In the lab we can control the temperature, pressure, voltage, etc. of the experimental set-up to see
+\item In the lab we can control the parameters of the experimental set-up to see
 how results change.
-\item In astrophysics this is impossible. We are sentenced to looking at the objects as they are. Understanding this is especially important for stars.
-\item But knowledge goes both ways: what we learn through theory, experiment and observations is applicable everywhere.
+\item In astrophysics this is impossible. We can only observe. Some of the first objects we observed were the Sun and stars.
+\item But the physical laws are universal: what we learn through theory, experiment and observations is applicable everywhere.
 \item There is also such thing as ``laboratory astrophysics'' - \q{What do you think that is? (1-2  mins)}
 \end{itemize}
 \end{minipage}
@@ -232,7 +317,7 @@ The Sun (and other stars) depart severely from these assumptions:
 \begin{itemize}
 	\item Stars are inhomogeneous in all 3 dimensions (especially radially).
 	\item They emit non-Plankian spectra, in a generally anisotropic manner
-	\item And they also change and evolve on scales from seconds to billions of years. 
+	\item And they also change on scales from seconds to billions of years. 
 	\item \textbf{This course is about all these aspects}
 \end{itemize}
 \end{minipage}
@@ -290,15 +375,15 @@ The Sun (and other stars) depart severely from these assumptions:
 \item Stellar structure determines the structure of the atmosphere, and $T_{\rm eff}$.
 \item Stellar atmosphere oscillates because of the processes in stellar interior. 
 \item At the surface, we measure the magnetic fields generated in the interior. 
-\item Neutrinos produced in the code leave the star directly. 
-\item \textbf{The structure of the whole star leave an observable imprint on its surface.}
+\item Neutrinos produced in the core leave the star directly. 
+\item \textbf{The structure of the whole star leaves an observable imprint on its surface.}
 \end{itemize}
 }
 %
 \frame{
 \frametitle{Understanding the stars}
 \begin{itemize}
-\item \textbf{The structure of the whole star leave an observable imprint on its surface.}
+\item \textbf{The structure of the whole star leaves an observable imprint on its surface.}
 \item We measure these observable imprints. 
 \item We can observe \emph{a lot} of stars - so we can have accurate statistics. 
 \item \textbf{We devise theoretical models that try to describe the stellar structure and the evolution and compare the outputs of these models both to the measurable properties of individual stars and to the statistical distributions.}
@@ -447,11 +532,29 @@ B(\lambda, T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k T} - 1}
 \end{minipage}
 }
 %
+%
+\frame{
+\frametitle{And we can do the same for other stars.}
+\begin{minipage}{0.45\linewidth}
+\q{What is the fundamental parameter that determines the shape of the spectrum and the absence/presence of spectral lines?}
+
+It is the temperature! It determines the ionization and excitation of the particles and thus their absorption/emission properties.
+\end{minipage}
+\hfill
+\begin{minipage}{0.54\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/spectra_stars.png}
+\caption*{Credits: Adam Burrows, Princeton}
+\end{figure}
+\end{minipage}
+}
+%
+
 \frame{
 \frametitle{The Harvard Spectral Classification}
 \begin{minipage}{0.48\linewidth}
 \begin{tabular}{cc}
-Class & \red{T$_{\rm eff}$} [kelvin] \\
+Class & \red{T$_{\rm eff}$} [K] \\
 \hline
 O & $\ge$ 30000 \\
 B & 10000-30000 \\
@@ -478,7 +581,7 @@ M & 2000-3000
 \item There are three groups of stars.
 \item For one (main sequence) the color and brightness are somewhat correlated.
 \item Other is very hot but faint - white dwarves
-\item The last is cool but bright - red giants
+\item The last is cool but bright - (red) giants (there are also other giants).
 \item It will turn out these are \emph{phases} in stellar evolution.
 \end{itemize}
 \end{minipage}
@@ -516,8 +619,8 @@ M & 2000-3000
 \frametitle{HR diagram: questions}
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
-\item Why are the stars on the main sequence correlated?
-\item What is the order in the evolutionary stages of these three groups? 
+\item Why are the color and the brightness of the stars on the main sequence correlated?
+\item In which order these evolutionary stages take place?
 \item What determines when and how the star changes between these stages?
 \item What are the fundamental differences between these phases?
 \end{itemize}
@@ -532,61 +635,104 @@ M & 2000-3000
 }
 %
 \frame{
-\frametitle{Back to the \blue{HR diagram}: if we know the star is on the \blue{main sequence}}
+\frametitle{How can we infer other stellar parameters?}
+\begin{itemize}
+	\item We saw that we can estimate luminosity from the apparent brightness (irradiance) and distance. 
+	\item And that we can infer the effective temperature from the color.
+	\item Combined, these two give us the radius (an estimate of).
+	\item \q{Write down the equations again if necessary}.
+	\item What about the mass? Physical composition? Magnetic field? Rotation rate?
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Stellar masses}
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
-\footnotesize{
-\item \sepia{Main sequence}: \blue{hydrogen} \red{$\rightarrow$} \blue{helium} at the star's core.
-\item \blue{Question:} what forces are competing against each other when two nuclei fusion to form a new one inside a star ?
-\item If we measure the \blue{luminosty} and \blue{$T_{\rm eff}$} we can place the star along the main sequence and determine its radius \red{$R$} and mass \red{$M$} (direction of variation of \blue{radius} and \blue{mass})
-\item \blue{Question:} which stars do you think will run out of hydrogen (by converting it into helium) faster ? large mass or small mass ?
-}
+\item Are extremely important, yet extremely hard to infer.
+\item The only accurate opportunity to infer the mass is to observe the star in a dynamical interaction.
+\item For example in a binary system. 
+\item These binary stars are very important, a big fraction of the stars are in binary (or multiple systems).
+\item The stars can also interact with each other. 
 \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\linewidth}
 \begin{figure}
-\includegraphics[width=4cm]{./fig1509.jpg}
-\caption*{Credits: New Jersey Institute of Technology, US}
+\includegraphics[width=6cm]{figures/roche_lobe.jpg}
 \end{figure}
 \end{minipage}
 }
-
+%
 \frame{
-\frametitle{Element abundances in the Universe (i.e. also stars)}
+\frametitle{Element abundances in the Universe }
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
-\item \blue{Question:} consequences for \sepia{life} and \sepia{biological evolution}
-\item \blue{Question:} how was this figure determined ?
+\item Most of these elements were generate in stars. 
+\item But they also have implications for generation and evolution of other stars? 
+\item \q{Let's have a relaxed discussion on importance of heavier elements.}
 \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\linewidth}
 \begin{figure}
-\includegraphics[width=6cm]{./The-relative-abundances-of-elements-in-the-universe-after-Goldschmidt-1938.png}
+\includegraphics[width=6cm]{figures/The-relative-abundances-of-elements-in-the-universe-after-Goldschmidt-1938.png}
 \caption*{Credits: Goldschmidt 1938}
 \end{figure}
 \end{minipage}
 }
 %
 \frame{
-\frametitle{Of course it's the \blue{spectra}!!}
+\frametitle{These abundances are inferred from the spectra}
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
 \item Determination of the Silicon Abundance by fitting the solar spectra
-\item \sepia{Dots}: observations; \sepia{dashed/solid}: \red{low/high} Silicon abundance.
+\item \sepia{Dots}: observations; \sepia{dashed/solid}: low/high Silicon abundance.
 \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\linewidth}
 \begin{figure}
-\includegraphics[width=6cm]{./abundance_si.jpg}
+\includegraphics[width=6cm]{figures/abundance_si.png}
 \caption*{Credits: Borrero et al. 2003}
 \end{figure}
 \end{minipage}
 }
-
 %
+%
+\frame{
+\frametitle{Question to think about}
+\begin{itemize}
+	\item We said that the effective temperature of the Sun is $5777$\,K.
+	\item We also said that this temperature is not constant, but must be increasing inward, in order to drive energy flux outward.
+	\item \q{What is the temperature in the core?}
+	\item \q{What is the source of energy?}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Answer}
+\begin{itemize}
+	\item The temperature at the core is $\approx 1.5\times 10^7$\,K. And the source of energy is nuclear fusion of $H$ in $He$. 
+	\item How do we know? It took us some time. 
+	\item First one to even think about this was Eddington. (Maybe check \href{https://arxiv.org/pdf/2111.02096.pdf}{this} paper by H. Kragh).
+	\item The previous idea was graviational contraction. 
+	\item The temporal scale for such a process is the \textbf{Kelvin-Helmholtz timescale}.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Kelvin-Helmholtz timescale}
+\begin{itemize}
+	\item Let's do an order of magnitude estimation:
+	\begin{equation}
+	t_{\rm KH} = \frac{GM^2}{RL}
+	\end{equation}
+	\item For the Sun this amounts to 30 million years. 
+	\item We knew back then already that Earth is billions of years old. 
+	\item It had to be something else!
+\end{itemize}
+}
 \end{document}
 
 
