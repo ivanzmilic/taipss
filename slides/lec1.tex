@@ -1,0 +1,593 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{beamerthemesidebar}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{multimedia}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{caption}
+
+\setbeamersize{sidebar width right=0pt}
+\setbeamertemplate{footline}[frame number]
+%
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\q}[1]{\textcolor{blue}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\definecolor{burlywood}{RGB}{255,211,155}
+\definecolor{chocolate}{RGB}{255,127,36}
+\definecolor{tan}{RGB}{210,180,140}
+%
+%
+\title{Lecture 1: Course Introduction and History of solar and stellar research}
+\author{\texorpdfstring{\sepia{Petri K\"{a}p\"{y}la Ivan Mili\'{c}}\newline\blue{\url{kapyla, milic@leibniz-kis.de}}}{}}
+\institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
+\date{\today}
+%
+\begin{document}
+\frame{\titlepage}
+%
+\section{General astrophysical concepts}
+\frame
+{
+\frametitle{Uniqueness of astrophysics}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item In the lab we can control the temperature, pressure, voltage, etc. of the experimental set-up to see
+how results change.
+\item In astrophysics this is impossible. We are sentenced to looking at the objects as they are. Understanding this is especially important for stars.
+\item But knowledge goes both ways: what we learn through theory, experiment and observations is applicable everywhere.
+\item There is also such thing as ``laboratory astrophysics'' - \q{What do you think that is? (1-2  mins)}
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5cm]{figures/hubble_udf.jpg} \\
+\caption*{Hubble Ultra Deep Field: credits to NASA}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Numerical experiments}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item There are also \emph{numerical} experiments. 
+\item We know, for hundreds of years, that most equations cannot be solved analytically.
+\item They are not pecularities, they describe real-life problems. \q{Can you come up with any?}
+\item To solve these, we use numerical simulations. These are computer codes that solve systems of integral and differential equations, and try to describe the structure and evolution of the objects.
+\end{itemize}
+\vspace{-0.25cm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+% herehere
+\includegraphics[width=5.5cm]{figures/mare_nostrum.jpg}
+\caption*{Mare nostrum supercomputer, Barcelona. Credits: bcs.es}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Remote sensing}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item Another problem is that we cannot measure the physical parameters directly. We have to measure whatever the object is emitting:  
+\begin{itemize}
+\item [$\bullet$] Gravitational waves
+\item [$\bullet$] Neutrinos
+\item [$\bullet$] but mostly electromagnetic waves (\textbf{light})
+\end{itemize}
+\item This problem is tackled in more depth in another course: "Experimental Astrophysics: Remote Sensing", that will take place in the winter semester 2024/25.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=4.5cm]{figures/newton_prism.jpg}
+\caption*{Engraving after a picture by J.A. Houston, ca. 1870. Courtesy of The Granger Collection, New York}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Gravitational wave astronomy}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item Just like moving charges emit electromagntic waves, moving masses emit gravitational waves (GW)
+\item They cause the space-time to fluctuate - The tiny variations in distance can be detected 
+\item The LIGO experiment uses interferometry to detect tiny variations in the distance between two
+perpendicular arms.
+\item First successful detection: 2016. Nobel in 2017.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/et.png}
+\caption*{Future Einstein Telescope (artist impression). Credits: NIKHEF}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Neutrino astronomy}
+\begin{itemize}
+\item Existence of the neutrino first postulated by Pauli (1930) to conserve energy and momentum during $\beta$-decay. First detection by Reines \& Cowan (1956). Nobel in 1995.
+\item Neutrinos are produced in the interior of stars as a consequence of nuclear reactions (i.e. \red{p-p chain})
+\begin{center}
+\begin{tcolorbox}[width=8cm,colback=tan]
+$4 ^{1}\!H^{+} + 2 e^{-} \rightarrow ^{4}\!\!He^{2+} + \nu_e + \textrm{27.63 MeV}$
+\end{tcolorbox}
+\end{center}
+\item Also produced during supernova explosions.
+\item There is also the cosmic neutrino background: dates from 1 sec after the Big Bang. 
+\item The cosmic microwave background, was produced some 380,000 years later.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Solar Neutrino Problem}
+\begin{minipage}{0.52\linewidth}
+\begin{itemize}
+\footnotesize{
+\item According to the Standard Solar Model, the Sun's core has a temperature of about $T \approx 1.5\times 10^7$\,K.
+\item At this temperature, the Sun should be producing a given number of neutrinos per second.
+\item Experiments such as the Superkamiokande, detect only one third.
+\item Does this mean that the temperature in the Sun's core is lower ? Is the Standard model wrong? Strong debate in the 90's.
+\item In fact, we detect only a third because Superkamiolande detects only $\nu_e$, but as
+neutrinos having \textbf{small mass}, they change flavours ($\nu_e$, $\nu_\tau$, $\nu_\mu$) as they travel - Neutrino oscillations! (Nobel prize in 2015).
+}
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/kamiokande.png}
+\caption*{Credits Inst. Cosmic Ray Research, University of Tokyo}
+\end{figure}
+\end{minipage}
+}
+%
+\section{Observing the stars}
+\frame{
+\frametitle{The light and the electromagnetic spectrum}
+\begin{itemize}
+\item The reason why we see \emph{anything} is because the light is coming from that object to our eyes or detectors (camera chip, etc..)
+\item We see the planets and moons because they reflect the light, but we see th Sun and other stars because they \textbf{emit} the light.
+\item That means there is energy generated in these objects that allows them to radiate.
+\item \q{ Solve the following problem:} \emph{Total solar irradiance} (radiative energy per second per square meter at the top of the Earth's atmosphere) is 1361 W/m$^2$. How much energy does Sun produce per second? (Ask for any constants you need).
+\end{itemize}
+}
+%
+\frame{
+\frametitle{The light and the electromagnetic spectrum}
+\begin{itemize}
+\item That means there is energy generated in these objects that allows them to radiate.
+\item \q{ Solve the following problem:} \emph{Total solar irradiance} (radiative energy per second per square meter at the top of the Earth's atmosphere) is 1361 W/m$^2$. How much energy does Sun produce per second? (Ask for any constants you need).
+\item Answer: 
+\begin{equation}
+\frac{dE}{dt} \equiv L_{\odot} = \mathcal{E}  4\pi d^2 = 1361 \rm{W m^{-2}} 4\pi (149 \times 10^9 \rm{m})^2 = 3.846\times 10^{26} \rm{W}
+\end{equation}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Effective temperature}
+$3.846\times 10^{26} \rm{W}$ \q{is a lot of energy. What would roughly have to be the temperature of the Sun, so it would radiate this amount of energy?}
+}
+%
+\frame{
+\frametitle{Stefan-Boltzmann law}
+\begin{itemize}
+	\item The simplest way for us to relate the emitted energy to the temperature is through the Stefan-Boltzmann law. 
+	\item The emissivity (emitted energy per unit surface in the outgoing direction) is equal to: 
+	\begin{equation}
+	\epsilon = \sigma T^4
+	\end{equation}
+	\item Then, the luminosity (emitted energy per second) of such object is: 
+	$L = 4\pi R^2 \sigma T^4$. 
+	\item If you substitute the numbers, you will get $T=5777\,\rm{K}$.
+	\item \q{What temperature would this be?}
+	\item \q{What does this question even mean?}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Departures from the ideal case}
+We made a series of approximations in the process of inferring this temperature. 
+\begin{itemize}
+\item First we assumed that the solar radiance is constant in time (\emph{excellent approximation})
+\item Then we assumed that the emission is isotropic (\emph{this is not a good approximation but see below})
+\item Then we assumed that the solar surface is homogeneous (\emph{on small scales it is not, but let's discuss this for a while})
+\item Finally, we assumed that the Sun emits like a blackbody to infer the called \text{effective temperature} - 5777K. 
+\item \q{Let's discuss a bit what this concept means - 5 mins}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Real situations}
+\begin{minipage}{0.52\linewidth}
+The Sun (and other stars) depart severely from these assumptions:
+\begin{itemize}
+	\item Stars are inhomogeneous in all 3 dimensions (especially radially).
+	\item They emit non-Plankian spectra, in a generally anisotropic manner
+	\item And they also change and evolve on scales from seconds to billions of years. 
+	\item \textbf{This course is about all these aspects}
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.46\linewidth}
+\begin{figure}
+\includegraphics[width=5cm]{figures/dkist1.jpg}
+\caption*{Credits: NSO/AURA/NSF/DKIST}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{The concept of stellar atmosphere}
+\begin{itemize}
+\item Energy is generated in the cores of stars and transported outwards (in multiple ways)
+\item As we move away from the stellar center - the medium becomes less opaque, at some point the photons can escape the star. Then they contribute to the total stellar luminosity that we ultimately detect.  
+\item The \sepia{layer} of the last emission is referred to as $\tau=1$ layer, where $\tau$ is the so called \textbf{optical depth}.
+\item As the stars are made of plasma - we don't have an obvious surface. $\tau=1$ layer serves as a loose definition of a solar surface (observationally).
+\item Next week, we will describe a star using equations of stellar structure - we will again have to make a definition of solar surface.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{The concept of stellar atmosphere}
+\begin{minipage}{0.52\linewidth}
+\begin{itemize}
+\item The physical location of $\tau=1$ depends on the density of the medium and how the photon interacts with the medium - \textbf{described by the opacity}.
+\item Solar plasma has different opacity at different wavelengths - photosphere has different physical location.
+\item Also, when we look at the Sun under different angles, we see different depths. 
+\item This is the so called limb-darkening. 
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/sun_orange.jpg} 
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Why study the stellar atmospheres?}
+\begin{itemize}
+\item The stellar light gives us direct information about the stellar surface (the photosphere).
+\item \q{Are there ways to probe the stellar interior? Can the stellar atmosphere help?}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Why study the stellar atmospheres?}
+\begin{itemize}
+%\item The stellar light gives us direct information about the stellar surface (the photosphere).
+\item \q{Are there ways to probe the stellar interior? Can the stellar atmosphere help?}
+\item Stellar structure determines the structure of the atmosphere, and $T_{\rm eff}$.
+\item Stellar atmosphere oscillates because of the processes in stellar interior. 
+\item At the surface, we measure the magnetic fields generated in the interior. 
+\item Neutrinos produced in the code leave the star directly. 
+\item \textbf{The structure of the whole star leave an observable imprint on its surface.}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Understanding the stars}
+\begin{itemize}
+\item \textbf{The structure of the whole star leave an observable imprint on its surface.}
+\item We measure these observable imprints. 
+\item We can observe \emph{a lot} of stars - so we can have accurate statistics. 
+\item \textbf{We devise theoretical models that try to describe the stellar structure and the evolution and compare the outputs of these models both to the measurable properties of individual stars and to the statistical distributions.}
+\end{itemize}
+}
+%
+\section{Stellar colors}
+%
+\frame{
+\frametitle{Luminosity vs the color}
+\begin{itemize}
+\item Effective temperature describes the total luminosity of the star.
+\item We used a blackbody to approximate solar \emph{surface}.
+\item Now, different temperatures imply different colors (i.e. different spectral distributions).
+\begin{figure}
+\includegraphics[width=7.5cm]{figures/bb_curves.png}
+\caption{Planck curves for blackbodies of different temperatures. Credits: University of Swinburne}
+\end{figure}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{A side quest}
+\begin{itemize}
+\item \q{Can someone convince me that a star \textbf{cannot} be a blackbody? - 2-3 mins}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Stars are not black bodies!}
+\begin{itemize}
+\item Star needs to transport energy outwards. For that a gradient of temperature is needed - not a blackbody. 
+\item \q{Harder question is can stellar photosphere be a blackbody?}
+\item In theory - yes, no fundamental law would be broken if it was. 
+\item In practice - it can't. Different wavelengths \emph{always} have different opacities and thus sample different depths.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Solar spectrum is NOT a blackbody spectrum}
+\begin{figure}
+\includegraphics[width=10cm]{figures/fraunhofer_spectrum.png}
+\caption*{Credits: Fraunhofer (1814)}
+\end{figure}
+\begin{itemize}
+\item Wollastone (1802) and Fraunhofer (1814) discovered dark lanes in the solar spectrum,
+\item These lines represent loss of light at specific wavelengths - solar atmosphere is much more opaque at these wavelengths. \q{Why?}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Solar spectrum is NOT a blackbody spectrum}
+\begin{figure}
+\includegraphics[width=6cm]{figures/fraunhofer_spectrum.png}
+\caption*{Credits: Fraunhofer (1814)}
+\end{figure}
+\begin{itemize}
+\item These lines represent loss of light at specific wavelengths - solar atmosphere is much more opaque at these wavelengths. \q{Why?}
+\item Kirchoff and Bunsen (1860's) related them to chemical elements. 
+\item Birth of quantum mechanics: Bohr's model can explain hydrogen lines. \textbf{Energy jumps between discrete energy levels}.
+\item Discovery of Helium by Janssen (1868) in the solar spectrum.
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Planck Law}
+\begin{itemize}
+\item Kirchoff (again) reckognized the importance of an universal law that connects emission and absorption properties of a medium in an equilibrium state. - \emph{"... It is of utmost importance to derive this law theoretically"}. 
+\item We had some pieces - Stefan-Boltzmann law that we just talked about...
+\item ... Then we had Wien's law: Emission of bodies of different temperature peaks at different wavelengths (colors).
+\item People also experimentally captured the dependence $B(T)$, where $B$ is some ``brightness" or essentially luminosity.
+\item \emph{Interesting:} Both Boltzmann and Wien (as well as Rayleigh and later Jeans) derived the corresponding laws theoretically. \q{Do you know how?}
+\item Recommendation: ``Theoretical Concepts in Physics'' (Malcom Longair, 2020, Cambridge)
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Planck Law}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+\item Finally, Planck derived this law theoretically. 
+\item After that, multiple other approaces to derivation were made (for example one by Bose and Einstein).
+\begin{equation}
+B(\lambda, T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k T} - 1}
+\end{equation}
+\item This equation describes the \emph{intensity} of the light in a state where photons are in equilibrium. 
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{figure}
+\includegraphics[width=8cm]{figures/b_b2.png}
+\caption*{Planck curves for few different temperatures. Credits: Wikipedia}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Solar spectrum is NOT a blackbody spectrum}
+\begin{figure}
+\includegraphics[width=6cm]{figures/fraunhofer_spectrum.png}
+\caption*{Credits: Fraunhofer (1814)}
+\end{figure}
+\begin{itemize}
+\item These lines represent loss of light at specific wavelengths - solar atmosphere is much more opaque at these wavelengths. \q{Why?}
+\item Kirchoff and Bunsen (1860's) related them to chemical elements. 
+\item Birth of quantum mechanics: Bohr's model can explain hydrogen lines. \textbf{Energy jumps between discrete energy levels}.
+\item Discovery of Helium by Janssen (1868) in the solar spectrum.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Today we can do better than 200 years ago ...}
+\begin{figure}
+\includegraphics[width=8cm]{figures/sun_halpha_a.png}
+\caption*{H$\alpha$ spectral line in solar spectrum: notice all the weak spectral lines around!}
+\end{figure}
+}
+%
+\frame{
+\frametitle{And we can do the same for other stars.}
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=9cm]{figures/spectra_stars.png}
+\end{tabular}
+\caption*{Credits: Adam Burrows, Princeton}
+\end{figure}
+}
+%
+%
+\frame{
+\frametitle{And we can do the same for other stars.}
+\begin{minipage}{0.45\linewidth}
+\q{What is the fundamental parameter that determines the shape of the spectrum and the absence/presence of spectral lines?}
+\end{minipage}
+\hfill
+\begin{minipage}{0.54\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/spectra_stars.png}
+\caption*{Credits: Adam Burrows, Princeton}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{The Harvard Spectral Classification}
+\begin{minipage}{0.48\linewidth}
+\begin{tabular}{cc}
+Class & \red{T$_{\rm eff}$} [kelvin] \\
+\hline
+O & $\ge$ 30000 \\
+B & 10000-30000 \\
+A & 7500-10000 \\
+F & 6000-7500 \\
+G & 5000-6000 \\
+K & 3000-5000 \\
+M & 2000-3000 
+\end{tabular}
+\end{minipage}
+\hfill
+ \begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/ajc.jpg}
+\caption*{Annie Jump Cannon. Credits: Library of Congress, US}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{HR diagram: basics}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item There are three groups of stars.
+\item For one (main sequence) the color and brightness are somewhat correlated.
+\item Other is very hot but faint - white dwarves
+\item The last is cool but bright - red giants
+\item It will turn out these are \emph{phases} in stellar evolution.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+\caption*{Credits: the Open University}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{HR diagram: basics}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item It will turn out these are \emph{phases} in stellar evolution.
+\item We \textbf{can't} observe stars as they evolve and age.
+\item But we can observe a lot of stars and try to infer things. 
+\item It is like aliens observed us very briefly: they would need some time that small, weak humans are a first stage in a lifetime of a human being.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+\caption*{Credits: the Open University}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{HR diagram: questions}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item Why are the stars on the main sequence correlated?
+\item What is the order in the evolutionary stages of these three groups? 
+\item What determines when and how the star changes between these stages?
+\item What are the fundamental differences between these phases?
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+\caption*{Credits: the Open University}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Back to the \blue{HR diagram}: if we know the star is on the \blue{main sequence}}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\footnotesize{
+\item \sepia{Main sequence}: \blue{hydrogen} \red{$\rightarrow$} \blue{helium} at the star's core.
+\item \blue{Question:} what forces are competing against each other when two nuclei fusion to form a new one inside a star ?
+\item If we measure the \blue{luminosty} and \blue{$T_{\rm eff}$} we can place the star along the main sequence and determine its radius \red{$R$} and mass \red{$M$} (direction of variation of \blue{radius} and \blue{mass})
+\item \blue{Question:} which stars do you think will run out of hydrogen (by converting it into helium) faster ? large mass or small mass ?
+}
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=4cm]{./fig1509.jpg}
+\caption*{Credits: New Jersey Institute of Technology, US}
+\end{figure}
+\end{minipage}
+}
+
+\frame{
+\frametitle{Element abundances in the Universe (i.e. also stars)}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item \blue{Question:} consequences for \sepia{life} and \sepia{biological evolution}
+\item \blue{Question:} how was this figure determined ?
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{./The-relative-abundances-of-elements-in-the-universe-after-Goldschmidt-1938.png}
+\caption*{Credits: Goldschmidt 1938}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Of course it's the \blue{spectra}!!}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item Determination of the Silicon Abundance by fitting the solar spectra
+\item \sepia{Dots}: observations; \sepia{dashed/solid}: \red{low/high} Silicon abundance.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{./abundance_si.jpg}
+\caption*{Credits: Borrero et al. 2003}
+\end{figure}
+\end{minipage}
+}
+
+%
+\end{document}
+
+
+
