@@ -26,6 +26,10 @@ Michael Stix, The Sun: an Introduction, 2002, Springer
 
 19/04 - Handson 01: Python and data visualization
 
+23/04 - Lecture 02: Concepts of stellar luminosity and color. Main equations of stellar structure and evolution. Timescales of stellar processes. 
+
+26/04 - Handson 02: Calculational exercises on the equations of stellar structure. 
+
 ## Git Repo Organization:
 
 #### /slides folder has the lecture (and, when needed, exercise) .pdfs
