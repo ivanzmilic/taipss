@@ -1,4 +1,5 @@
 \documentclass[aspectratio=169]{beamer}
+\geometry{paperwidth=160mm,paperheight=100mm}
 \usepackage{beamerthemesidebar}
 \usepackage{hyperref}
 \usepackage{color}
@@ -38,7 +39,7 @@
 %
 %
 \title{Theoretical Astrophysics I: Physics of Sun and Stars\\
-Lecture 2: Stellar colors and luminosities. Basic equations of stellar structure and evolution}
+Lecture 2: Stellar colors and luminosities. Basic equations of stellar structure}
 \author{\texorpdfstring{\sepia{Petri K\"{a}pyl\"{a} Ivan Mili\'{c}}\newline\blue{\url{pkapyla, milic@leibniz-kis.de}}}{}}
 \institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
 \date{\today}
@@ -47,53 +48,33 @@ Lecture 2: Stellar colors and luminosities. Basic equations of stellar structure
 \frame{\titlepage}
 
 \section{Colors and luminosities}
+\frame{
+	\frametitle{Recap}
+	\begin{itemize}
+		\item We concluded that stars (and the Sun) emit the light. 
+		\item We can measure the recieved flux at the Earth (i.e. irradiance). In observational astrophysics we use the term \textbf{apparent magnitude}.
+		\item If we know the distance to the star, and make some reasonable assumptions, we can find the total \textbf{luminosity} of the star
+		$$L = \mathcal{E} 4 \pi d^2 \rm{[W]}$$
+		\item We know how big the Sun is (cca 700 000\,km in radius), so we can estimate its \textbf{effective temperature} from Stefan-Boltzmann law:
+		
+		$$L = F(r=R) 4\pi R^2 = \sigma T^4 4\pi R^2$$
+		
+	\end{itemize}
+}
 
 \frame{
 \frametitle{Stefan-Boltzmann law}
-\begin{itemize}
-	\item The simplest way for us to relate the emitted energy to the temperature is through the Stefan-Boltzmann law. 
-	\item The emissivity (emitted energy per unit surface in the outgoing direction) is equal to: 
+\begin{itemize} 
+	\item The emissivity (flux at the surface) is equal to: 
 	\begin{equation}
-	\epsilon = \sigma T^4
+	\frac{dE^{\rm em}}{dt dS} = F(r=R) = \sigma T^4
 	\end{equation}
 	\item Then, the luminosity (emitted energy per second) of such object is: 
 	$L = 4\pi R^2 \sigma T^4$. 
-	\item If you substitute the numbers, you will get $T=5777\,\rm{K}$.
-	\item \q{What temperature would this be?}
-	\item \q{What does this question even mean?}
+	\item For the Sun If you substitute the numbers, you will get $T=5777\,\rm{K}$.
+	\item This is \textbf{a} temperature. The Sun does not have a constant temperature. 
+	\item It is basically a measure of solar luminosity!
 \end{itemize}
-}
-%
-\frame{
-\frametitle{Departures from the ideal case}
-We made a series of approximations in the process of inferring this temperature. 
-\begin{itemize}
-\item First we assumed that the solar radiance is constant in time (\emph{excellent approximation})
-\item Then we assumed that the emission is isotropic (\emph{this is not a good approximation but see below})
-\item Then we assumed that the solar surface is homogeneous (\emph{on small scales it is not, but let's discuss this for a while})
-\item Finally, we assumed that the Sun emits like a blackbody to infer the called \text{effective temperature} - 5777K. 
-\item \q{Let's discuss a bit what this concept means - 5 mins}
-\end{itemize}
-}
-%
-\frame{
-\frametitle{Real situations}
-\begin{minipage}{0.52\linewidth}
-The Sun (and other stars) depart severely from these assumptions:
-\begin{itemize}
-	\item Stars are inhomogeneous in all 3 dimensions (especially radially).
-	\item They emit non-Plankian spectra, in a generally anisotropic manner
-	\item And they also change on scales from seconds to billions of years. 
-	\item \textbf{This course is about all these aspects}
-\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}{0.46\linewidth}
-\begin{figure}
-\includegraphics[width=5cm]{figures/dkist1.jpg}
-\caption*{Credits: NSO/AURA/NSF/DKIST}
-\end{figure}
-\end{minipage}
 }
 %
 \frame{
@@ -101,43 +82,25 @@ The Sun (and other stars) depart severely from these assumptions:
 \begin{itemize}
 \item Energy is generated in the cores of stars and transported outwards (in multiple ways)
 \item As we move away from the stellar center - the medium becomes less opaque, at some point the photons can escape the star. Then they contribute to the total stellar luminosity that we ultimately detect.  
-\item The \sepia{layer} of the last emission is referred to as $\tau=1$ layer, where $\tau$ is the so called \textbf{optical depth}.
+\item The layer of the last emission is referred to as $\tau=1$ layer, where $\tau$ is the so called \textbf{optical depth}.
 \item As the stars are made of plasma - we don't have an obvious surface. $\tau=1$ layer serves as a loose definition of a solar surface (observationally).
-\item Next week, we will describe a star using equations of stellar structure - we will again have to make a definition of solar surface.
+\item Today we will describe a star using equations of stellar structure - we will again have to make a definition of solar surface.
 \end{itemize}
 }
 %
 \frame{
 \frametitle{The concept of stellar atmosphere}
-\begin{minipage}{0.52\linewidth}
-\begin{itemize}
-\item The physical location of $\tau=1$ depends on the density of the medium and how the photon interacts with the medium - \textbf{described by the opacity}.
-\item Solar plasma has different opacity at different wavelengths - photosphere has different physical location.
-\item Also, when we look at the Sun under different angles, we see different depths. 
-\item This is the so called limb-darkening. 
-\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}{0.47\linewidth}
+For some stars, like the Sun, this layer is extremely thin (few 100s to few 1000s km):
 \begin{figure}
-\includegraphics[width=6cm]{figures/sun_orange.jpg} 
+\includegraphics[width=9cm]{figures/stellatm.jpg}
+\caption{Scheme of the stellar atmosphere. Credits: ESA}
 \end{figure}
-\end{minipage}
 }
 %
 \frame{
-\frametitle{Why study the stellar atmospheres?}
-\begin{itemize}
-\item The stellar light gives us direct information about the stellar surface (the photosphere).
-\item \q{Are there ways to probe the stellar interior? Can the stellar atmosphere help?}
-\end{itemize}
-}
-%
-\frame{
-\frametitle{Why study the stellar atmospheres?}
+\frametitle{Interior vs atmosphere relationships}
 \begin{itemize}
 %\item The stellar light gives us direct information about the stellar surface (the photosphere).
-\item \q{Are there ways to probe the stellar interior? Can the stellar atmosphere help?}
 \item Stellar structure determines the structure of the atmosphere, and $T_{\rm eff}$.
 \item Stellar atmosphere oscillates because of the processes in stellar interior. 
 \item At the surface, we measure the magnetic fields generated in the interior. 
@@ -148,12 +111,21 @@ The Sun (and other stars) depart severely from these assumptions:
 %
 \frame{
 \frametitle{Understanding the stars}
+\begin{minipage}{0.495\linewidth}
 \begin{itemize}
 \item \textbf{The structure of the whole star leaves an observable imprint on its surface.}
 \item We measure these observable imprints. 
 \item We can observe \emph{a lot} of stars - so we can have accurate statistics. 
 \item \textbf{We devise theoretical models that try to describe the stellar structure and the evolution and compare the outputs of these models both to the measurable properties of individual stars and to the statistical distributions.}
 \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.495\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/kepler_fov.jpg}
+\caption{Kepler mission field of view. Credits: NASA}
+\end{figure}
+\end{minipage}
 }
 %
 \section{Stellar colors}
@@ -162,7 +134,7 @@ The Sun (and other stars) depart severely from these assumptions:
 \frametitle{Luminosity vs the color}
 \begin{itemize}
 \item Effective temperature describes the total luminosity of the star.
-\item We used a blackbody to approximate solar \emph{surface}.
+\item We used a blackbody to approximate solar \emph{surface} - \textbf{not the whole star!}.
 \item Now, different temperatures imply different colors (i.e. different spectral distributions).
 \begin{figure}
 \includegraphics[width=7.5cm]{figures/bb_curves.png}
@@ -172,20 +144,13 @@ The Sun (and other stars) depart severely from these assumptions:
 }
 %
 \frame{
-\frametitle{A side quest}
-\begin{itemize}
-\item \q{Can someone convince me that a star \textbf{cannot} be a blackbody? - 2-3 mins}
-\end{itemize}
-}
-%
-%
-\frame{
 \frametitle{Stars are not black bodies!}
 \begin{itemize}
 \item Star needs to transport energy outwards. For that a gradient of temperature is needed - not a blackbody. 
-\item \q{Harder question is can stellar photosphere be a blackbody?}
-\item In theory - yes, no fundamental law would be broken if it was. 
-\item In practice - it can't. Different wavelengths \emph{always} have different opacities and thus sample different depths.
+\item \q{Harder question is: can stellar photosphere be a blackbody?}
+\item We leave that for a different discussion, but in short: 
+\item It cannot, although we can roughly approximate it as: 
+\item Blackbody radiation + additional absorption/emission in the stellar \emph{atmosphere}.
 \end{itemize}
 }
 %
@@ -221,9 +186,9 @@ The Sun (and other stars) depart severely from these assumptions:
 \frametitle{Planck Law}
 \begin{itemize}
 \item Kirchoff (again) reckognized the importance of an universal law that connects emission and absorption properties of a medium in an equilibrium state. - \emph{"... It is of utmost importance to derive this law theoretically"}. 
-\item We had some pieces - Stefan-Boltzmann law that we just talked about...
-\item ... Then we had Wien's law: Emission of bodies of different temperature peaks at different wavelengths (colors).
-\item People also experimentally captured the dependence $B(T)$, where $B$ is some ``brightness" or essentially luminosity.
+\item We had some pieces: Stefan-Boltzmann law that we just talked about...
+\item ... the Wien's law: Emission of bodies of different temperature peaks at different wavelengths (colors).
+\item People also experimentally captured the dependence $B(T)$, where $B$ is the emitted flux density.
 \item \emph{Interesting:} Both Boltzmann and Wien (as well as Rayleigh and later Jeans) derived the corresponding laws theoretically. \q{Do you know how?}
 \item Recommendation: ``Theoretical Concepts in Physics'' (Malcom Longair, 2020, Cambridge)
 \end{itemize}
@@ -303,7 +268,7 @@ B(\lambda, T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k T} - 1}
 \frametitle{And we can do the same for other stars.}
 \begin{minipage}{0.45\linewidth}
 \q{What is the fundamental parameter that determines the shape of the spectrum and the absence/presence of spectral lines?}
-
+\vspace{1cm}\\
 It is the temperature! It determines the ionization and excitation of the particles and thus their absorption/emission properties.
 \end{minipage}
 \hfill
@@ -405,34 +370,33 @@ M & 2000-3000
 \begin{itemize}
 	\item We saw that we can estimate luminosity from the apparent brightness (irradiance) and distance. 
 	\item And that we can infer the effective temperature from the color.
-	\item Combined, these two give us the radius (an estimate of).
-	\item \q{Write down the equations again if necessary}.
+	\item Combined, these two give us the radius (this will be your homework).
 	\item What about the mass? Physical composition? Magnetic field? Rotation rate?
 \end{itemize}
 }
 %
 \frame{
 \frametitle{Stellar masses}
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.44\linewidth}
 \begin{itemize}
 \item Are extremely important, yet extremely hard to infer.
 \item The only accurate opportunity to infer the mass is to observe the star in a dynamical interaction.
 \item For example in a binary system. 
-\item These binary stars are very important, a big fraction of the stars are in binary (or multiple systems).
+\item Very important, a big fraction of the stars are in binary (or multiple systems).
 \item The stars can also interact with each other. 
 \end{itemize}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.55\linewidth}
 \begin{figure}
-\includegraphics[width=6cm]{figures/roche_lobe.jpg}
+\includegraphics[width=7.6cm]{figures/roche_lobe.jpg}
 \end{figure}
 \end{minipage}
 }
 %
 \frame{
 \frametitle{Element abundances in the Universe }
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.4\linewidth}
 \begin{itemize}
 \item Most of these elements were generate in stars. 
 \item But they also have implications for generation and evolution of other stars? 
@@ -440,9 +404,9 @@ M & 2000-3000
 \end{itemize}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.59\linewidth}
 \begin{figure}
-\includegraphics[width=6cm]{figures/The-relative-abundances-of-elements-in-the-universe-after-Goldschmidt-1938.png}
+\includegraphics[width=7cm]{figures/The-relative-abundances-of-elements-in-the-universe-after-Goldschmidt-1938.png}
 \caption*{Credits: Goldschmidt 1938}
 \end{figure}
 \end{minipage}
@@ -450,14 +414,14 @@ M & 2000-3000
 %
 \frame{
 \frametitle{These abundances are inferred from the spectra}
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.495\linewidth}
 \begin{itemize}
 \item Determination of the Silicon Abundance by fitting the solar spectra
 \item \sepia{Dots}: observations; \sepia{dashed/solid}: low/high Silicon abundance.
 \end{itemize}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\linewidth}
+\begin{minipage}{0.495\linewidth}
 \begin{figure}
 \includegraphics[width=6cm]{figures/abundance_si.png}
 \caption*{Credits: Borrero et al. 2003}
@@ -466,6 +430,240 @@ M & 2000-3000
 }
 %
 %
+\section{Stellar modeling}
+\frame{
+	\frametitle{What is the goal of stellar structure and evolution modeling?}
+	\begin{minipage}{0.495\linewidth}
+	\begin{itemize}
+		\item To explain why are luminosity and temperature correlated.
+		\item To understand what determines these two parameters. 
+		\item To predict/reconstruct the evolutionary paths of stars on HR diagram.
+		\item Little bit further down the road: to understand changes in stars on various scales (pulsations, oscillations), stellar magnetic field generation, stellar activity and the interaction between the stars and their environment. 
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.495\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	\caption*{Credits: the Open University}
+	\end{figure}
+	\end{minipage}
+}
+%
+
+\frame{
+	\frametitle{Basic assumptions - what we are working with}
+	\begin{minipage}{0.495\linewidth}
+	\begin{itemize}
+		\item Star exists and evolves in isolation.
+		\item The star is non-rotating and spherically symmetric. 
+		\item The star is uniform in it's initial composition. 
+		\item We ignore the effect of magnetic fields. 
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.495\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	\caption*{Credits: the Open University}
+	\end{figure}
+	\end{minipage}
+}
+%
+\frame{
+	\frametitle{How to play the game}
+	\begin{minipage}{0.495\linewidth}
+	\begin{itemize}
+		\item We describe our star as a radial distribution of temperature, pressure and density. 
+		\item We also describe it through it's chemical composition.
+		\item These parameters will be connected with some differential equations. 
+		\item Solving them should give us observable parameters ($T_eff$, $L$) for given boundary conditions. 
+		\item When we let the system evolve, we should be able to reproduce the evolution of stars on the HR diagram.
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.495\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	\caption*{Credits: the Open University}
+	\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{The coordinate system}
+	\begin{minipage}{0.6\linewidth}
+	\begin{itemize}
+		\item Problem is 1D - it is natural to describe variation of physical quantities with radius: $T(r),\,\rho(r)\,p(r)$. I.e. we consider \emph{layers} with thickness $dr$
+		\item Alternatively, we can focus on \emph{elements} that enclose some very small mass $dm$. 
+		\item This is Eulerian vs Lagrangian formulation. We will use them both.
+		\item The first one is more intuitive, the second more useful when the star dimensions change.
+		\item They are connected as (conservation of mass):
+		\begin{equation}
+		dm = \rho(r) 4\pi r^2 dr
+		\end{equation}
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{The energy equation}
+	\begin{minipage}{0.6\linewidth}
+	\begin{itemize}
+		\item Energy is flowing through a parcel. It can also be generated in the parcel (if we have a source).
+		\begin{equation}
+		\delta (u dm) = dm \delta u = \delta Q + \delta W
+		\end{equation}
+		\item where $Q$ is amount of heat, and $W$ is work. Then
+		\begin{equation}
+		\delta W = -p \delta dV = -p \frac{1}{\rho} \delta dm.
+		\end{equation}
+		\begin{equation}
+		\delta Q = q dm \delta t + F(m) \delta t - F(m+ dm) \delta t
+		\end{equation}
+		\begin{equation}
+		\delta Q = (q-\frac{\partial F}{\partial m} dm \delta t)
+		\end{equation}
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{The energy equation}
+	\begin{minipage}{0.6\linewidth}
+	\begin{itemize}
+		\item Now, taking the limit of a small $\delta t$, and putting these two together we have:
+		\begin{equation}
+		\dot{u} + p \dot{(\frac{1}{\rho})} = q - \frac{dF}{dm}
+		\end{equation}
+		\item Which, for the moment, we are going to consider to be static:
+		\begin{equation}
+		q = \frac{dF}{dm}
+		\end{equation}
+		\item In the absence of sources $F$ is constant. $F$ at surface needs to be $L$. This power is supplied by the nuclear processes (i.e. nuclear luminosity):
+		\begin{equation}
+		L_{\rm nuc} = \int_0^{M} q dm.
+		\end{equation}	
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{The equation of motion}
+	\begin{minipage}{0.6\linewidth}
+	\begin{itemize}
+		\item Analyzing the forces acting on the element: 
+		\begin{equation}
+		\ddot{r} = -G\frac{m}{r^2} - \frac{\partial p}{\partial r} \frac{1}{\rho}.
+		\end{equation}
+		\item Or, if we work in $dm$:
+		\begin{equation}
+		\ddot{r} = -G\frac{m}{r^2} - 4\pi r^2\frac{\partial p}{\partial m} .
+		\end{equation}
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{Hydrostatic equilibrium}
+	\begin{minipage}{0.6\linewidth}
+	\begin{itemize}
+		\item If the star is static, there are no accelerations:
+		\begin{equation}
+		\frac{dp}{dr} = -\rho \frac{Gm}{r^2},
+		\end{equation}
+		\item or in $dm$:
+		\begin{equation}
+		\frac{dp}{dm} = -G\frac{m}{4\pi r^2}
+		\end{equation}
+		\item Estimate the pressure at the center:
+		\begin{equation}
+		p_c = \int_0^M \frac{G m dm}{4\pi r^2} > \int_0^M \frac{G m dm}{4\pi r^2} 
+		\end{equation}
+		
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{Virial theorem}
+	\begin{minipage}{0.6\linewidth}
+	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{Total energy of the star}
+	\begin{minipage}{0.6\linewidth}
+	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{Contracting = losing energy = heating}
+	\begin{minipage}{0.6\linewidth}
+	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\linewidth}
+	%\begin{figure}
+	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
+	%\caption*{Credits: the Open University}
+	%\end{figure}
+	\end{minipage}
+}
+
+
+
 \frame{
 \frametitle{Question to think about}
 \begin{itemize}
@@ -497,8 +695,32 @@ M & 2000-3000
 	\item For the Sun this amounts to 30 million years. 
 	\item We knew back then already that Earth is billions of years old. 
 	\item It had to be something else!
-	\item There will be a master course in German on ``Applications of thermodynamics in astrophysics'' by Prof. Antonio Ferriz Mas, starting in May - keep an eye out! 
-	\item See you on Friday! \q{Online / in person?}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Nuclear timescale}
+\begin{itemize}
+	\item Let's do an order of magnitude estimation:
+	\begin{equation}
+	t_{\rm KH} = \frac{GM^2}{RL}
+	\end{equation}
+	\item For the Sun this amounts to 30 million years. 
+	\item We knew back then already that Earth is billions of years old. 
+	\item It had to be something else!
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Dynamical timescale}
+\begin{itemize}
+	\item Let's do an order of magnitude estimation:
+	\begin{equation}
+	t_{\rm KH} = \frac{GM^2}{RL}
+	\end{equation}
+	\item For the Sun this amounts to 30 million years. 
+	\item We knew back then already that Earth is billions of years old. 
+	\item It had to be something else!
 \end{itemize}
 }
 \end{document}
