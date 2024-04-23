@@ -476,8 +476,8 @@ M & 2000-3000
 	\begin{itemize}
 		\item We describe our star as a radial distribution of temperature, pressure and density. 
 		\item We also describe it through it's chemical composition.
-		\item These parameters will be connected with some differential equations. 
-		\item Solving them should give us observable parameters ($T_eff$, $L$) for given boundary conditions. 
+		\item These parameters will be connected with some differential equations and equation of state. 
+		\item Solving them should give us observable parameters ($T_{\rm eff}$, $L$) for given boundary conditions. 
 		\item When we let the system evolve, we should be able to reproduce the evolution of stars on the HR diagram.
 	\end{itemize}
 	\end{minipage}
@@ -505,11 +505,11 @@ M & 2000-3000
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch1.png}
+	\caption*{Coordinate system}
+	\end{figure}
 	\end{minipage}
 }
 
@@ -534,11 +534,11 @@ M & 2000-3000
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch3.png}
+	\caption*{Expansion of a small element}
+	\end{figure}
 	\end{minipage}
 }
 
@@ -548,7 +548,7 @@ M & 2000-3000
 	\begin{itemize}
 		\item Now, taking the limit of a small $\delta t$, and putting these two together we have:
 		\begin{equation}
-		\dot{u} + p \dot{(\frac{1}{\rho})} = q - \frac{dF}{dm}
+		\dot{u} + p {(\frac{1}{\rho})}^. = q - \frac{dF}{dm}
 		\end{equation}
 		\item Which, for the moment, we are going to consider to be static:
 		\begin{equation}
@@ -561,11 +561,11 @@ M & 2000-3000
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch2.png}
+	\caption*{Energy flow through a star}
+	\end{figure}
 	\end{minipage}
 }
 
@@ -584,11 +584,11 @@ M & 2000-3000
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch4.png}
+	\caption*{Forces acting on a infinitesimal element}
+	\end{figure}
 	\end{minipage}
 }
 
@@ -612,30 +612,25 @@ M & 2000-3000
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch1.png}
+	\end{figure}
 	\end{minipage}
 }
 
 \frame{
 	\frametitle{Virial theorem}
-	\begin{minipage}{0.6\linewidth}
+	
 	\begin{itemize}
 		\item In hydrostatic equilibrium, there is a link between graviational potential energy and internal energy (which is, essentially, kinetic energy of particles).
 		\item Multiply HE with $V = \frac{4}{3}\pi r^3$ to get:
 		\begin{equation}
-		\int_0^{p(R)} V dP = -\frac{1}{3} \int_0^M \frac{G m\,dm}{r}
+		\int_{p(0)}^{p(R)} V dP = -\frac{1}{3} \int_0^M \frac{G m\,dm}{r}
 		\end{equation}
-		\item Here r.h.s. is the total gravitational potential energy of the star - i.e. energy to assemble the star by bringing matter from infinity. Denoted by $\Omega$.
+		\item Here r.h.s. is a third of the total gravitational potential energy of the star - i.e. energy to assemble the star by bringing matter from infinity. Denoted by $\Omega$.
 	\end{itemize}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.4\linewidth}
 	
-	\end{minipage}
 }
 %
 \frame{
@@ -648,7 +643,7 @@ M & 2000-3000
 		\end{equation}
 		\item First term is zero (why? think about boundary conditions). So we get:
 		\begin{equation}
-		-3 \int_0^{V(R)} p dV = -3 \int_0^M \frac{p}{\rho} dm = \omega
+		-3 \int_0^{V(R)} p dV = -3 \int_0^M \frac{p}{\rho} dm = \Omega
 		\end{equation}
 		\item What can we conclude from this?
 	\end{itemize}
@@ -663,8 +658,9 @@ M & 2000-3000
 	\frametitle{Virial theorem}
 	\begin{minipage}{0.6\linewidth}
 	\begin{itemize}
+		\item So:
 		\begin{equation}
-		-3 \int_0^{V(R)} p dV = -3 \int_0^M \frac{p}{\rho} dm = \omega
+		-3 \int_0^{V(R)} p dV = -3 \int_0^M \frac{p}{\rho} dm = \Omega
 		\end{equation}
 		\item What can we conclude from this:
 		\item The energies have opposite signs, and negative part (gravity) has larger magnitude. 
@@ -682,23 +678,36 @@ M & 2000-3000
 	\frametitle{Virial theorem for ideal gas}
 	\begin{minipage}{0.6\linewidth}
 	\begin{itemize}
+		\item Ideal gas: $p=nkT$, $u=\frac{3}{2}nkT$.
+		\item Or the kinetic energy per unit mass $u=\frac{3}{2} \frac{kT}{m_g}.$
 		\begin{equation}
-		-3 \int_0^{V(R)} p dV = -3 \int_0^M \frac{p}{\rho} dm = \omega
+		-3 \int_0^{V(R)} p dV = -3\int_0^M \frac{p}{\rho} dm = \Omega
 		\end{equation}
-		\item What can we conclude from this:
-		\item The energies have opposite signs, and negative part (gravity) has larger magnitude. 
-		\item Hence, the star is \textbf{stable} and it won't just fly off in the space.
+		\item \textbf{From this we can find that} (also valid for gravitational systems like clusters and galaxies and clusters of galaxies): 
+		\begin{equation}
+		U = -\frac{1}{2}\Omega
+		\end{equation}
 	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/lec2_sketch5.png}
+	\caption*{Planets also have roughly $T = -1/2 \Omega$}
+	\end{figure}
 	\end{minipage}
 }
 \frame{
 	\frametitle{Total energy of the star}
 	\begin{minipage}{0.6\linewidth}
-	
+	\begin{itemize}
+		\item Here we will go straight to the equation 2.42 from the book: 
+		\begin{equation}
+		\dot{E} = \dot{U} + \dot{\cal K} + \dot{\Omega} = L_{nuc} - L
+		\end{equation}
+		\item In the static case we will have good old $E = U + \Omega = \frac{1}{2} \Omega$.
+		\item What with $E$ and $U$ when the star contracts? (Remember that $\Omega$ is negative).
+	\end{itemize}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.4\linewidth}
@@ -712,14 +721,18 @@ M & 2000-3000
 \frame{
 	\frametitle{Contracting = losing energy = heating}
 	\begin{minipage}{0.6\linewidth}
-	
+	\begin{itemize}
+		\item What with $E$ and $U$ when the star contracts? (Remember that $\Omega$ is negative).
+		\item Believe it or not: Total energy decreases, but the temperature of the star \textbf{increases}. 
+		\item This is actually not so unbelievable: when you jump from the hill your total energy decreases but your velocity increases. 
+	\end{itemize}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.4\linewidth}
-	%\begin{figure}
-	%\includegraphics[width=5.2cm]{figures/hr_simple.jpg}
-	%\caption*{Credits: the Open University}
-	%\end{figure}
+	\begin{minipage}{0.39\linewidth}
+	\begin{figure}
+	\includegraphics[width=5.2cm]{figures/pvsg.png}
+	\caption*{Credits: https://scienceatyourdoorstep.com/}
+	\end{figure}
 	\end{minipage}
 }
 
@@ -762,26 +775,39 @@ M & 2000-3000
 \frame{
 \frametitle{Nuclear timescale}
 \begin{itemize}
-	\item Let's do an order of magnitude estimation:
+	\item This is a time that it would take the star to spend all the gas in the process of fusion:
 	\begin{equation}
-	t_{\rm KH} = \frac{GM^2}{RL}
+	E = mc^2
 	\end{equation}
-	\item For the Sun this amounts to 30 million years. 
-	\item We knew back then already that Earth is billions of years old. 
-	\item It had to be something else!
+	\item And then:
+	\begin{equation}
+	t_{\rm nuc} = \frac{\epsilon M c^2}{L}
+	\end{equation}
+	\item Which for the Sun is a very large number. Turns out that only a fraction of Sun's hydrogen will participate in the fusion, thus bringing this number down to 10 billion years.
 \end{itemize}
 }
 %
 \frame{
 \frametitle{Dynamical timescale}
 \begin{itemize}
-	\item Let's do an order of magnitude estimation:
+	\item This is a free-fall time for an object to fall through the star :-) 
 	\begin{equation}
-	t_{\rm KH} = \frac{GM^2}{RL}
+	t_{\rm dyn} \approx \frac{R}{v_{esc}} = \sqrt{\frac{R^3}{GM}}
 	\end{equation}
-	\item For the Sun this amounts to 30 million years. 
-	\item We knew back then already that Earth is billions of years old. 
-	\item It had to be something else!
+	\item For the Sun this amounts to roughly 1000 seconds. As $R$ can vary wildly between the stars, so does the dynamical timescale.
+\end{itemize}
+}
+%
+\frame{
+\frametitle{What do these timescales tell us}
+As a rule of a thumb:
+\begin{itemize}
+
+	\item Dynamical timescale tells us that if we perturb the star in the equilibrium, it will restore (hopefully) in $t_{\rm dyn}$. This would also be a characteristic timescale for star formation ($R$ is much much bigger though).
+
+	\item Kelvin-Helmholtz timescale tells us how long it takes to reach the thermal equilibrium globally (locally, temperature changes of course).
+
+	\item The nuclear timescale tells us how much time it would take a star to spend its fuel and enter the next stage of evolution.
 \end{itemize}
 }
 \end{document}
