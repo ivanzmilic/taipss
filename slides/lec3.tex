@@ -463,6 +463,20 @@ Arthur Eddington, 24th August 1920
 }
 %
 \frame{
+\frametitle{Evolution of chemical composition}
+\begin{itemize}
+\item Number of reactions per unit volume and unit time $n_i n_j
+  R_{ijk}$. Then the energy released by such reactions per unit volume
+  and unit time $n_i n_j R_{ijk}Q_{ijk}$.
+\item Summing over all nuclear reactions and dividing by $\rho$ gives
+  the rate of energy released per unit mass:
+  \begin{equation}
+    q = \frac{\rho}{m_{\rm H}^2} \sum_{ijk} \frac{1}{1+\delta_{ij}} \frac{X_i}{{\cal A}_i}\frac{X_j}{{\cal A}_j} R_{ijk} Q_{ijk}
+  \end{equation}
+\end{itemize}
+}
+%
+\frame{
 \frametitle{Nuclear binding energy}
 
 \begin{minipage}{0.4\linewidth}
@@ -501,8 +515,8 @@ Arthur Eddington, 24th August 1920
 \hfill
 \begin{minipage}{0.59\linewidth}
 \begin{figure}
-\includegraphics[width=7cm]{figures/Binding_energy.png}
-\caption*{Credit: \red{PLACEHOLDER}}
+\includegraphics[width=5cm]{figures/coulomb_barrier.png}
+\caption*{Credit: Prialnik}
 \end{figure}
 \end{minipage}
   For typical mean stellar temperatures $d$ is about $10^3$ larger
@@ -514,16 +528,27 @@ Arthur Eddington, 24th August 1920
 
 \begin{minipage}{0.4\linewidth}
 \begin{itemize}
-\item BLAA
+\item Quantum mechanical tunneling through the Coulomb barrier was
+  calculated by George Gamov in 1928.
+\item The penetration probability is proportional to
+  \begin{equation}
+    {\rm p}_{q} \propto \exp\left\{ \frac{-\pi {\cal Z}_i {\cal Z}_j e^2}{\varepsilon_0 h v}\right\}.
+  \end{equation}
+\item The total probability is
+  \begin{equation}
+    {\rm p}_{t} \propto \exp\left\{ \frac{-\pi {\cal Z}_i {\cal Z}_j e^2}{\varepsilon_0 h v}\right\} \exp\left\{ \frac{-m_{\rm g} v^2}{2kT}\right\}.
+  \end{equation} 
 \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}{0.59\linewidth}
 \begin{figure}
-\includegraphics[width=7cm]{figures/Binding_energy.png}
-\caption*{Credit: Wikipedia}
+\includegraphics[width=7cm]{figures/gamow_peak.png}
+\caption*{Credit: Trache (2010), Rom. J. Phys., 52, 823}
 \end{figure}
 \end{minipage}
+This function has a maximum known as the Gamow peak which enables
+fusion in stars.
 }
 %
 \frame{
