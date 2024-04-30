@@ -552,7 +552,7 @@ fusion in stars.
 }
 %
 \frame{
-\frametitle{$pp$ chain}
+\frametitle{Hydrogen burning: $pp$ chain}
 \begin{itemize}
 \item Making stable helium out of hydrogen requires three or four
   protons to be brought to within $10^{-15}$~m. This is theoretically
@@ -577,17 +577,44 @@ fusion in stars.
 }
 %
 \frame{
-\frametitle{CNO cycle}
+\frametitle{Hydrogen burning: CNO cycle}
 \begin{itemize}
-\item Mediocre shit shit
+\item Another process that can fuse hydrogen to helium is the CNO
+  (carbon-nitrogen-oxygen) cycle (Bethe, von Weizs\"acker, 1938). 
+\item Here the CNO elements act as catalysts that enable the fusion H
+  $\rightarrow$ He, and they are neither destroyed or created in the
+  process:
+\begin{figure}
+\includegraphics[width=8cm]{figures/CNO-cycle.png}
+\caption*{Credits: Prialnik}
+\end{figure}
+\item $Q_{\rm CNO} \approx 25$~MeV, and rate of energy release is
+  (very) roughly:
+  \begin{equation}
+    q_{\rm CNO} \propto \rho T^{16}.
+  \end{equation}
+\item Steep $T$ dependence will have repercussions for stellar
+  structure (next lecture).
 \end{itemize}
 }
 %
 %
 \frame{
-\frametitle{Triple $\alpha$ reaction}
+\frametitle{Helium burning: Triple $\alpha$ reaction}
 \begin{itemize}
-\item Awesome shit
+\item The triple $\alpha$ reaction proceeds in two steps:
+  \begin{eqnarray}
+    ^4{\rm He} + ^4{\rm He} &\rightarrow& ^8{\rm Be},\nonumber \\
+    ^8{\rm Be} + ^4{\rm He} &\rightarrow& ^{12}{\rm C}.
+  \end{eqnarray}
+\item This reaction occurs despite $^8$Be having a lifetime of only
+  $2.6\cdot10^{-16}$~s!
+\item Rate of energy release is extremely sensitive to $T$:
+  \begin{equation}
+    q_{\rm CNO} \propto \rho^2 T^{40}.
+  \end{equation}
+\item However, also the ignition temperature is high ($\approx
+  10^8$~K).
 \end{itemize}
 }
 %
@@ -598,16 +625,18 @@ fusion in stars.
 \begin{itemize}
 \item $pp$ chain dominates in low mass stars such as the Sun.
 \item CNO cycle is operating in more massive main-sequence stars.
-\item The first stars got their energy from triple $\alpha$ reactions.
+\item The first stars generated also heavier elements from triple
+  $\alpha$ (and subsequent) reactions.
 \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}{0.59\linewidth}
 \begin{figure}
 \includegraphics[width=7cm]{figures/Nuclear_energy_generation.png}
-\caption*{Fusion processes as a function of $T$ Credit: \red{PLACEHOLDER}}
+%\caption*{Credit: RJHall, https://en.wikipedia.org/wiki/File:Nuclear\_energy\_generation.svg}
 \end{figure}
 \end{minipage}
+Credit: RJHall, https://en.wikipedia.org/wiki/File:Nuclear\_energy\_generation.svg (CC-SA 3.0)
 }
 %
 %% %
