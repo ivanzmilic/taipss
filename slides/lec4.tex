@@ -40,6 +40,7 @@
 %
 \def\onethird{{\textstyle{1\over3}}}
 \def\twothirds{{\textstyle{2\over3}}}
+\def\fourthirds{{\textstyle{4\over3}}}
 \def\onehalf{{\textstyle{1\over2}}}
 \def\threehalfs{{\textstyle{3\over2}}}
 %
@@ -47,6 +48,8 @@
 \newcommand{\aMLT}{\alpha_{\rm MLT}}
 \newcommand{\Fconv}{F_{\rm conv}}
 \newcommand{\Hp}{H_p}
+\newcommand{\prad}{p_{\rm rad}}
+\newcommand{\pgas}{p_{\rm gas}}
 %
 \title{Theoretical Astrophysics I: Physics of Sun and Stars\\
 Lecture 4: Convective energy transport}
@@ -214,7 +217,7 @@ Lecture 4: Convective energy transport}
 \item Sometimes the quantity $\Delta\nabla = \nabla - \nabla_{\rm a}$
   (superadiabaticity) is used to denoted whether a layer is
   convectively stable or not.
-\item In stellar convection zones (apart from the near-surface layes)
+\item In stellar convection zones (apart from the near-surface layers)
   $\Delta \nabla$ is very small, e.g., ${\cal O}(10^{-3}\ldots
   10^{-4})$ in the Sun.
 \end{itemize}
@@ -223,7 +226,7 @@ Lecture 4: Convective energy transport}
 \frame{
 \frametitle{Schwarzschild criterion -- reflection}
 \begin{itemize}
-\item Violation of Schwarzschild criterion is necessary but not
+\item Violation of Schwarzschild criterion is a necessary but not
   sufficient condition for convection to occur (\blue{Why?})
 \end{itemize}
 }
@@ -231,7 +234,7 @@ Lecture 4: Convective energy transport}
 \frame{
 \frametitle{Schwarzschild criterion -- reflection}
 \begin{itemize}
-\item Violation of Schwarzschild criterion is necessary but not
+\item Violation of Schwarzschild criterion is a necessary but not
   sufficient condition for convection to occur (\blue{Why?})
 \item Internal friction in the gas was been neglected $\rightarrow$ in
   reality $\Delta \nabla$ has to exceed a finite value $\Delta
@@ -251,30 +254,172 @@ Lecture 4: Convective energy transport}
 }
 %
 \frame{
+\frametitle{When and why does convection happen?}
+
+The Schwarzschild criterion is very general and we would like to have
+something more spectific to stars.
+\begin{itemize}
+\item Consider a radiative star in hydrostatic equilibrium where the
+  whole luminosity is transported by radiative diffusion:
+  \begin{equation}
+    F = - 4\pi r^2 K \frac{\pd T}{\pd r},
+  \end{equation}
+  where $K$ is the radiative conductivity:
+  \begin{equation}
+    K = \frac{16\sigma T^3}{3\kappa \rho} = \frac{4 c T^3}{3 a \kappa \rho}.
+  \end{equation}
+\item With this the temperature gradient is
+  \begin{equation}
+    \frac{\pd T}{\pd r} = - \frac{3}{4ac} \frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2}.
+  \end{equation}
+\end{itemize}
+}
+%
+\frame{
+\frametitle{When and why does convection happen?}
+
+\begin{itemize}
+\item Recast this in terms of radiative pressure:
+  \begin{equation}
+    \prad = \onethird a T^4, \ \ \mbox{or}\ \ d\prad = \fourthirds T^3 dT.
+  \end{equation}
+\item Now we can write the equation in terms of $\prad$:
+  \begin{equation}
+    \frac{d\prad}{dr} = - \kappa \rho \frac{F}{4\pi r^2}.
+  \end{equation}
+\item Finally, we use the hydrostatic equation:
+  \begin{equation}
+    \frac{dp}{dr} = - \rho \frac{Gm}{r^2},
+  \end{equation}
+  to obtain:
+  \begin{equation}
+    \frac{d\prad}{dp} = \frac{\kappa F}{4\pi Gm}.
+  \end{equation} 
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{When and why does convection happen?}
+
+\begin{itemize}
+\item The sought relation is:
+  \begin{equation}
+    \frac{d\prad}{dp} = \frac{\kappa F}{4\pi Gm}.
+  \end{equation} 
+\item \blue{What can you tell about this equation?}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{When and why does convection happen?}
+
+\begin{itemize}
+\item The sought relation is:
+  \begin{equation}
+    \frac{d\prad}{dp} = \frac{\kappa F}{4\pi Gm}.
+  \end{equation} 
+\item \blue{What can you tell about this equation?}
+\item Because $p = \pgas + \prad$, $dp > d\prad$, or
+  $\frac{d\prad}{dp} < 1$.
+\item This means that for a \emph{radiative} star
+  \begin{equation}
+    \kappa F < 4\pi Gm.\label{equ:EddF}
+  \end{equation}
+\item This condition can be violated (and part of the energy must be
+  transported by means other than radiation) if $\kappa F$ is
+  sufficiently big.
+\item Increase $\kappa$ due to partial ionization: outer layers of low
+  mass stars such as the Sun.
+\item Increase $F$ due to strong temperature dependence of energy
+  production: CNO-cycle and triple-$\alpha$ in massive stars.
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Eddington luminosity}
+
+\begin{itemize}
+\item Eq.~(\ref{equ:EddF}) can be rewritten in terms of $L$ and $M$
+  \begin{equation}
+    L < \frac{4\pi G M}{\kappa}.
+  \end{equation}
+\item This is a fundamental limit for radiative luminosity. If $L$
+  exceeds this, a radiation-driven \emph{stellar wind} will commence.
+\end{itemize}
+}
+%
+%
+\frame{
 \frametitle{Mixing length theory}
 
+In reality convection is highly turbulent and chaotic, and happens in
+3D. Stellar evolution models require a simple presciption of
+convection although there is no rigirous way to do this.
 \begin{itemize}
 \item Assume discrete gas elements that move a vertical distance
   $\ell$ before dissolving.
 \item This distance is called the \emph{mixing length}, and is given
-  by $\ell = \aMLT \Hp$, where $\aMLT = {\cal O}(1)$.
-\item Consider the convective energy flux (unit: W/m$^2$) is:
-  \begin{equation}
-    \Fconv = c_p \rho u T',\label{equ:Fconv}
-  \end{equation}
-  where $u$ is the convective velocity, and $T' = T - \overline{T}$.
+  by $\ell = \aMLT \Hp$, where $\aMLT = {\cal O}(1)$. This is a choice
+  and cannot be derived rigorously!
+\item Pressure scale height increases with depth $\rightarrow$
+  convection cells get bigger.
 \end{itemize}
 }
 %
 \frame{
 \frametitle{Mixing length theory}
 
+Pressure scale height increases with depth $\rightarrow$ convection
+cells get bigger.
+
+\begin{figure}
+  \includegraphics[width=10cm]{figures/Hotta_2019.png}\includegraphics[width=5cm]{figures/Hotta_2019_box.png}
+\caption*{Source: Hotta et al. (2019), \emph{Science Advances}, 5, 2307}
+\end{figure}
+}
+%
+\frame{
+\frametitle{Mixing length theory}
+
 \begin{itemize}
+\item Consider the convective energy flux (unit: W/m$^2$) is:
+  \begin{equation}
+    \Fconv = c_p \rho u T',\label{equ:Fconv}
+  \end{equation}
+  where $u$ is the convective velocity, and $T' = T - \overline{T}$.
 \item Average (squared) convective velocity is
   \begin{equation}
     u^2 = g \delta (\nabla-\nabla_{\rm e}) \frac{\ell^2}{8h_p}.
   \end{equation}
 \end{itemize}
+}
+%
+\frame{
+\frametitle{Mixing length theory -- issues?}
+\begin{itemize}
+\item Non-rotating convection looks similar to what mixing length
+  theory predicts.
+\end{itemize}
+\begin{figure}
+\includegraphics[width=7cm]{figures/conv-norot.png}
+\caption*{Non-rotating convection}
+\end{figure}
+}
+%
+%
+\frame{
+\frametitle{Mixing length theory -- issues?}
+\begin{itemize}
+\item Non-rotating convection looks similar to what mixing length
+  theory predicts. But not if rotation is sufficiently strong.
+\end{itemize}
+\begin{figure}
+\includegraphics[width=7cm]{figures/conv-norot.png}\includegraphics[width=7cm]{figures/conv-rapidrot.png}
+\caption*{Left: Non-rotating convection. Right: rapidly rotating convection.}
+\end{figure}
 }
 %
 %
@@ -289,6 +434,44 @@ Lecture 4: Convective energy transport}
 \end{itemize}
 }
 %
+%
+\frame{
+\frametitle{Solar granulation}
+
+\begin{itemize}
+\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
+  \begin{equation}
+    u = \left( \frac{F}{\rho} \right)^{1/3}
+  \end{equation}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Simulations: surface convection}
+
+\begin{itemize}
+\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
+  \begin{equation}
+    u = \left( \frac{F}{\rho} \right)^{1/3}
+  \end{equation}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Simulations: deep convection}
+
+\begin{itemize}
+\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
+  \begin{equation}
+    u = \left( \frac{F}{\rho} \right)^{1/3}
+  \end{equation}
+\end{itemize}
+}
+%
+
+
 \end{document}
 
 
