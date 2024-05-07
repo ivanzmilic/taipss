@@ -480,10 +480,9 @@ cells get bigger.
 \end{itemize}
 }
 %
-
 %
 \frame{
-\frametitle{Schwarzschild criterion}
+\frametitle{Mixing length theory}
 \begin{minipage}{0.4\linewidth}
 \begin{itemize}
 \item Mixing length model of the solar convection zone.
@@ -498,6 +497,27 @@ cells get bigger.
 \begin{figure}
 \includegraphics[width=4.75cm]{figures/MLT_Sun_Stix2002.png}
 \caption*{Stix (2002), The Sun: An Introduction}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Mixing length theory vs. simulations}
+\begin{minipage}{0.4\linewidth}
+\begin{itemize}
+\item Convective velocities in 3D simulations are of the same order of
+  magnitude as from MLT.
+\item Exact match cannot be expected beacuse MLT is a very coarse
+  approximation + simulations have their own issues (next lecture).
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+\begin{figure}
+\includegraphics[width=8cm]{figures/uconv_KKB14.png}
+\caption*{Average convective velocity in simulations (A, C, E) and
+  from MLT}
 \end{figure}
 \end{minipage}
 }
@@ -531,14 +551,17 @@ cells get bigger.
 %
 %
 \frame{
-\frametitle{Mixing length theory -- issues?}
+\frametitle{Perfect is the worst enemy of good enough?}
 
 \begin{itemize}
-\item When rotation is sufficiently rapid
+\item Mixing length theory (+ some additional tweaks to account for
+  overshooting) is generally good enough to capture the big picture.
+\item However, the interplay of convection, rotation and magnetism
+  leads to another set of interesting problems that can also have
+  repercussions to everyday life.
 \end{itemize}
+\
 }
-%
-
 
 \end{document}
 
