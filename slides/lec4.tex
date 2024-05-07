@@ -47,6 +47,7 @@
 \newcommand{\pd}{\partial}
 \newcommand{\aMLT}{\alpha_{\rm MLT}}
 \newcommand{\Fconv}{F_{\rm conv}}
+\newcommand{\Frad}{F_{\rm rad}}
 \newcommand{\Hp}{H_p}
 \newcommand{\prad}{p_{\rm rad}}
 \newcommand{\pgas}{p_{\rm gas}}
@@ -270,7 +271,7 @@ something more spectific to stars.
   \end{equation}
 \item With this the temperature gradient is
   \begin{equation}
-    \frac{\pd T}{\pd r} = - \frac{3}{4ac} \frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2}.
+    \frac{\pd T}{\pd r} = - \frac{3}{4ac} \frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2}.\label{equ:dTdr}
   \end{equation}
 \end{itemize}
 }
@@ -307,7 +308,7 @@ something more spectific to stars.
   \begin{equation}
     \frac{d\prad}{dp} = \frac{\kappa F}{4\pi Gm}.
   \end{equation} 
-\item \blue{What can you tell about this equation?}
+\item \blue{What can you say based on this equation?}
 \end{itemize}
 }
 %
@@ -320,15 +321,15 @@ something more spectific to stars.
   \begin{equation}
     \frac{d\prad}{dp} = \frac{\kappa F}{4\pi Gm}.
   \end{equation} 
-\item \blue{What can you tell about this equation?}
+\item \blue{What can you say based on this equation?}
 \item Because $p = \pgas + \prad$, $dp > d\prad$, or
   $\frac{d\prad}{dp} < 1$.
 \item This means that for a \emph{radiative} star
   \begin{equation}
     \kappa F < 4\pi Gm.\label{equ:EddF}
   \end{equation}
-\item This condition can be violated (and part of the energy must be
-  transported by means other than radiation) if $\kappa F$ is
+\item This condition can be violated, and part of the energy must be
+  transported by means other than radiation, if $\kappa F$ is
   sufficiently big.
 \item Increase $\kappa$ due to partial ionization: outer layers of low
   mass stars such as the Sun.
@@ -346,8 +347,28 @@ something more spectific to stars.
   \begin{equation}
     L < \frac{4\pi G M}{\kappa}.
   \end{equation}
-\item This is a fundamental limit for radiative luminosity. If $L$
-  exceeds this, a radiation-driven \emph{stellar wind} will commence.
+\item This is a fundamental limit for radiative luminosity (Eddington
+  luminosity). If $L$ exceeds this, a radiation-driven \emph{stellar
+  wind} will commence.
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Energy transport revisited}
+
+\begin{itemize}
+\item For a radiative star the total flow of energy (W/s) is
+  transported by radiation and given by
+  \begin{equation}
+      F = \Frad = 4\pi r^2 \frac{4ac}{3} \frac{T^4}{\kappa \rho H_p} \nabla_{\rm rad},
+  \end{equation}
+  where $\nabla_{\rm rad}$ is the radiative temperature gradient;see,
+  Eq.~(\ref{equ:dTdr}).
+\item When convection is present $F = \Frad + \Fconv \neq \Frad$, and
+  therefore $\nabla \neq \nabla_{\rm rad}$.
+\item Therefore we need to compute $\Fconv$ in order to calculate
+  $\nabla$.
 \end{itemize}
 }
 %
@@ -355,17 +376,25 @@ something more spectific to stars.
 \frame{
 \frametitle{Mixing length theory}
 
-In reality convection is highly turbulent and chaotic, and happens in
-3D. Stellar evolution models require a simple presciption of
-convection although there is no rigirous way to do this.
+Convection is highly turbulent and chaotic, and occurs in 3D. This in
+itself is already a nearly unsolvable problem (next lecture). Stellar
+evolution models require a simple presciption of convection in 1D
+(although there is no rigirous way to do this!).
 \begin{itemize}
 \item Assume discrete gas elements that move a vertical distance
   $\ell$ before dissolving.
 \item This distance is called the \emph{mixing length}, and is given
-  by $\ell = \aMLT \Hp$, where $\aMLT = {\cal O}(1)$. This is a choice
-  and cannot be derived rigorously!
-\item Pressure scale height increases with depth $\rightarrow$
-  convection cells get bigger.
+  by $\ell = \aMLT \Hp$, where $\aMLT = {\cal O}(1)$. The functional
+  form is a choice and cannot be derived rigorously from first
+  principles!
+\item The mixing length theory is analogous to the concept of
+  mean-free path in thermodynamics. It originates from Ludwig Prandtl
+  (1925) who used it to describe turbulent motions in the laboratory.
+\item It was adapted to astrophysics by Ludwig Biermann in the 1930s
+  and the most widely used version still is due to Erika
+  B\"ohm-vitense (1958); see also Vitense (1953).
+\item \blue{What can you conclude from the basic assumption of the
+  mixing length theory?}
 \end{itemize}
 }
 %
@@ -385,15 +414,43 @@ cells get bigger.
 \frametitle{Mixing length theory}
 
 \begin{itemize}
-\item Consider the convective energy flux (unit: W/m$^2$) is:
+\item Consider the convective energy (more precisely enthalpy) flux
+  (unit: W/m$^2$) is:
   \begin{equation}
-    \Fconv = c_p \rho u T',\label{equ:Fconv}
+    \Fconv = c_p \rho u \delta T,\label{equ:Fconv}
   \end{equation}
-  where $u$ is the convective velocity, and $T' = T - \overline{T}$.
-\item Average (squared) convective velocity is
+  where $u$ is the convective velocity, and $\delta T = T -
+  \overline{T}$.
+\item Assume that the ``average'' convective blob has traveled a
+  distance $d=\ell/2$.
+\item Then the temperature fluctuation is:
+  \begin{eqnarray}
+    \frac{\delta T}{T} = \frac{d}{T}\left(\frac{\pd T}{\pd r} - \left.\frac{\pd T}{\pd r} \right|_{\rm ad} \right) = (\nabla - \nabla_{\rm ad}) \frac{\ell}{2 H_p}, \label{equ:deltaT}
+  \end{eqnarray}
+\item Assume that half of the work done by the buoyancy force when
+  travelling a radial distance $\ell/2$ goes to kinetic energy:
+  \begin{eqnarray}
+    - \frac{1}{2} g \frac{\delta \rho}{\rho} \frac{\ell}{2} = \frac{1}{2} g \frac{\delta T}{T} \frac{\ell}{2} = (\nabla - \nabla_{\rm ad}) \frac{g\ell^2}{8 H_p}.
+  \end{eqnarray}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Mixing length theory}
+
+\begin{itemize}
+\item Assume that half of this goes to the kinetic energy of the fluid element:
+  \begin{eqnarray}
+    u^2 = (\nabla - \nabla_{\rm ad}) \frac{g\ell^2}{8 H_p}.\label{equ:u2}
+  \end{eqnarray}
+\item Combining Eqs.~(\ref{equ:deltaT}) and (\ref{equ:u2}) gives the
+  convective flux:
   \begin{equation}
-    u^2 = g \delta (\nabla-\nabla_{\rm e}) \frac{\ell^2}{8h_p}.
+    \Fconv = c_p \rho T g^{1/2} \frac{\ell^2}{4\sqrt{2}H_p^{3/2}} (\nabla-\nabla_{\rm ad})^{3/2}.
   \end{equation}
+  \item \blue{What do these equations imply? Hint: recall the Schwarzschild criterion.}
+  \item \blue{We made a shortcut in the analysis here. Any idea what this was?}
 \end{itemize}
 }
 %
