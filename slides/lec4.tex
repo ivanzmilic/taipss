@@ -147,14 +147,16 @@ Lecture 4: Convective energy transport}
 \begin{itemize}
 \item The ideal gas equation can be written as:
   \begin{equation}
-    p = \frac{{\cal R}}{\mu} \rho T = (c_p - c_V) \rho T,
+    p = {\cal R}_{\rm spec} \rho T = (c_p - c_V) \rho T,
   \end{equation}
-  where $c_p$ and $c_V$ are specific heat capacities at constant
-  pressure and at constant volume. Their ratio is $\gamma = c_p/c_V =
-  5/3$.
-\item Furthermore, with the internal energy $u = c_V T$ this becomes
+  where $c_p = \left.\frac{dQ}{dT}\right|_{p}$ and $c_V =
+  \left.\frac{dQ}{dT}\right|_V$ are specific heat capacities at
+  constant pressure and at constant volume (unit
+  J~K$^{-1}$~kg$^{-1}$). Their ratio is $\gamma = c_p/c_V = 5/3$.
+\item Furthermore, with the specific internal energy $u = c_V T$ this
+  becomes
   \begin{equation}
-    p = \frac{{\cal R}}{\mu} \rho T = (\gamma - 1) \rho u,\ \ \mbox{and} \ \ u = \frac{1}{\gamma-1} \frac{p}{\rho}. 
+    p = {\cal R}_{\rm spec} \rho T = (\gamma - 1) \rho u,\ \ \mbox{and} \ \ u = \frac{1}{\gamma-1} \frac{p}{\rho}. 
   \end{equation}
 \end{itemize}
 }
@@ -215,12 +217,13 @@ Lecture 4: Convective energy transport}
   \begin{equation}
     \nabla < \nabla_{\rm a}.
   \end{equation}
+  This criterion was derived by Karl Schwarzschild in 1906.
 \item Sometimes the quantity $\Delta\nabla = \nabla - \nabla_{\rm a}$
   (superadiabaticity) is used to denoted whether a layer is
   convectively stable or not.
 \item In stellar convection zones (apart from the near-surface layers)
-  $\Delta \nabla$ is very small, e.g., ${\cal O}(10^{-3}\ldots
-  10^{-4})$ in the Sun.
+  $\Delta \nabla$ is very small, e.g., ${\cal O}(10^{-8}\ldots
+  10^{-3})$ in the Sun.
 \end{itemize}
 }
 %
@@ -250,7 +253,7 @@ Lecture 4: Convective energy transport}
     rad}/\rho c_p$ is the radiative diffusivity, and $H_p$ is the
   pressure scale height.
 \item Critical value for free convection is ${\rm Ra}_{\rm c} \approx
-  1500$. In the Sun, ${\rm Ra} \approx 10^{20}$.
+  1707$. In the Sun, ${\rm Ra} \approx 10^{20}$.
 \end{itemize}
 }
 %
@@ -358,12 +361,12 @@ something more spectific to stars.
 \frametitle{Energy transport revisited}
 
 \begin{itemize}
-\item For a radiative star the total flow of energy (W/s) is
+\item For a radiative star the total flow of energy (unit: W) is
   transported by radiation and given by
   \begin{equation}
       F = \Frad = 4\pi r^2 \frac{4ac}{3} \frac{T^4}{\kappa \rho H_p} \nabla_{\rm rad},
   \end{equation}
-  where $\nabla_{\rm rad}$ is the radiative temperature gradient;see,
+  where $\nabla_{\rm rad}$ is the radiative temperature gradient; see,
   Eq.~(\ref{equ:dTdr}).
 \item When convection is present $F = \Frad + \Fconv \neq \Frad$, and
   therefore $\nabla \neq \nabla_{\rm rad}$.
@@ -391,8 +394,8 @@ evolution models require a simple presciption of convection in 1D
   mean-free path in thermodynamics. It originates from Ludwig Prandtl
   (1925) who used it to describe turbulent motions in the laboratory.
 \item It was adapted to astrophysics by Ludwig Biermann in the 1930s
-  and the most widely used version still is due to Erika
-  B\"ohm-vitense (1958); see also Vitense (1953).
+  and the most widely used version is due to Erika Vitense (1953); see
+  also B\"ohm-Vitense (1958).
 \item \blue{What can you conclude from the basic assumption of the
   mixing length theory?}
 \end{itemize}
@@ -455,14 +458,61 @@ cells get bigger.
 }
 %
 \frame{
+\frametitle{Mixing length theory}
+
+\begin{itemize}
+  \item \blue{What do these equations imply? Hint: recall the
+    Schwarzschild criterion.}
+  \item The factor $\nabla-\nabla_{\rm ad}$ means that when the
+    stratification changes from unstable to stable the convective flow
+    abruptly stops. Therefore mixing length theory is \emph{local} and
+    does not allow \emph{overshooting}.
+  \item \blue{We made a shortcut in the analysis here. Any idea what
+    this was?}
+  \item There are still radiative losses from the convective fluid
+    elements and therefore the temperature gradient inside the element
+    ($\nabla_{\rm e}$) is not equal to $\nabla_{\rm ad}$.
+  \item This leads to an additional equation (known as the cubic
+    equation) that needs to be solved for $\nabla$.
+  \item However, this is only important very near the surfaces of
+    stars and many stellar evolution codes simply set $\nabla =
+    \nabla_{\rm ad}$ when the Schwarzschild criterion is violated.
+\end{itemize}
+}
+%
+
+%
+\frame{
+\frametitle{Schwarzschild criterion}
+\begin{minipage}{0.4\linewidth}
+\begin{itemize}
+\item Mixing length model of the solar convection zone.
+\item Huge differences in pressure, density, superadiabaticity, and
+  velocity.
+\item Also the convective turnover time $\tau_{\rm c} = \ell/u$ varies
+  several orders of magnitude.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\linewidth}
+\begin{figure}
+\includegraphics[width=4.75cm]{figures/MLT_Sun_Stix2002.png}
+\caption*{Stix (2002), The Sun: An Introduction}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
 \frametitle{Mixing length theory -- issues?}
 \begin{itemize}
 \item Non-rotating convection looks similar to what mixing length
   theory predicts.
 \end{itemize}
 \begin{figure}
-\includegraphics[width=7cm]{figures/conv-norot.png}
-\caption*{Non-rotating convection}
+  \includegraphics[width=7cm]{figures/conv-norot.png}\includegraphics[width=6cm]{figures/MLT-Sun_Co.png}
+\caption*{Left: Non-rotating convection. Right: logarithm of the
+  Coriolis number ${\rm Co} = 2\Omega_\odot/\tau_{\rm c}$ using mixing
+  length model data.}
 \end{figure}
 }
 %
@@ -481,49 +531,10 @@ cells get bigger.
 %
 %
 \frame{
-\frametitle{Estimates of convective velocity and temperature fluctuations}
+\frametitle{Mixing length theory -- issues?}
 
 \begin{itemize}
-\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
-  \begin{equation}
-    u = \left( \frac{F}{\rho} \right)^{1/3}
-  \end{equation}
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Solar granulation}
-
-\begin{itemize}
-\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
-  \begin{equation}
-    u = \left( \frac{F}{\rho} \right)^{1/3}
-  \end{equation}
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Simulations: surface convection}
-
-\begin{itemize}
-\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
-  \begin{equation}
-    u = \left( \frac{F}{\rho} \right)^{1/3}
-  \end{equation}
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Simulations: deep convection}
-
-\begin{itemize}
-\item Velocity from convective flux, Eq.~(\ref{equ:Fconv})
-  \begin{equation}
-    u = \left( \frac{F}{\rho} \right)^{1/3}
-  \end{equation}
+\item When rotation is sufficiently rapid
 \end{itemize}
 }
 %
