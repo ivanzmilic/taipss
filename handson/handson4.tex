@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Hands-on exercises 4: More thermodynamics related to convection}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+These are again mostly analytical exercises. But, as we deal with the
+real objects, sometimes we will want to calculate the physical values
+of our results. For that, it is very convenient to start a simple
+python session. We will also encourage you to do so :-)
+
+{\bf Problem 1:} Convince yourself that
+\begin{equation}
+\frac{1}{T}\frac{dT}{dr} = - \frac{\nabla}{H_p},
+\end{equation}
+where $\nabla = \frac{p}{T}\frac{dT}{dp}$, and $H_p$ is the pressure
+scale height.
+
+{\bf Problem 2:} Show that the adiabatic temperature gradient can be
+written as
+\begin{equation}
+\left.\frac{dT}{dr}\right|_{\rm a} = -\frac{g}{c_p},
+\end{equation}
+where $g$ is the acceleration due to gravity and $c_p$ is the specific
+heat capacity at constant pressure.
+
+{\bf Problem 3:} Use the second law of thermodynamics
+\begin{equation}
+ds = \frac{dQ}{T},
+\end{equation}
+where $s$ is the specific entropy, to show that an adiabatic process
+is \emph{isentropic}, i.e., that the entropy does not change.
+
+Show that the superadiabatic temperature gradient is related to the
+specific entropy gradient via:
+\begin{equation}
+-\frac{1}{c_p} \frac{ds}{dz} = \frac{1}{H_p} (\nabla - \nabla_{\rm a}).
+\end{equation}
+
+{\bf Problem 4:} Use the Navier-Stokes equation
+\begin{equation}
+\rho\frac{\partial {\bm u}}{\partial t} = - \rho{\bm u}\bm\cdot\nabla{\bm u} - \rho {\bm g} + \bm\nabla p + {\bm F}_{\rm visc},
+\end{equation}
+and the definition of the convective enthalpy flux (unit W/m$^2$)
+\begin{equation}
+F_{\rm conv} = c_p \rho u T',
+\end{equation}
+to estimate the convective velocity and temperature fluctuations at
+the middle of the convection zone of the Sun ($r=0.85R_\odot$). Hint:
+assume a hydrostatic stationary state, use the tabulated mixing length
+model from previous lecture and $c_p =
+2.07\cdot10^4$~J~K$^{-1}$~kg$^{-1}$.
+
+\newpage
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}
