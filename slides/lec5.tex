@@ -54,7 +54,7 @@
 \newcommand{\pgas}{p_{\rm gas}}
 %
 \title{Theoretical Astrophysics I: Physics of Sun and Stars\\
-Lecture 5: Convection, magnetic fields, and dynamo}
+Lecture 5: Convection in stars versus convection simulations}
 \author{\texorpdfstring{\sepia{Petri K\"{a}pyl\"{a} Ivan Mili\'{c}}\newline\blue{\url{pkapyla, milic@leibniz-kis.de}}}{}}
 \institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
 \date{\today}
@@ -218,10 +218,9 @@ Lecture 5: Convection, magnetic fields, and dynamo}
   \end{equation}
   with $E_{\rm K} = \onehalf {\bm u}^2$ and $E(k) = \sum_k | \hat{\bm
     u}(k) |^2$.
-\item While the surface simulations (Stagger) seem to be compatible
-  with the granulation tracking observations, global simulations (ASH)
-  suggest velocities that are orders of magnitude larger than the
-  (helio)seismology or supergranulation (SG) tracking.
+\item While the surface simulations (Stagger) seem to be largely
+  compatible with the granulation tracking observations, global
+  simulations (ASH) suggest velocities that are much larger.
 \item This is one of the manifestations of the ``Convective
   conundrum,'' or the discrepancy between models and reality.
 \end{itemize}
@@ -229,15 +228,15 @@ Lecture 5: Convection, magnetic fields, and dynamo}
 \hfill
 \begin{minipage}{0.4\linewidth}
 \begin{figure}
-\includegraphics[width=5.5cm]{figures/Hanasoge_et_al_2016_Fig5.png}
-\caption*{Hanasoge et al. (2016)}
+\includegraphics[width=6.5cm]{figures/Proxauf_power_spectrum.png}
+\caption*{Proxauf (2021), PhD Thesis (G\"ottingen Univ.)}
 \end{figure}
 \end{minipage}
 }
 %
 \frame{
 \frametitle{Differential rotation}
-The Sun rotates \emph{differentially}, i.e., not like a solid body.
+The Sun rotates \emph{differentially}, i.e., not like a solid body. Here $\Omega = u_\phi/r \sin\theta$.
 \begin{minipage}{0.49\linewidth}
 \begin{figure}
 \includegraphics[width=6cm]{figures/solar_DR_surf.png}
@@ -258,8 +257,8 @@ The Sun rotates \emph{differentially}, i.e., not like a solid body.
 \frametitle{Differential rotation in simulations}
 \begin{minipage}{0.44\linewidth}
 \begin{itemize}
-\item The interaction of the convective flows and the global solar
-  rotation lead to differential rotation.
+\item The interaction of convection and the global solar rotation lead
+  to differential rotation.
 \item Simulations with solar parameters (only luminosity and rotation
   rate as we will see below!) very often yield ``anti-solar''
   differential rotation with fast poles and slow equator.
@@ -469,7 +468,7 @@ The Sun rotates \emph{differentially}, i.e., not like a solid body.
   \begin{equation}
     {\rm Re} = \frac{ud}{\nu},\ \ {\rm Re}_{\rm M} = \frac{ud}{\eta},\ \ {\rm Pe} = \frac{ud}{\chi}, \ \ {\rm Co} = \frac{2\Omega d}{u}.
   \end{equation}
-  \item We need to compare these quantities in our simulations to
+  \item We need to compare these quantities in the simulations to
     those in stars.
 \end{itemize}
 }
@@ -498,18 +497,38 @@ Only the Rossby number (${\rm Co}^{-1}$) can be reproduced!
 \frametitle{Why do simulations struggle to capture the Sun?}
 
 \begin{itemize}
-\item More precisely, a Coriolis number can be defined as
+\item More precisely, another Coriolis number can be defined as
   \begin{equation}
-    {\rm Co}_\star = \frac{2\Omega H}{u_\star}.
+    {\rm Co}_\star = \frac{2\Omega H_p}{u_\star},
   \end{equation}
-  It turns out that
+  that does not depend on any actual velocity or length scale. It
+  turns out that
   \begin{equation}
     {\rm Co}_\star = ({\rm Ra}_{\rm F}^\star)^{-1/3},\ \ \mbox{where}\ \ {\rm Ra}_{\rm F}^\star = \frac{{\rm Ra}_{\rm F}}{{\rm Pr}^2{\rm Ta}^{3/2}}.
   \end{equation}
   \item The catch mentioned earlier is that it is not enough to
     reproduce \emph{one} of the system parameters if all the other
     ones are (too much) off.
+  \item We will come back to this in the tutorial...
 \end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Non-canonical models of convection}
+
+\begin{itemize}
+\item \red{Heating from the bottom} or \blue{cooling at the top}?
+\item Instead of $\nabla-\nabla_{\rm a} >0$ everywhere (as in mixing
+  length theory), perhaps the lower part of the convection zone is
+  \emph{stably stratified}? This happens in the case of surface
+  cooling driven convection.
+\end{itemize}
+\begin{figure}
+\includegraphics[width=6cm]{figures/conv-norot.png}\includegraphics[width=7cm]{figures/plot_fluxes_Om00_288.png}
+\caption*{Left: snapshot of the velocity. Right: Energy fluxes and the
+  negative of the entropy gradient. Grey areas mixed by convection!}
+\end{figure}
 }
 %
 %
@@ -550,7 +569,7 @@ Only the Rossby number (${\rm Co}^{-1}$) can be reproduced!
 \item The field cannot be generated without flows. To understand the
   generation of, e.g., the solar magnetic field, we must now the
   velocity field. \emph{Study of magnetic phenomena is by far the
-  biggest branch of solar physics!}
+  most interesting branch of solar physics!}
 \end{itemize}
 }
 %
