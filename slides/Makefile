@@ -5,5 +5,11 @@ default:
 #	pdflatex lec2
 #	pdflatex lec3
 #	pdflatex lec3
-	pdflatex lec4
-	pdflatex lec4
+#	pdflatex lec4
+#	pdflatex lec4
+	pdflatex lec5
+	pdflatex lec5
+
+5:
+	pdflatex lec5
+	pdflatex lec5
