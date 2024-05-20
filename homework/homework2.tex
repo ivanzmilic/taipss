@@ -115,10 +115,11 @@ after each reaction.
 
 {\bf Problem 2:} 
 
-a) Why does convection transport heat radially outward although there is no net mass flux?
+a) Why does convection transport heat radially outward although there
+is no net mass flux?
 
-b) Estimate the superadiabatic temperature gradient (\textbf {in order of
-magnitude fashion}) in the Sun, \textbf{by} making use of the mixing length
+b) Estimate the superadiabatic temperature gradient (in order of
+magnitude fashion) in the Sun, by making use of the mixing length
 expression for $\Fconv$:
 \begin{equation}
   \Fconv = c_p \rho T g^{1/2} \frac{\ell^2}{4\sqrt{2}H_p^{3/2}} (\nabla-\nabla_{\rm ad})^{3/2}.
@@ -144,7 +145,7 @@ p = K \rho^\gamma,
 where $\gamma = 1 + \frac{1}{n}$ is the polytropic exponent and $n$ is
 the polytropic index, to derive the Lane-Emden equation:
 \begin{equation}
-\frac{1}{\xi^2} \frac{d}{d\xi} \left(\xi^2 \frac{d\theta}{d\xi} \right) = -\theta^n.
+\frac{1}{\xi^2} \frac{d}{d\xi} \left(\xi^2 \frac{d\theta}{d\xi} \right) = -\theta^n.\label{equ:LaneEmden}
 \end{equation}
 Here $\theta$ and $\xi$ are the non-dimensional density and radius
 defined as
@@ -152,18 +153,22 @@ defined as
 \rho = \rho_{\rm c} \theta^n, \ \ \mbox{and}\ \ r = \alpha\xi,
 \end{equation}
 and where $\alpha^2$ equals a constant that arises in the derivation
-of the equation.
+of Eq.(\ref{equ:LaneEmden}).
 
 The boundary conditions at $\xi=0$ for the Lane-Emden equation are:
 \begin{equation}
 \theta = 1,\ \mbox{and}\ \frac{d\theta}{d\xi} = 0.
 \end{equation}
+%Explain why we are choosing these specific boundary conditions. (As a
+%question for students).
+What do these boundary conditions correspond to?
 
-\textbf{Explain why we are choosing these specific boundary conditions. (As a question for students).}
+Solve the Lane-Emden equation for $n=0,1$, and $5$. For these values
+the equation can be solved \emph{analytically}.
 
-\textbf{Solve the Lane-Emden equation for $n=0,1,5$. For these values the equation can be solved \emph{analytically}.}
-
-\textbf{Solve the Lane-Embden equation for $n=1.5$ and $n=3$, and compare the resuls with the ones found in the textbook by D. Prialnik. For this you will have to solve the equation \emph{numerically}.}
+{Solve the Lane-Emden equation for $n=1.5$ and $n=3$, and compare the
+  resuls with the ones found in the textbook by D.\ Prialnik. For this
+  you will have to solve the equation \emph{numerically}.
 
 {\bf Useful physical constants}
 \begin{itemize}
