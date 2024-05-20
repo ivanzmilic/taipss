@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+% Usual packages
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\Fconv}{F_{\rm conv}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Theoretical Astrophysics: Physics of Sun and Stars\\
+Homework 2}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+\textbf{Deadline for this homework is 04/06 23:59}
+
+{\bf Problem 1:} The solar luminosity is $L_\odot = 3.83\cdot
+10^{26}$~W. Assume that all of the energy for this luminosity is
+provided by the $pp1$ chain, and that neutrinos carry off 3\% of the
+energy. How many neutrinos are produced per second? What is the
+neutrino flux (i.e.\ the number of neutrinos per second per cm$^2$) at
+Earth?
+
+The $pp1$ chain is comprised of the reactions:
+\begin{eqnarray}
+  p + p &\rightarrow& ^2{\rm D} + e^+ + \nu,\ (1.18~{\rm MeV})\nonumber \\
+  ^2{\rm D} + p &\rightarrow& ^3{\rm He} + \gamma,\ \ \ \ \ \ (5.49~{\rm MeV}) \nonumber \\
+  ^3{\rm He} + ^3{\rm He} &\rightarrow& ^4{\rm He} + 2p.\ \ \ \ \ (12.86~{\rm MeV})
+\end{eqnarray}
+where the first two reactions need to happen twice for the last
+reaction to occur, and where $\nu$ signifies an emitted
+neutrino. Energy released (in MeV = $10^6$~eV) is given in brackets
+after each reaction.
+
+
+{\bf Problem 2:} a) Why does convection transport heat radially outward
+although there is no net mass flux?
+
+b) Estimate the superadiabatic temperature gradient in order of
+magnitude fashion in the Sun making use of the mixing length
+expression for $\Fconv$:
+\begin{equation}
+  \Fconv = c_p \rho T g^{1/2} \frac{\ell^2}{4\sqrt{2}H_p^{3/2}} (\nabla-\nabla_{\rm ad})^{3/2}.
+\end{equation}
+Use the average values of density and temperature of the Sun, and $c_p
+= 2.07\cdot10^4$~J~K$^{-1}$~kg$^{-1}$. Hint: Recall that $\ell =
+\alpha_{\rm MLT}H_p$ and bear in mind the definition of the pressure
+scale height from previous homework. When is this result a good
+approximation and when not? Why?
+
+
+{\bf Problem 3:} Use the equations of hydrostatic equilibrium and mass
+conservation:
+\begin{eqnarray}
+  \frac{dp}{dr} = -\rho \frac{Gm}{r^2},\ \ \frac{dm}{dr} = 4\pi r^2\rho, 
+\end{eqnarray}
+assuming a polytropic equation of state
+\begin{equation}
+p = K \rho^\gamma,
+\end{equation}
+where $\gamma = 1 + \frac{1}{n}$ is the polytropic exponent and $n$ is
+the polytropic index, to derive the Lane-Emden equation:
+\begin{equation}
+\frac{1}{\xi^2} \frac{d}{d\xi} \left(\xi^2 \frac{d\theta}{d\xi} \right) = -\theta^n.
+\end{equation}
+Here $\theta$ and $\xi$ are the non-dimensional density and radius
+defined as
+\begin{equation}
+\rho = \rho_{\rm c} \theta^n, \ \ \mbox{and}\ \ r = \alpha\xi,
+\end{equation}
+and where $\alpha^2$ equals a constant that arises in the derivation
+of the equation.
+
+The boundary conditions at $\xi=0$ for the Lane-Emden equation are:
+\begin{equation}
+\theta = 1,\ \mbox{and}\ \frac{d\theta}{d\xi} = 0.
+\end{equation}
+Solve the Lane-Emden equation for a few values of $n$ in the range
+$n=[0,10]$. You will need to do this numerically because analytical
+solutions exists only for $n=0$, $1$, and $5$.
+
+
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+  \item $h=6.626 \times 10^{-34}$~J~s.
+  \item $k=1.38 \times 10^{-23}$~J/K.
+\end{itemize}
+\end{document}
