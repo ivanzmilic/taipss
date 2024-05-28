@@ -30,6 +30,8 @@ Michael Stix, The Sun: an Introduction, 2002, Springer
 
 26/04 - Handson 02: Calculational exercises on the equations of stellar structure. 
 
+28/05 - Lecture 06: Radiation transport
+
 ## Git Repo Organization:
 
 #### /slides folder has the lecture (and, when needed, exercise) .pdfs
