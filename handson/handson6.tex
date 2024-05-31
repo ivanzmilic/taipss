@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\pd{\partial}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Hands-on exercises 6: Analytical Radiative Transfer}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+{\bf Problem 1:} For isotropic Planckian radiation, calculate the wavelength-integrated mean intensity $J$, flux $H$ and K-integral $K$. 
+
+Show that $J = 3K$ and convince yourself that when radiation is very slightly anisotropic, $J=3K$ is a good approximation. 
+
+Use it to derive the diffusion approximation that we showed in class and demonstrate that the Rosseland mean opacity is defined via:
+
+\begin{equation}
+\frac{1}{\overline{\kappa}} = \frac{\int_0^{\infty} 1/\kappa_\nu dB_\nu / dT d\nu}{\int_0^{\infty} dB_\nu / dT d\nu}
+\end{equation}
+
+{\bf Problem 2:} The \emph{formal} solution of the radiative transfer equation on a line segment with optical depth $\tau_\nu$ reads: 
+
+\begin{equation}
+I_\nu = \int_0^{\tau_\nu} S_\nu(t) e^{-t} dt
+\end{equation}
+
+Show that for constant $S_\nu$, small $\tau$ leads to intensity being proportional to the amount of emitting/absorbing material, while for large $\tau$ it saturates. Discuss!
+
+{\bf Problem 3:} For the gas of pure hydrogen, with given $\rho$ and $T$, calculate bound-free opacity at $\lambda$ = 50\,nm and 500\,nm (also appears in the slides).
+
+Note! Assume that the hydrogen is not necessarily completely ionized and that it can come as neutral or ionized hydrogen (no $H-$, no $H_2$). 
+
+To solve the problem you will need the Saha ionization equation: 
+
+\begin{equation}
+\frac{n_{i+1} n_e}{n_i} = \frac{2}{\lambda^3} \frac{g_{i+1}}{g_i} {\rm exp}(-E_i / k_B T)
+\end{equation}
+
+
+
+%\newpage
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}

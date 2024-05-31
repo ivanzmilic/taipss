@@ -145,7 +145,7 @@ I_\nu = \frac{dE}{dS\,dt\,d\Omega\,d\nu\,\cos \theta}
 \end{equation}
 \item Going to number of photons:
 \begin{equation}
-n(\theta,\phi\,\nu) = \frac{I_\nu}{h\nu}
+n(\theta,\phi\,\nu) = \frac{I_\nu}{c\,h\nu}
 \end{equation}
 \end{itemize}
 \end{minipage}
@@ -168,7 +168,7 @@ J_\nu = \frac{1}{4\pi}\oint I_\nu (\theta,\phi) \sin \theta d \theta d \phi
 \end{equation}
 \item Flux (in $z$ direction):
 \begin{equation}
-\mathcal{F}_\nu = \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
+\mathcal{F}_\nu = H_\nu = \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
 \end{equation}
 \end{itemize}
 \end{minipage}
@@ -191,9 +191,9 @@ F_\nu = \frac{dE}{dt dS d\nu}
 \begin{equation}
 F_\nu = \frac{dE}{dt d\nu} \rightarrow F = \frac{dE}{dt}
 \end{equation}
-But then, to make situation worse, in stellar atmospheres theory flux is:
+But then, to make situation worse, in stellar atmospheres theory flux is ($H_nu$ in the book):
 \begin{equation}
-\mathcal{F}_\nu = \frac{dE}{dt dS d\nu}
+\mathcal{F}_\nu = \frac{dE}{dt dS d\nu} = H_\nu
 \end{equation}
 then astrophysical flux: 
 \begin{equation}
@@ -201,7 +201,7 @@ F_\nu = \frac{1}{\pi}\frac{dE}{dt dS d\nu}
 \end{equation}
 and Eddington flux (which the book uses and calls the radiation flux) is:
 \begin{equation}
-H_\nu = \frac{1}{4\pi}\frac{dE}{dt dS d\nu} = \frac{1}{4\pi} \mathcal{F}_\nu
+\mathcal{H}_\nu = \frac{1}{4\pi}\frac{dE}{dt dS d\nu} = \frac{1}{4\pi} \mathcal{F}_\nu
 \end{equation}
 \end{itemize}
 }
@@ -215,7 +215,7 @@ J_\nu = \frac{1}{4\pi}\oint I_\nu (\theta,\phi) \sin \theta d \theta d \phi
 \end{equation}
 \item Radiation flux:
 \begin{equation}
-\mathcal{H}_\nu = \frac{1}{4\pi} \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
+H_\nu = \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
 \end{equation}
 \item and the so called K-integral, which is proportional to the pressure of the radiation field:
 \begin{equation}
@@ -236,7 +236,7 @@ J = \frac{1}{4\pi}\int_0^{\infty}\oint I_\nu (\theta,\phi) \sin \theta d \theta 
 \end{equation}
 \item Radiation flux:
 \begin{equation}
-\mathcal{H} = \frac{1}{4\pi} \int_0^{\infty}\oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi d\nu
+H = \int_0^{\infty}\oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi d\nu
 \end{equation}
 \item and the so called K-integral, which is proportional to the pressure of the radiation field:
 \begin{equation}
@@ -252,7 +252,7 @@ J = \frac{1}{4\pi}\int_0^{\infty}\oint I_\nu (\theta,\phi) \sin \theta d \theta 
 \begin{itemize}
 \item What would be the radiation flux if the intensity was isotropic?
 \begin{equation}
-\mathcal{H}_\nu = \frac{1}{4\pi} \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
+H_\nu = \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
 \end{equation}
 
 \end{itemize}
@@ -264,11 +264,11 @@ J = \frac{1}{4\pi}\int_0^{\infty}\oint I_\nu (\theta,\phi) \sin \theta d \theta 
 \begin{itemize}
 \item What would be the radiation flux if the intensity was isotropic?
 \begin{equation}
-\mathcal{H}_\nu = \frac{1}{4\pi} \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
+H_\nu = \oint I_\nu (\theta,\phi) \cos \theta \sin \theta  d \theta d \phi
 \end{equation}
 \item A common substitute in this case is to integrate $\phi$ to $2\pi$ and then set $\cos \theta = \mu$ (this is again an another $\mu$).
 \begin{equation}
-\mathcal{H}_\nu = \frac{1}{2} \int_{-1}^{1} I_\nu (\mu) \mu d\mu = 0
+H_\nu = 2\pi \int_{-1}^{1} I_\nu (\mu) \mu d\mu = 0
 \end{equation}
 \item If the radiation is completely isotropic, there is no energy transport. In order to transport the energy outward toward the surface the radiation has to be slightly anisotropic.
 \end{itemize}
@@ -552,9 +552,9 @@ S_\nu = B_\nu(T) = \frac{2h\nu^3}{c^2} (e^{h\nu/kT} - 1)^{-1}
 \end{equation}
 \item Then we multiply the equation by $\cos \theta$ and integrate over all angles:
 \begin{equation}
-\frac{dK_\nu}{-\rho \kappa_\nu dz} = \mathcal{F}_\nu
+4 \pi \frac{d\mathcal{K}_\nu}{-\rho \kappa_\nu dz} = H_\nu
 \end{equation}
-\item Here $K_\nu$ is the so called K-integral, which is proportional to the radiation pressure.
+\item Here $\mathcal{K}_\nu$ is the so called K-integral, which is proportional to the radiation pressure $p=4\pi \mathcal{K} /c$.
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.44\linewidth}
@@ -569,13 +569,13 @@ S_\nu = B_\nu(T) = \frac{2h\nu^3}{c^2} (e^{h\nu/kT} - 1)^{-1}
 \frametitle{Solving RTE deep in the atmospheres}
 \begin{minipage}{0.55\linewidth}
 \begin{equation}
-\frac{dp_\nu}{-\rho \kappa_\nu dz} = \mathcal{F}_\nu
+c\frac{dp_\nu}{-\rho \kappa_\nu dz} = H_\nu
 \end{equation}
 \begin{itemize}
 \item Nice! Flux of the radiation is equal to the gradient in the radiation pressure.
 \item Now, let's integrate this over the frequencies, and introduce mean opacity $\overline{\kappa}$:
 \begin{equation}
-H(z) = \frac{1}{4\pi} \mathcal{F}(z)= -\frac{4 a c T^3}{3 \overline{\kappa} \rho} \frac{dT}{dz}
+H(z) = -\frac{4 a c T^3}{3 \overline{\kappa} \rho} \frac{dT}{dz}
 \end{equation}
 \end{itemize}
 \end{minipage}
