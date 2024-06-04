@@ -135,6 +135,14 @@ Lecture 7: Simple Overview of Stellar Evolution}
 \frametitle{The ($T,\rho$)-plane}
 \begin{itemize}
 \item The evolution of the star is driven by its core. \blue{Why?}
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{The ($T,\rho$)-plane}
+\begin{itemize}
+\item The evolution of the star is driven by its core. \blue{Why?}
 \item If we know the chemical composition, density $\rho$, and the
   temperature $T$, all other quantities can be derived.
 \item Let us denote the pair of central temperature and density at
@@ -152,7 +160,7 @@ Lecture 7: Simple Overview of Stellar Evolution}
 \frametitle{Characterization of the ($\log T,\log\rho$)-plane}
 \begin{itemize}
 \item We anticipate that $T$ and $\rho$ can vary several orders of
-  magnitude depending on the star and/or evolutionary stage, we
+  magnitude depending on the star and/or evolutionary stage, so we
   consider the logarithms $\log T$ and $\log\rho$ in what follows.
 \item The ($\log T,\log\rho$)-plane divides into zones where different
   equations of state, nuclear reactions, and dynamical instabilities
@@ -164,7 +172,7 @@ Lecture 7: Simple Overview of Stellar Evolution}
   \end{equation}
   where $K_0$ is a constant. At high density (and not too high
   temperature), the electrons become degenerate and dominate the
-  pressure according to
+  pressure according to (tutorial)
   \begin{equation}
     p_{\rm e,deg} = K_1 \rho^{5/3},
   \end{equation}
@@ -238,7 +246,7 @@ Lecture 7: Simple Overview of Stellar Evolution}
     q = q_0 \rho^m T^n.
   \end{equation}
 \item A given reaction becomes important when $q>q_{\rm min}$
-  (e.g.~0.1~J~km$^{-1}$~s$^{-1}$). This leads to
+  (e.g.~0.1~J~kg$^{-1}$~s$^{-1}$). This leads to
   \begin{equation}
     \log\rho = - \frac{n}{m}\log T + \frac{1}{m} \log \left(
     \frac{q_{\rm min}}{q_0} \right).
@@ -260,13 +268,14 @@ Lecture 7: Simple Overview of Stellar Evolution}
 \frametitle{Zones of nuclear burning}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
-\item The Hydrogen burning reactions connect smoothly from the $pp$
+\item The hydrogen burning reactions connect smoothly from the $pp$
   chain to the CNO cycle. The latter has much stronger $T$-dependence
   and hence the slope in the ($T,\rho$) plane is steeper.
 \item Further reactions include helium, carbon, oxygen, and silicon
   burning, that are activated at higher $T$.
-\item For $T$ reaching several billion Kelvin, iron cores start to
-  dissociate which plays role at late stages of massive stars.
+\item When $T$ reaches several billion Kelvin, iron cores start to
+  dissociate which plays a significant role at late stages of massive
+  stars.
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\linewidth}
@@ -296,7 +305,7 @@ Lecture 7: Simple Overview of Stellar Evolution}
   \begin{equation}
     r' = r - \epsilon r = r(1 - \epsilon).
   \end{equation}
-\item For $\epsilon \ll 1$ the binomial expansion gives:
+\item With $\epsilon \ll 1$ the binomial expansion gives:
   \begin{equation}
     (1 \pm \epsilon)^n \approx 1 \pm n\epsilon.
   \end{equation}
@@ -360,13 +369,13 @@ stability}:
 \frame{
 \frametitle{A note on dynamical stability}
 \begin{itemize}
-\item For relativistic-degenerate electron gas $\gamma =
-  \fourthirds$. This is the limiting case corresponding to the
-  Chandrasekhar mass $M_{\rm Ch}\sim 1.46M_\odot$. If the mass is
-  higher a perturbation leads to collapse of the star.
+\item For relativistic-degenerate electron gas $\gamma = \fourthirds$
+  (in reality $\gamma \rightarrow \fourthirds$). This corresponds to
+  the Chandrasekhar mass $M_{\rm Ch}\sim 1.46M_\odot$. If the mass is
+  higher the star collapses.
 \item If radiation pressure becomes dominant such that $p\approx
 %($\beta \rightarrow 0$)
-  \prad$, $\gamma \rightarrow \fourthirds$.
+  \prad$, we again have $\gamma \rightarrow \fourthirds$.
 \item For pure photon gas $p/\rho = u_{\rm rad}/3$. Using the virial
   theorem, we get
   \begin{equation}
@@ -374,7 +383,8 @@ stability}:
   \end{equation}
   This means that the total energy of the star $E = \Omega + u_{\rm
     rad}$ vanishes.
-\item This means that the gas sphere is \emph{unbound}.
+\item This means that the gas sphere is \emph{unbound} and the star
+  cannot be held together by gravity.
 \end{itemize}
 }
 %
@@ -382,20 +392,23 @@ stability}:
 \frame{
 \frametitle{A note on dynamical stability}
 \begin{itemize}
-\item An ionistation(-type) process can change the adiabatic index and
+\item An ionization(-type) process can change the adiabatic index and
   lead to $\gamma < \fourthirds$.
-\item The most obvious example is ionisation where a single atom can
+\item The most obvious example is ionization where a single atom can
   produce two particles if a suitable amount of energy is absorbed or
   via a collision with another particle or photon.
 \item The reverse process (recombination) occurs at the same time and
   reduces the number of particles.
 \item Because pressure depends on the number of particles irrespective
-  of their nature, ionisation/recombination leads to a dependence of
+  of their nature, ionization/recombination leads to a dependence of
   the pressure on volume (density) is different than for ideal gas.
 \item As an example, for a pure singly ionized gas $\gamma <
   \fourthirds$ between 18\% and 82\% ionization. Therefore only a
   nearly neutral or nearly completely ionized gas would be dynamically
   stable.
+\item Nuclear processes such as pair production and iron
+  photodissociation are further mechanims that can lead to
+  $\gamma<\fourthirds$.
 \end{itemize}
 }
 %
@@ -405,7 +418,7 @@ stability}:
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item In regions III and IV $\gamma \rightarrow \fourthirds$ due to
-  relativistic degenerate gas and radiation presure,
+  relativistic degeneracy of electrons and radiation presure,
   respectively. Therefore dynamical instability can also occur.
 \item Further regions where dynamical instability occurs include the
   iron photodisintegration zone and pair production strip which are
@@ -413,7 +426,7 @@ stability}:
 \item Therefore the stable part of the ($\rho,T$) diagram is bounded
   by high temperatures and high density regions.
 \item Furthermore, nuclear burning is \emph{thermally} unstable in
-  degenerate gases.
+  degenerate gases (tutorial).
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\linewidth}
@@ -426,7 +439,7 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item Consider a polytropic configuration for a star in hydrostatic
@@ -434,8 +447,8 @@ stability}:
   \begin{equation}
     p_{\rm c} = (4\pi)^{1/3} B_n G M ^{2/3} \rhoc^{4/3},\label{equ:pc}
   \end{equation}
-  where the coefficient $B_n$ is a weak function of the polytropic
-  index in the range $n = 1.5\ldots 3$.
+  where the coefficient $B_n$ is in the range $0.15$ to $0.2$ for
+  polytropic indices $n = 1.5\ldots 3$.
 \item Consider a star in zone I where ideal gas equation applies. Then
   the relation between $\rhoc$ and $\TTc$ is
   \begin{equation}
@@ -453,7 +466,7 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item For a given density the temperature increasea when the mass of
@@ -477,7 +490,7 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item The density of degenerate stars tends to infinity as the stellar
@@ -504,11 +517,11 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item Combination of all of the information so far can be used to
-  sketch the evolutionary of stars with different masses.
+  sketch the positions of stars with different masses.
 \item This can be used to sketch the general paths of stars of
   different masses.
 \item Stars have a minimum and maximum masses. \blue{Why?}
@@ -524,7 +537,7 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item Combination of all of the information so far can be used to
@@ -533,7 +546,7 @@ stability}:
   different masses.
 \item Stars have a minimum and maximum masses. \blue{Why?}
 \item The cores of stars with $M \lesssim 0.08 M_\odot$ are not hot
-  enouhg to ignite nuclear fusion. For $M \gtrsim100 M_\odot$ the
+  enough to ignite nuclear fusion. For $M \gtrsim100 M_\odot$ the
   radiation pressure makes the star unbound.
 \end{itemize}
 \end{minipage}
@@ -547,7 +560,7 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item Low mass stars contract and heat up until hydrogen burning
@@ -557,7 +570,8 @@ stability}:
   play a role. Therefore stars with $M<M_{\rm Ch}$ end up as white
   dwarfs and cool over again a long time.
 \item White dwarfs have a constant radius and density that depend only
-  on the mass $M$. The larger the mass, the lower the radius.
+  on the mass $M$. The larger the mass, the lower the radius
+  (totorial)!
 \item We would expect two populations of white dwarfs. \blue{Why?}
 \end{itemize}
 \end{minipage}
@@ -571,12 +585,12 @@ stability}:
 %
 %
 \frame{
-\frametitle{Evolutionary path of the centre of the star in the ($\log T, \log\rho$) plane}
+\frametitle{Path of the centre of the star in the ($\log T, \log\rho$) plane}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
 \item Stars near $M=M_{\rm Ch}$ cross the carbon detonation very near
   the degeneracy border that can lead to a thermonuclear instability
-  and collase. \blue{Why is this very unlikely for a single star?}
+  and collase. \blue{Why is this quite unlikely for a single star?}
 \item More massive stars burn successively heavier elements as the
   lighter ones have been consumed. Eventually they hit the iron
   photodissociation strip where another catastrophic instability
@@ -604,20 +618,23 @@ stability}:
     \log L = \alpha \log \Teff + {\rm const.},\label{equ:logL}
   \end{equation}
   where the slope $\alpha$ is different for low and large $L$.
-\item Another apparent correlation exists between luminosity and mass:
+\item Another correlation exists between luminosity and mass:
   \begin{equation}
-    L \propto M^\nu.\label{equ:Lmass}
+    L \propto M^\nu,\label{equ:Lmass}
   \end{equation}
-\item Based on our theory, we make a hypothesis that main sequence
-  stars burn hydrogen in their cores and are correspondingly placed on
-  the ($\log T, \log \rho$) plane. This theory needs to reproduce the
-  relations (\ref{equ:logL}) and (\ref{equ:Lmass}).
+  with $\nu \approx 3\ldots 5$.
+%% \item Based on our theory, we make a hypothesis that main sequence
+%%   stars burn hydrogen in their cores and are correspondingly placed on
+%%   the ($\log T, \log \rho$) plane.
+\item The theory of main sequence needs to reproduce the relations
+  (\ref{equ:logL}) and (\ref{equ:Lmass}).
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.4\linewidth}
 \begin{figure}
-\includegraphics[width=5cm]{figures/Gaia_HR.jpg}
-\caption*{Credits: ESA}
+%\includegraphics[width=5cm]{figures/Gaia_HR.jpg}
+\includegraphics[width=5cm]{figures/HRDiagram.png}
+\caption*{Credits: Wikipedia}
 \end{figure}
 \end{minipage}
 }
@@ -648,7 +665,7 @@ stability}:
 \frametitle{Theory of the main sequence}
 \begin{itemize}
 \item The answer is \emph{dimensional analysis} that we already used
-  on some of the tutorials.
+  in some of the tutorials.
 \item Let us first define a dimensionless variable for the fractional mass:
   \begin{equation}
     x = \frac{m}{M}.
@@ -735,7 +752,7 @@ stability}:
   \begin{equation}
     L \propto M^3,
   \end{equation}
-  which can be compared with observations.
+  which compares rather well with observations.
 \end{itemize}
 }
 %
@@ -746,7 +763,7 @@ stability}:
 \item Furthermore, we can now solve for (exercises) $\Rstar$ and
   $\rhostar$:
   \begin{equation}
-    \Rstar \propto M^{\frac{n-1}{n+3}},\ \ \ \rhostar \propto M^{2\frac{3-n}{3+n}}.
+    \Rstar \propto M^{\frac{n-1}{n+3}},\ \ \ \rhostar \propto M^{2\left(\frac{3-n}{3+n}\right)}.
   \end{equation}
   \blue{What can be concluded based on these relations?}
 \end{itemize}
@@ -762,11 +779,18 @@ stability}:
     \Rstar \propto M^{\frac{n-1}{n+3}},\ \ \ \rhostar \propto M^{2\frac{3-n}{3+n}}.
   \end{equation}
   \blue{What can be concluded based on these relations?}
-\item $n\approx 16$ for the CNO cycle so stellar radius is almost
-  independent of mass. For $pp$ chain $n\approx 4$ and $\Rstar \propto
-  M^{3/7}$. Radius always increases with mass unlike for white dwarfs!
-\item Since $n>3$, density decreases with increasing $M$ again
-  opposite to white dwarfs.
+\item $n\approx 16$ for the CNO cycle so stellar radius is roughly
+  proportional to mass
+  \begin{equation}
+    \Rstar \propto M.
+  \end{equation}
+\item For $pp$ chain $n\approx 4$ and
+  \begin{equation}
+    \Rstar \propto M^{3/7}.
+  \end{equation}
+  Therefore radius always increases with mass unlike for white dwarfs!
+\item Furthermore, since $n>3$ density decreases with increasing $M$
+  again opposite to white dwarfs.
 \end{itemize}
 }
 %
@@ -793,7 +817,22 @@ stability}:
   \begin{equation}
     \log L = 8.4\log \Teff + {\rm const.}
   \end{equation}
-\item These match with the observations fairly well.
+\item These again match the observations fairly well.
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Theory of the main sequence}
+\begin{itemize}
+\item The main sequence lifetime is epected to be proportional to the
+  nuclear fuel (stellar mass) and inversely proportional to the energy
+  release rate (luminosity):
+  \begin{equation}
+    \tau_{\rm MS} \propto \frac{M}{L} \propto M^{-2}.
+  \end{equation}
+\item This confirms that more massive stars evolve faster and the main
+  sequence shortens gradually from the more massive end.
 \end{itemize}
 }
 %
@@ -816,9 +855,32 @@ stability}:
 %
 \frame{
 \frametitle{Limitations of the simple model}
+\begin{itemize}
+\item \blue{Any ideas?}
+\end{itemize}
+}
+%% \end{minipage}
+%% \begin{minipage}{0.49\linewidth}
+%% \begin{figure}
+%% \includegraphics[width=6.5cm]{figures//Prialnik_logTlogrho_evoreal.png}
+%% \caption*{Credits: Prialnik}
+%% \end{figure}
+%% \end{minipage}
+
+%
+%
+\frame{
+\frametitle{Limitations of the simple model}
 \begin{minipage}{0.5\linewidth}
 \begin{itemize}
-\item TBA
+\item Applies to uniform chemical composition: strictly valid for
+  \emph{zero-age main sequence}.
+\item Convection is ignored.
+\item Homogeneity of the star is not a good approximation in advanced
+  stages of stellar evolution.
+\item More realistic models indicate that mass loss is important,
+  e.g., stars with masses much higher than $M_{\rm Ch}$ end up as
+  white dwarfs.
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\linewidth}
