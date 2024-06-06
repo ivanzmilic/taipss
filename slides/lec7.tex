@@ -143,6 +143,8 @@ Lecture 7: Simple Overview of Stellar Evolution}
 \frametitle{The ($T,\rho$)-plane}
 \begin{itemize}
 \item The evolution of the star is driven by its core. \blue{Why?}
+\item Nuclear burning happens in the core which changes the
+  composition and structure of the rest of the star.
 \item If we know the chemical composition, density $\rho$, and the
   temperature $T$, all other quantities can be derived.
 \item Let us denote the pair of central temperature and density at
@@ -401,7 +403,8 @@ stability}:
   reduces the number of particles.
 \item Because pressure depends on the number of particles irrespective
   of their nature, ionization/recombination leads to a dependence of
-  the pressure on volume (density) is different than for ideal gas.
+  the pressure on volume (density) that is different than for ideal
+  gas.
 \item As an example, for a pure singly ionized gas $\gamma <
   \fourthirds$ between 18\% and 82\% ionization. Therefore only a
   nearly neutral or nearly completely ionized gas would be dynamically
@@ -571,7 +574,7 @@ stability}:
   dwarfs and cool over again a long time.
 \item White dwarfs have a constant radius and density that depend only
   on the mass $M$. The larger the mass, the lower the radius
-  (totorial)!
+  (tutorial)!
 \item We would expect two populations of white dwarfs. \blue{Why?}
 \end{itemize}
 \end{minipage}
@@ -634,7 +637,7 @@ stability}:
 \begin{figure}
 %\includegraphics[width=5cm]{figures/Gaia_HR.jpg}
 \includegraphics[width=5cm]{figures/HRDiagram.png}
-\caption*{Credits: Wikipedia}
+\caption*{Credits: Richard Powell / Wikipedia}
 \end{figure}
 \end{minipage}
 }
@@ -750,10 +753,33 @@ stability}:
 \item Since this relation is valid for any value of $x$, the surface
   value scales as
   \begin{equation}
-    L \propto M^3,
+    L \propto M^3.
   \end{equation}
-  which compares rather well with observations.
 \end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Theory of main sequence}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+\item $\nu = 3$ compares well with observations of massive stars. This
+  is because $\kappa$ is nearly constant for high temperatures where
+  $\kappa$ is dominated by eletron scattering.
+\item For Kramers opacity law
+  \begin{equation}
+    \kappa = \kappa_0 \rho T^{-7/2},
+  \end{equation}
+  the result is $\nu\approx 5$, which is rather good for intermediate
+  masses.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\begin{figure}
+\includegraphics[width=6.5cm]{figures/mass-lum-Malkov_2007_MNRAS_382.png}
+\caption*{Credits: Malkov (2007), MNRAS, 382, 1073.}
+\end{figure}
+\end{minipage}
 }
 %
 %
@@ -817,8 +843,31 @@ stability}:
   \begin{equation}
     \log L = 8.4\log \Teff + {\rm const.}
   \end{equation}
-\item These again match the observations fairly well.
 \end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Theory of the main sequence}
+\begin{minipage}{0.59\linewidth}
+\begin{itemize}
+\item There is an observed relation between the luminosity and
+  effective temperature of main sequence stars
+  \begin{equation}
+    \log L = \alpha \log \Teff + {\rm const.},\label{equ:logL}
+  \end{equation}
+  where the slope $\alpha$ is different for low and large $L$.
+\item The simple theory matches the observations at least
+  qualitatively.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\begin{figure}
+%\includegraphics[width=5cm]{figures/Gaia_HR.jpg}
+\includegraphics[width=5cm]{figures/HRDiagram.png}
+\caption*{Credits: Richard Powell / Wikipedia}
+\end{figure}
+\end{minipage}
 }
 %
 %
