@@ -11,8 +11,10 @@ default:
 #	pdflatex lec5
 #	pdflatex lec6
 #	pdflatex lec6
-	pdflatex lec7
-	pdflatex lec7
+#	pdflatex lec7
+#	pdflatex lec7
+	pdflatex lec8
+	pdflatex lec8
 
 5:
 	pdflatex lec5
