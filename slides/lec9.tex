@@ -80,26 +80,26 @@ Lecture 9: Stellar Atmospheres}
 \item So far we have dealt with interiors of the stars - these contain an absolute majority of stellar material. 
 \item We studied the equations that govern stellar structure and the evolution and solved them in more or less detail to understand how the stars look into the inside and how they evolve on the HR diagram. 
 \item None of these processes were \textbf{directly} observable. The only observable quantity we talked about was the stellar luminosity ($L$). 
-\item Now we are going to talk about the structures that we can observe - stellar atmospheres. 
+\item Now we are going to talk about the structures that we can observe - stellar atmospheres, and their observational signatures - stellar spectra. 
 \end{itemize}
 }
 %
 %
 \frame{
 \frametitle{Why study stellar atmospheres?}
-\begin{minipage}{0.59\linewidth}
+\begin{minipage}{0.54\linewidth}
 \begin{itemize}
 \item Stellar atmosphere is the miniscule part on the very right of this diagram. 
 \item How can it be important? (Salpeter once asked the same question)
-\item First: Stellar atmosphere is the only part we can observe. It gives us indirect insight into what is going on inside. 
-\item Second: Stellar Atmospheres can influence the evolution of the star, at certain evolution stages atmospheres can be huge and mass loss happens there. 
+\item First: Stellar atmosphere is the only part we can observe: insight into what is going on inside. 
+\item Second: It can influence the evolution of the star, at certain evolution stages atmospheres can be huge and influence the rest. 
 \item Third: There is a lot of interesting physics going on (especially the case for the Sun, talk next week!)
 \end{itemize}
 \end{minipage}
-\begin{minipage}{0.4\linewidth}
+\begin{minipage}{0.45\linewidth}
 \begin{figure}
-\includegraphics[width=5cm]{figures/solar_density.png}
-\caption*{Credits: CD}
+\includegraphics[width=6cm]{figures/solar_density.png}
+\caption*{Credits: NASA/MSFC Hathaway}
 \end{figure}
 \end{minipage}
 }
@@ -107,36 +107,48 @@ Lecture 9: Stellar Atmospheres}
 %
 \frame{
 \frametitle{Differences between stellar atmospheres and stellar interiors}
+\begin{minipage}{0.495\linewidth}
+Interior
 \begin{itemize}
-\item 
+\item $T = 10^5 - 10^7$\,K
+\item $\rho = 10^{1} - 10^{5} {\rm kg / m^3}$
+\item Completely ionized 
+\item Ideal gas
+\item LTE 
 \end{itemize}
+\end{minipage}
+\begin{minipage}{0.495\linewidth}
+Atmospheres
+\begin{itemize}
+\item $T = 10^4 - 10^5$\,K
+\item $\rho = 10^{-1} - 10^{-8} {\rm kg / m^3}$
+\item Neutral, partially ionized, totally ionized - depending on the layer and species
+\item Ideal gas
+\item Photosphere in LTE, chromosphere and up in NLTE, but some things are tricky (e.g. photoionization)
+\end{itemize}
+\end{minipage}
+
 }
 %
 %
 \frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
+\frametitle{Sketch of the atmosphere}
+\begin{minipage}{0.495\linewidth}
 \begin{itemize}
-\item The photosphere needs to be able to radiate away all of the
-  incoming energy flux. This is determined by the thermodynamic
-  structure, i.e., the drop of $p$, $\rho$, and $T$ accross it.
-\item In Hydrostatic equilibrium
-  \begin{equation}
-    \frac{dp}{dr} \approx -\rho \frac{GM}{R^2},
-  \end{equation}
-  which can be integrated from $R$ to the point where $p$ vanishes
-  \begin{equation}
-    p_R = \frac{GM}{R^2}\int_R^\infty \rho dr.\label{equ:pR1}
-  \end{equation}
-\item Furthermore, the optical depth of the photosphere, characterised
-  by $\Teff$, is of the order on unity and thus $\int_R^\infty \kappa
-  \rho dr = \overline{\kappa} \int_R^\infty \rho dr$, where
-  $\overline{\kappa}$ is the mean opacity in the photosphere.
-\item Taking $\overline{\kappa} = \kappa(R)$ and assuming it to be a
-  power law in $\rho_R$ and $\Teff$ gives:
-  \begin{equation}
-    \kappa_0 \rho_R^a \Teff^b \int_R^\infty \rho dr = 1.\label{equ:optau}
-  \end{equation}
+  \item Atmospheres of main sequence stars are typically very thin: plane-parallel approximation is valid. 
+  \item The transport of energy goes from convective to radiative, and then the energy leaves the star. 
+  \item Radiative equilibrium is often used: $H=const$.
+  \item To understand the observational signatures of the atmosphere, radiative transfer is needed. 
+  \item We need to mathematically describe propagation of radiation and take into account appropriate physical processes.
 \end{itemize}
+\end{minipage}
+\begin{minipage}{0.495\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/stellar_atmosphere.png}
+\caption*{Credits: NASA/MSFC Hathaway}
+\end{figure}
+\end{minipage}
+
 }
 %
 %
