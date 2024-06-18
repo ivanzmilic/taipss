@@ -92,7 +92,7 @@ Lecture 9: Stellar Atmospheres}
 \item Stellar atmosphere is the miniscule part on the very right of this diagram. 
 \item How can it be important? (Salpeter once asked the same question)
 \item First: Stellar atmosphere is the only part we can observe: insight into what is going on inside. 
-\item Second: It can influence the evolution of the star, at certain evolution stages atmospheres can be huge and influence the rest. 
+\item Second: In certain spectral/luminosity classes atmospheres can be huge and influence the rest. 
 \item Third: There is a lot of interesting physics going on (especially the case for the Sun, talk next week!)
 \end{itemize}
 \end{minipage}
@@ -113,7 +113,7 @@ Interior
 \item $T = 10^5 - 10^7$\,K
 \item $\rho = 10^{1} - 10^{5} {\rm kg / m^3}$
 \item Completely ionized 
-\item Ideal gas
+\item Ideal gas (Sometimes degenerate)
 \item LTE 
 \end{itemize}
 \end{minipage}
@@ -146,7 +146,7 @@ Atmospheres
 \begin{minipage}{0.495\linewidth}
 \begin{figure}
 \includegraphics[width=6cm]{figures/Solar_eclipse_1999_4.jpg}
-\caption*{Credits: Wikipedia}
+\caption*{The majority of the atmosphere is the thin red ring. Credits: Wikipedia}
 \end{figure}
 \end{minipage}
 
@@ -157,7 +157,7 @@ Atmospheres
 \frametitle{Spectral classses}
 \begin{minipage}{0.44\linewidth}
 \begin{itemize}
-  \item One of the main features we want to understand are the differences between the different spectral classes.
+  \item We want to understand are the differences between the spectral classes.
   \item For a while - people thought that these differences are due to different chemical composition. 
   \item But it turns out stellar spectra are \textbf{extremely} sensitive to the temperature and the pressure.
   \item Today, we will try to explain that.
@@ -314,7 +314,7 @@ dI_\nu = I_\nu^0 e^{-\tau_\nu} + \int_0^{\tau_\nu} S(t) e^{-t} dt
 \begin{minipage}{0.44\linewidth}
 \begin{figure}
 \includegraphics[width=6cm]{figures/hbf.png}
-\caption*{Credit: Rolf Kudritzki}
+\caption*{Credit: Gray (1992)}
 \end{figure}
 \end{minipage}
 }
@@ -332,7 +332,7 @@ dI_\nu = I_\nu^0 e^{-\tau_\nu} + \int_0^{\tau_\nu} S(t) e^{-t} dt
 dI_\nu = I_\nu^0 e^{-\tau_\nu} + S_\nu (1-e^{-\tau_\nu})
 \end{equation}
 \item Depending on the $\tau_\nu$ we can get either dominant contribution of the background radiation, or the slab. 
-\item \q{Discuss the image on the right (solar atmosphere imaged at two different wavelengths)}
+\item \q{Right: (solar atmosphere imaged at two different wavelengths)}
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.44\linewidth}
@@ -352,10 +352,10 @@ dI_\nu = I_\nu^0 e^{-\tau_\nu} + S_\nu (1-e^{-\tau_\nu})
 \end{equation}
 \begin{itemize}
 \item We can now frame this differently:
-\item If we somehow \textbf{know} that, at a wavelength the medium is \textbf{optical thick}, we know we are seeing that medium.
+\item If we somehow \textbf{know} that, at a wavelength the medium is \textbf{optically thick}, we know we are seeing that medium.
 \item If it is \textbf{transparent}, we know we are seeing the light below. 
 \item So we can use different wavelengths to probe different regions. 
-\item But, sometimes differences between $S$ and 
+\item But, sometimes differences between $S$ and $I^0$ are also important!
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.44\linewidth}
@@ -398,7 +398,7 @@ dI_\nu = a + b / r_\nu
 \begin{itemize}
 \item It is reasonable to assume that $S$ increases inward in the solar atmosphere (because $T$ increases), so $a$ and $b$ are positive.
 \item For more opaque regions we will get less intensity.
-\item Wow - not really insightful after all!
+\item We kinda did expect that, but...
 \item Extremely important: we also understood that a \textbf{gradient} of temperature in the atmosphere is necessary!
 \end{itemize}
 \end{minipage}
@@ -436,7 +436,8 @@ dI_\nu = a + b / r_\nu
 \frame{
 \frametitle{Milne problem}
 \begin{itemize}
-  \item But how to find $J(z)$, or better to say $J(\tau)$? We did not use RTE yet. Define that optical depth goes in the negative z direction: 
+  \item But how to find $J(z)$, or better to say $J(\tau)$? 
+  \item We did not use RTE yet. Define that optical depth goes in the negative z direction: 
   \begin{equation}
   \mu\frac{dI}{d\tau} = I - S = I - J
   \end{equation}
@@ -447,11 +448,10 @@ dI_\nu = a + b / r_\nu
 %
 \frame{
 \frametitle{Milne problem}
-\begin{itemize}
-  \item But how to find $J(z)$, or better to say $J(\tau)$? We did not use RTE yet. Define that optical depth goes in the negative z direction: 
   \begin{equation}
   \mu\frac{dI}{d\tau} = I - S = I - J
   \end{equation}
+  \begin{itemize}
   \item Integrate this over $d \mu$ and $\mu d \mu$. \q{We will need the blackboard here!}
   \item You should have gotten:
   \begin{equation}
