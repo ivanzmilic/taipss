@@ -138,14 +138,15 @@ Atmospheres
   \item Atmospheres of main sequence stars are typically very thin: plane-parallel approximation is valid. 
   \item The transport of energy goes from convective to radiative, and then the energy leaves the star. 
   \item Radiative equilibrium is often used: $H=const$.
-  \item To understand the observational signatures of the atmosphere, radiative transfer is needed. 
-  \item We need to mathematically describe propagation of radiation and take into account appropriate physical processes.
+  \item To understand the observational signatures of the atmosphere we need to:
+  \item i) mathematically describe propagation of radiation;
+  \item ii) take into account appropriate physical processes that contribute to opacity and emissivity;
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.495\linewidth}
 \begin{figure}
-\includegraphics[width=6cm]{figures/stellar_atmosphere.png}
-\caption*{Credits: NASA/MSFC Hathaway}
+\includegraphics[width=6cm]{figures/Solar_eclipse_1999_4.jpg}
+\caption*{Credits: Wikipedia}
 \end{figure}
 \end{minipage}
 
@@ -153,252 +154,361 @@ Atmospheres
 %
 %
 \frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
+\frametitle{Spectral classses}
+\begin{minipage}{0.44\linewidth}
 \begin{itemize}
-\item Combining Eqs.~(\ref{equ:pR1}) and (\ref{equ:optau}) gives:
-  \begin{equation}
-    p_R = \frac{GM}{R^2 \kappa_0} \rho_R^{-a} \Teff^{-b}.\label{equ:pR2}
-  \end{equation}
-\item Yet another relation between the thermodynamic quantities at $R$
-  is given by the equation of state, here taken to be ideal gas equation:
-  \begin{equation}
-    p_R = \frac{\cal R}{\mu} \rho_R \Teff.\label{equ:peos}
-  \end{equation}
-\item Finally, the temperature at $R$ is related to the luminosity via
-  \begin{equation}
-    L = 4\pi R^2 \Teff^4.\label{equ:Lumi}
-  \end{equation}
-\item Now we have four equations that describe the surface of the
-  star: Eqs.(\ref{equ:ppoly}) (with Eqs.~(\ref{equ:Kn}) and
-  (\ref{equ:Cn})), (\ref{equ:pR2}), (\ref{equ:peos}), and
-  (\ref{equ:Lumi})
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{itemize}
-\item These read in logarithmic form:
-  \begin{eqnarray}
-    & n \log p_R = (n-1) \log M + (3-n)\log R + (n+1) \log \rho_r + \mbox{const.} & \\
-    & \log p_R = \log M - 2 \log R - a \log \rho_r - b \log \Teff + \mbox{const.} & \\
-    & \log p_R = \log \rho_R + \log \Teff + \mbox{const.} & \\
-    & \log L = 2 \log R + 4 \log \Teff + \mbox{const.} &
-  \end{eqnarray}
-\item Eliminating $\log R$, $\log \rho_R$, and $\log p_R$ yields:
-  \begin{eqnarray}
-    & \log L = A \log \Teff + B \log M + \mbox{const.} & \\
-    & A =  \frac{(7-n)(a+1)-4-a+b}{0.5(3-n)(a+1)-1}, \ \ B = -\frac{(n-1)(a+1)+1}{0.5(3-n)(a+1)-1}. &
-  \end{eqnarray}
-\item This relation traces the \emph{Hayashi track} in the HR
-  diagram. These should not be interpreted as evolutionary tracks but
-  rather as an asymptote.
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{itemize}
-\item We assume for simplicity that $a = 1$ which is reasonably
-  accurate, such that
-  \begin{eqnarray}
-    & A =  \frac{9-2n+b}{2-n}, \ \ B = -\frac{2n-1}{2-n}. &
-  \end{eqnarray}
-  $b$ varies much more but is usually positive
-\item Dynamical stability requires that $n<3$ and therefore the
-  polytropic index is limited to the range $1.5 \leq n < 3$.
-\item For $b\approx 4$ and $n=1.5$ we find that $A=20$. This means
-  that the Hayashi track is almost vertical in the ($\log \Teff, \log
-  L$) plane.
-\item As a function of mass the tracks are stacked near each other and
-  higher mass leads to a shift toward higher temperatures because $A$
-  and $B$ have opposite signs.
-\item The slope changes with composition that can be associated with
-  an effective polytropic index.
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{itemize}
-\item The signifigance of the Hayashi track can be seen from
-  considering $\overline{\gamma}$ which is an average value of $\gamma
-  = \frac{d\ln p}{d\ln\rho}$ over the whole
-  star. $\overline{\gamma}_{\rm a}$ is the corresponding adiabatic
-  index.
-\item For a fully convective star $\overline{\gamma} =
-  \overline{\gamma}_{\rm a}$.
-\item If any part of the star is radiative with $\gamma<\gamma_{\rm
-  a}$, then $\overline{\gamma} < \overline{\gamma}_{\rm
-  a}$. Correspondingly, the average polytropic index $n>n_{\rm a}$
-  where $n_{\rm a}$ is the adiabatic polytropic index defining the
-  Hayashi track.
-\item If $\overline{\gamma} > \overline{\gamma}_{\rm a}$, the
-  situation is unstable and therefore such state is ``forbidden''. In
-  practise in such a situation, convection in the star would very
-  quickly restore near-adiabaticity by transporting any excess heat to
-  the surface because a very small superadiabaticity is enough to
-  transport massive amounts of energy (homework!).
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{minipage}{0.59\linewidth}
-\begin{itemize}
-\item Stars from from contrating gas clouds (molecular clouds) through
-  dynamical collapse. These clouds are (parsecs) and fragment in the
-  process.
-\item Most of the gas in such clouds is in the form of molecular
-  hydrogen (H$_2$). The collapse happens in dynamical timescale
-  $\tau_{\rm dyn} \propto \rho^{-1.2}$.
-\item Gradually the H$_2$ molecules are dissociated, after which
-  hydrogen and later helium start to be ionised. These processes use
-  up most of the energy from continuing collapse and the temperature
-  stays nearly constant.
-\item Finally the ionisation is nearly complete and the temperature
-  starts to increase and a hydrostatic equilibrium is restored. The
-  object is now a protostar.
+  \item One of the main features we want to understand are the differences between the different spectral classes.
+  \item For a while - people thought that these differences are due to different chemical composition. 
+  \item But it turns out stellar spectra are \textbf{extremely} sensitive to the temperature and the pressure.
+  \item Today, we will try to explain that.
 \end{itemize}
 \end{minipage}
-\begin{minipage}{0.4\linewidth}
+\begin{minipage}{0.55\linewidth}
 \begin{figure}
-\includegraphics[width=5cm]{figures/Iben_1965_PMS.png}
-\caption*{Credits: Iben (1965), Astrophys. J., 141}
+\includegraphics[width=7.5cm]{figures/stel_spec.png}
+\caption*{Credits: Wikipedia}
+\end{figure}
+\end{minipage}
+
+}
+\section{Radiative Transfer Equation}
+%
+%
+\frame{
+\frametitle{Specific monochromatic intensity}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+\item We need to treat wavelength and angular dependence of the radiation field
+\item Intensity: energy transported through given area in given time per given solid angle and frequency/wavelength bin (note the deprojection factor $\cos \theta$).
+\begin{equation}
+I_\nu = \frac{dE}{dS\,dt\,d\Omega\,d\nu\,\cos \theta}
+\end{equation}
+\item Going to number of photons:
+\begin{equation}
+n(\theta,\phi\,\nu) = \frac{I_\nu}{c\,h\nu}
+\end{equation}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\begin{figure}
+\includegraphics[width=6.0cm]{figures/spec_int.png}
+\caption*{Credits: IM thesis (2014, University of Belgrade)}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Radiative Transfer Equation (RTE)}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+\item This formulation is (more or less) due to Kirchhoff. The change of intensity ``along-the-ray'' over a distance $ds$ is:
+\begin{equation}
+dI_\nu = \eta_\nu ds - \chi_\nu I_\nu ds 
+\end{equation} 
+\item The terms of the right represent emission and \textbf{total} absorption (both true absorption and scattering) per unit volume.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/rte_1.png}
+\caption*{Credit: Anthony B. Davis and Yuri Knyazikhin}
 \end{figure}
 \end{minipage}
 }
 %
 %
 \frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{minipage}{0.59\linewidth}
+\frametitle{Radiative Transfer Equation}
+\begin{minipage}{0.55\linewidth}
 \begin{itemize}
-\item Estimate of protostellar radius can be obtained by assuming that
-  all of the gravitational energy is spent to dissociate H$_2$ and
-  ionize H and He. Then,
+\item Now, it makes sense that the absorption and emission properties of the medium depend on:
+\item Amount of matter capable of absorbing/emitting
+\item The inherent properties of the matter at the given temperature ($T$ is very important!)
+\item So we define:
+\begin{align}
+\kappa_\nu = \chi_\nu / \rho \\
+j_\nu = \eta_\nu / \rho
+\end{align}
+\item So our equation becomes:
+\begin{equation}
+\frac{1}{\rho} \frac{dI_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu
+\end{equation}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/rte_1.png}
+\caption*{Credit: Anthony B. Davis and Yuri Knyazikhin}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Optical depth and Source function}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\item We often do the following:
+\begin{equation}
+\frac{dI_\nu}{-\rho \kappa_\nu ds} = I_\nu - j_\nu / \kappa_\nu
+\end{equation}
+\item And we get:
+\begin{equation}
+\frac{dI_\nu}{-\rho \kappa_\nu ds} = I_\nu - j_\nu / (\rho \kappa_\nu)
+\end{equation}
+
+\begin{align}
+\kappa_\nu = \chi_\nu / \rho; \,j_\nu = \eta_\nu / \rho
+\end{align}
+\item So our equation becomes:
+\begin{equation}
+\frac{dI_\nu}{d\tau_\nu} = I_\nu - S_\nu
+\end{equation}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/tau.png}
+\caption*{Credit: Rolf Kudritzki}
+\end{figure}
+\end{minipage}
+}
+%
+\section{Solving RTE}
+%
+\frame{
+\frametitle{Optical depth and Source function}
+\begin{minipage}{0.55\linewidth}
+\begin{equation}
+\frac{dI_\nu}{d\tau_\nu} = I_\nu - S_\nu
+\end{equation}
+\begin{itemize}
+\item Solving this equation if everything is known is relatively straightforward:
+\begin{equation}
+dI_\nu = I_\nu^0 e^{-\tau_\nu} + \int_0^{\tau_\nu} S(t) e^{-t} dt
+\end{equation}
+\item Here $t$ is the dummy variable for frequency dependent optical depth.
+\item \textbf{Please note that the optical depth depends on the frequency!} \q{Discuss!}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/tau.png}
+\caption*{Credit: Rolf Kudritzki}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Optical depth}
+\begin{minipage}{0.55\linewidth}
+\begin{equation}
+\tau_\nu = \int -\rho \kappa_\nu ds
+\end{equation}
+\begin{itemize}
+\item As the absorption and scattering properties (opacity) of the medium depend on the wavelength, so does the optical depth.
+\item Now, why does the opacity depend on the wavelength? \q{Discuss!}
+\item Right: opacity due to bound-free absorption of neutral hydrogen atom.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/hbf.png}
+\caption*{Credit: Rolf Kudritzki}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Constant source function}
+\begin{minipage}{0.55\linewidth}
+\begin{equation}
+dI_\nu = I_\nu^0 e^{-\tau_\nu} + \int_0^{\tau_\nu} S(t) e^{-t} dt
+\end{equation}
+\begin{itemize}
+\item For a slab of constant source function, we get:
+\begin{equation}
+dI_\nu = I_\nu^0 e^{-\tau_\nu} + S_\nu (1-e^{-\tau_\nu})
+\end{equation}
+\item Depending on the $\tau_\nu$ we can get either dominant contribution of the background radiation, or the slab. 
+\item \q{Discuss the image on the right (solar atmosphere imaged at two different wavelengths)}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=4.5cm]{figures/gosic.png}
+\caption*{Credit: Gosic et al., 2018}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Constant source function}
+\begin{minipage}{0.55\linewidth}
+\begin{equation}
+dI_\nu = I_\nu^0 e^{-\tau_\nu} + S_\nu (1-e^{-\tau_\nu})
+\end{equation}
+\begin{itemize}
+\item We can now frame this differently:
+\item If we somehow \textbf{know} that, at a wavelength the medium is \textbf{optical thick}, we know we are seeing that medium.
+\item If it is \textbf{transparent}, we know we are seeing the light below. 
+\item So we can use different wavelengths to probe different regions. 
+\item But, sometimes differences between $S$ and 
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=4.5cm]{figures/gosic.png}
+\caption*{Credit: Gosic et al., 2018}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Linear source function with depth}
+\begin{itemize}
+  \item A very often used assumption in the atmosphere modeling is the so called, Milne-Eddington model, it assumes that, at some \emph{referent} wavelength, we have:
+\begin{equation}
+S_\nu = a + b \tau_r
+\end{equation}
+\item where $\tau_r$ is the optical depth at that referent wavelength.
+\item We define $r_\nu$, which is the ratio of opacities at other frequencies (wavelengths) to the referent one. 
+\item Additionally, we will assume that $S_\nu = B_\nu$ (LTE), and that $\tau_\nu >> 1$, we get:
+\begin{equation}
+dI_\nu = \int_0^{\infty} (a + b \tau_r) e^{-\tau_r r_\nu} d \tau_r r_\nu
+\end{equation}
+\item That yields (\q{blackboard!}):
+\begin{equation}
+dI_\nu = a + b / r_\nu
+\end{equation}
+
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Linear source function with depth}
+\begin{minipage}{0.5\linewidth}
+\begin{equation}
+dI_\nu = a + b / r_\nu
+\end{equation}
+\begin{itemize}
+\item It is reasonable to assume that $S$ increases inward in the solar atmosphere (because $T$ increases), so $a$ and $b$ are positive.
+\item For more opaque regions we will get less intensity.
+\item Wow - not really insightful after all!
+\item Extremely important: we also understood that a \textbf{gradient} of temperature in the atmosphere is necessary!
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\begin{figure}
+\includegraphics[width=6.7cm]{figures/stel_spec.png}
+\caption*{Credits: Wikipedia}
+\end{figure}
+\end{minipage}
+}
+%
+\section{Milne problem}
+%
+\frame{
+\frametitle{Why the Milne-Eddington approximation}
+\begin{itemize}
+  \item Why choose linear, why not quadratic? Why not some other functional dependence?
+  \item Beginning of XX century, Eddington, Milne, Schwarzschild and company were trying to solve the structure of the stellar atmosphere in radiative equilibrium. 
+  \item Given the outgoing specific flux ($H$), find the structure of the atmosphere. 
+  \item Radiative equilibrium (your hw):
   \begin{equation}
-    \alpha \frac{GM^2}{R_{\rm ps}} \approx \frac{M}{m_{\rm H}}\left( \frac{X}{2}\chi_{{\rm H}_2} + X_{\chi_{\rm H}} + \frac{Y}{4}\chi_{\rm He} \right),
+  \int_0^{\infty} \kappa_\nu J_\nu d_\nu = \int_0^{\infty} \kappa_\nu S_\nu d_\nu
   \end{equation}
-  where $\chi_{{\rm H}_2} =4.5$~eV, $\chi_{\rm H} = 13.6$~eV, and
-  $\chi_{\rm He} = 79$~eV.
-\item Taking $Y \approx 1 -X$ and $\alpha = \onehalf$ gives
+  \item Was simplified, by assuming that there is some mean $\overline{\kappa}$ (gray atmosphere), so that:
   \begin{equation}
-    \frac{R_{\rm ps}}{R_\odot} \approx \frac{50}{1-0.2X} \frac{M}{M_\odot}.
+  J = S
   \end{equation}
+  \item Furthermore, it was reasonable to assume LTE, so that $S=B=\sigma T^4 = J$.
+  \item This is a direct connection between the radiation and the temperature.
+  \item But how to find $J(z)$, or better to say $J(\tau)$?
 \end{itemize}
-\end{minipage}
-\begin{minipage}{0.4\linewidth}
-\begin{figure}
-\includegraphics[width=5cm]{figures/Iben_1965_PMS.png}
-\caption*{Credits: Iben (1965), Astrophys. J., 141}
-\end{figure}
-\end{minipage}
 }
 %
 %
 \frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{minipage}{0.59\linewidth}
+\frametitle{Milne problem}
 \begin{itemize}
-\item Recalling the average temperature from virial theorem and
-  inserting the estimate for $R_{\rm ps}$ with $X=0.7$ gives:
+  \item But how to find $J(z)$, or better to say $J(\tau)$? We did not use RTE yet. Define that optical depth goes in the negative z direction: 
   \begin{equation}
-    \overline{T} = \frac{\alpha}{3} \frac{\mu}{k} \frac{GMm_{\rm H}}{R_{\rm ps}} \approx 6\cdot 10^4~{\rm K}.
+  \mu\frac{dI}{d\tau} = I - S = I - J
   \end{equation}
-  Note that the temperature is independent of $M$.
-\item At this starting point on the Hayashi track the star is fully
-  convective and the gas is still opaque.
-\item Contraction continues until all of the gas is ionized. The
-  opacity drops first in the interior and the convection zone recedes.
-  $\Teff$ starts to rise slowly.
-\item Nuclear reactions start gradually when core temperature
-  increases and increase the luminosity. Evolutionary track is
-  complicated by ignition of different branches of hydrogen burning.
+  \item Integrate this over $d \mu$ and $\mu d \mu$. \q{We will need the blackboard here!}
+  \item You should get...
+\end{itemize}
+}
+%
+\frame{
+\frametitle{Milne problem}
+\begin{itemize}
+  \item But how to find $J(z)$, or better to say $J(\tau)$? We did not use RTE yet. Define that optical depth goes in the negative z direction: 
+  \begin{equation}
+  \mu\frac{dI}{d\tau} = I - S = I - J
+  \end{equation}
+  \item Integrate this over $d \mu$ and $\mu d \mu$. \q{We will need the blackboard here!}
+  \item You should have gotten:
+  \begin{equation}
+  \frac{dH}{d\tau} = 0
+  \end{equation}
+  \item and:
+  \begin{equation}
+  \frac{dK}{d\tau} = H
+  \end{equation}
+  \item This is where Eddington made an approximation to try and ``close'' the system, he assumed that $K=J/3$, and thus: 
+  \begin{equation}
+  J = 3H \tau + {\rm const} = a \tau + b
+  \end{equation}
+  \item This can later be pursued further to infer the temperature structure of a gray atmosphere, but we will not go there.
+  
+
+\end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Linear source function with depth}
+\begin{minipage}{0.5\linewidth}
+\begin{equation}
+dI_\nu = a + b / r_\nu
+\end{equation}
+\begin{itemize}
+\item It is reasonable to assume that $S$ increases inward in the solar atmosphere (because $T$ increases), so $a$ and $b$ are positive.
+\item For more opaque regions we will get less intensity.
+\item We ``solved'' mathematical part. Now is time for physics, because...
+\item What we still don't understand is why the opacity varies with the wavelength.
 \end{itemize}
 \end{minipage}
-\begin{minipage}{0.4\linewidth}
+\begin{minipage}{0.49\linewidth}
 \begin{figure}
-\includegraphics[width=5cm]{figures/Iben_1965_PMS.png}
-\caption*{Credits: Iben (1965), Astrophys. J., 141}
+\includegraphics[width=6.7cm]{figures/stel_spec.png}
+\caption*{Credits: Wikipedia}
 \end{figure}
 \end{minipage}
 }
 %
-%
+\section{Processes that contribute to opacity}
+% 
 \frame{
-\frametitle{Hayashi zone and pre-main-sequence phase}
-\begin{minipage}{0.59\linewidth}
-\begin{figure}
-\includegraphics[width=5cm]{figures/Prialnik_PMS_lifetimes.png}
-\caption*{Credits: Prialnik.}
-\end{figure}
+\frametitle{Opacity sources}
 \begin{itemize}
-\item The time that stars spend in the PMS phase depends strongly on
-  the mass.
-\end{itemize}
-\end{minipage}
-\begin{minipage}{0.4\linewidth}
-\begin{figure}
-\includegraphics[width=5cm]{figures/Iben_1965_PMS.png}
-\caption*{Credits: Iben (1965), Astrophys. J., 141}
-\end{figure}
-\end{minipage}
-}
-%
-\frame{
-\frametitle{Main-sequence phase}
-\begin{itemize}
-\item TBA
+\item Reminder, we only talk about opacity ($\kappa_\nu$) because $j_\nu = B_\nu \kappa_\nu$!
+\item Important sources are:
+\item Bound-free transitions (photoionization)
+\item Free-free processes (inverse bremsstrahlung) - not important at low temperatures and optical wavelengths
+\item Bound-bound processes (spectral lines - very diagnostically important!) \q{Discuss!}
+\item Thomson and Rayleigh scattering. 
+\item Photodissotiation of $H-$ and molecules.
 \end{itemize}
 }
-%
-%
-\frame{
-\frametitle{Main-sequence phase}
-\begin{itemize}
-\item TBA
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Main-sequence phase}
-\begin{itemize}
-\item TBA
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Red Giant phase}
-\begin{itemize}
-\item TBA
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Red Giant phase}
-\begin{itemize}
-\item TBA
-\end{itemize}
-}
-%
-%
-\frame{
-\frametitle{Red Giant phase}
-\begin{itemize}
-\item TBA
-\end{itemize}
-}
-%
-%
-%
+% 
+
 \end{document}
 % 
 
