@@ -504,8 +504,57 @@ dI_\nu = a + b / r_\nu
 \item Free-free processes (inverse bremsstrahlung) - not important at low temperatures and optical wavelengths
 \item Bound-bound processes (spectral lines - very diagnostically important!) \q{Discuss!}
 \item Thomson and Rayleigh scattering. 
-\item Photodissotiation of $H-$ and molecules.
+\item \textbf{Bound-free and free-free emission of $H-$ (very important for colder stars).}
 \end{itemize}
+}
+%
+%
+\frame{
+\frametitle{Bound-free opacity}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\item This is, in fact, photoionization. The energy of the photon needs to be larger than the binding energy of the electron:
+\begin{equation}
+h\nu > E_{ion}
+\end{equation}
+\item Higher levels are easier to ionize, so if we have more excited atoms, opacity at lower energies/ higher wavelengths is higher. \q{Talk about this for a while}.
+\item For example, for hydrogen: $E_{ion} = 13.6{\rm eV} / i^2$, where $i$ is the principal quantum number of the level.
+\begin{equation}
+\rho \kappa_\nu^{bf} = \sum_i n_i \sigma_i
+\end{equation}
+\item where I denoted the cross-section with $\sigma$.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/hbf.png}
+\end{figure}
+\end{minipage}
+}
+%
+%
+\frame{
+\frametitle{Bound-free opacity}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\item \q{Look carefully at the figure: what levels need to be populated so that hydrogen contributes to the opacity in the visible wavelengths}
+\item The Boltzman equation governs the excitations as: 
+\begin{equation}
+n_i = n_H \frac{g_i e^{-E_i / kT}}{Z_H}
+\end{equation}
+\item here $g_i$ is called \textbf{statistical weight} and $Z$ is the \textbf{partition function}.
+But, we also need the concentration of the neutral hydrogen (Hydrogen can be neutral, ionized, tied into $H_2$ or even in $H-$). For that we can use Saha equation:
+\begin{equation}
+\frac{n_{H+} n_e}{n_H} = \frac{}{\Lambda^3} e^{-E_{ion}/kT} 
+\end{equation}
+How does $n_{H}$ vary with temperature?
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/hbf.png}
+\end{figure}
+\end{minipage}
 }
 % 
 
