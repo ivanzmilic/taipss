@@ -1,5 +1,7 @@
 ## Theoretical Astrophysics I: Physics of Sun and stars
 
+### New: Recording of our Handson 10 is here: https://youtu.be/F2PTz5kvC_o
+
 ### Lecturers: Petri Käpylä, Ivan Milic (Institute for Solar Physics - KIS, Freiburg)
 
 ### University of Freiburg, Summer Semester 2024
@@ -31,6 +33,14 @@ Michael Stix, The Sun: an Introduction, 2002, Springer
 26/04 - Handson 02: Calculational exercises on the equations of stellar structure. 
 
 28/05 - Lecture 06: Radiation transport
+
+18/06 - Lecture 10: Stellar Atmospheres
+
+21/06 - Handson 10: Numerical calculation of stellar spectra, recording here https://youtu.be/F2PTz5kvC_o
+
+25/06 - Lecture 11: The Sun 
+
+29/06 - Handson 11: No exercise
 
 ## Git Repo Organization:
 
