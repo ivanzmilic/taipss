@@ -1,6 +1,8 @@
 ## Theoretical Astrophysics I: Physics of Sun and stars
 
-### New: Recording of our Handson 10 is here: https://youtu.be/F2PTz5kvC_o
+### New: Recording of our Lecture 10 is here: https://youtu.be/kaVqsGRmX7c
+
+### New: Recording of our Handson 9 is here: https://youtu.be/F2PTz5kvC_o
 
 ### Lecturers: Petri Käpylä, Ivan Milic (Institute for Solar Physics - KIS, Freiburg)
 
@@ -34,11 +36,11 @@ Michael Stix, The Sun: an Introduction, 2002, Springer
 
 28/05 - Lecture 06: Radiation transport
 
-18/06 - Lecture 10: Stellar Atmospheres
+18/06 - Lecture 09: Stellar Atmospheres
 
-21/06 - Handson 10: Numerical calculation of stellar spectra, recording here https://youtu.be/F2PTz5kvC_o
+21/06 - Handson 09: Numerical calculation of stellar spectra, recording here https://youtu.be/F2PTz5kvC_o
 
-25/06 - Lecture 11: The Sun 
+25/06 - Lecture 10: The Sun (online) https://youtu.be/kaVqsGRmX7c 
 
 29/06 - Handson 11: No exercise
 
