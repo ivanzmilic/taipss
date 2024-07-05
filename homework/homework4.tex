@@ -90,39 +90,27 @@ Homework 4}
 
 \textbf{Deadline for this homework is \textbf{01}/07 23:59}
 
-{\bf Problem 1:} Following the numerical exercise that we did on the handson number 9, related to stellar atmospheres, calculate the emergent flux, assuming that the optical depth given in the atmospheric model is representative of the average optical depth over all wavelengths (so - called gray atmosphere).
+{\bf Problem 1:} Following the numerical exercise that we did on the handson number 9, related to stellar atmospheres, calculate the emergent flux from a given atmospheric model. You can assume that the optical depth given in the atmospheric model is representative of the average optical depth over all wavelengths (so - called gray atmosphere). This means that you do not have to worry about wavelengt dependence of opacity and thus optical depth.
 
-For the same atmosphere, check whether the flux is constant with height, and what is the ratio of the K-integral and the mean intensity with depth. 
+For the same atmosphere, check whether the flux is constant with height/depth, and what is the ratio of the K-integral and the mean intensity with depth. 
 
 For this you will need to solve radiative transfer equation numerically in different directions (you specify a grid of directions) and to integrate, numerically, intensity over the angle.
 
 {\bf Problem 2:} 
 
-For a gas of given pressure and temperature, assuming it only consists of hydrogen in neutral and ionized state, find the electron density (you will need Saha equation for this + some more assumptions). 
+For a gas of given pressure and temperature, assuming it only consists of hydrogen in neutral and ionized state, find the electron density (you will need Saha equation for this, follow exercise 8). 
 
-Assuming that the number density of negative ion of Hydrogen is 
+Assuming that the number density of negative ion of Hydrogen is negligible compared to the neutral and ionized hydrogen, use Saha equation to estimate the number density of negative ions of hydrogen. 
+
+Now, using Boltzmann equation, estimate the number density of neutral Hydrogen in state $i=3$ of neutral Hydrogen. Recall that the energy of the hydrogen states scales like: 
+\begin{equation}
+E_i = \frac{-E_{ion}}{i^2}
+\end{equation}
+where $i$ is the principal quantum number, $E_i$ is the energy of the level (negative, because we need to add the energy to break up the bound state), and $E_{ion}$ is the ionization energy of Hydrogen, which is equal to 13.6\,eV. Ioniozation energy of the negative ion of Hydrogen is 0.75\,eV. 
+
+Finally, compare the number densities of neutral hydrogen in state $i=3$ and the negative ion of hydrogen in the model atmosphere you used in the problem 1. For this problem you will need temperature (third column) and total gas pressure (fourth column). Keep in mind the model is given in CGS units! :-)
 
 {\bf Problem 3:}
-
-%Kramer's opacity law, describes the free-free opacity of the completely ionized medium as: 
-%PJK: Kramers (before you suggest it, I will not accept Kramers' law)
-Kramers opacity law, describes the free-free opacity of the completely ionized medium as:
-\begin{equation}
-%\kappa_ff \approx \frac{1}{2} \kappa_{ff,0} (1+X) \langle \frac{\rm Z^2}{A} \rangle \rho T^{-7/2}
-%PJK: \rm for ffs
-  \kappa_{\rm ff} \approx \frac{1}{2} \kappa_{\rm ff,0} (1+X) \left< \frac{\rm Z^2}{A} \right> \rho T^{-7/2},
-\end{equation}
-where $\kappa_{\rm ff,0}$ is a constant equal to $7.5 \times 10^{21} {\rm m}^2 {\rm kg}^{-1}$ and 
-\begin{equation}
-%\langle \frac{\mathcal Z^2}{A} \rangle  = \sum_i X_i \frac{\mathcal Z_i^2}{A_i} 
-%PJK: \left ... \right
-  \left< \frac{\mathcal Z^2}{A} \right> = \sum_i X_i \frac{\mathcal Z_i^2}{A_i},
-\end{equation}
-where sum goes over all the relevant atoms, $X_i$ is the abundance, $Z$ is atomic number and $A$ mass number. 
-
-Calculate the mean free path (inverse absorption coefficient, where absorption coeffient is the product of opacity and mass density), at the boundary between the core and the radiative zone ($\rho=10^4\,{\rm kg/m^3}$, $T=10^7$\,K) and at the photosphere ($\rho=10^{-7}\,{\rm kg/m^3}$, $T=6000$\,K).
-
-What can you conclude about the assumption of local thermodynamic equilibrium (LTE) from this?
 
 {\bf Useful physical constants}
 \begin{itemize}
