@@ -1,0 +1,263 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\newcommand{\kkk}{\bm{k}}
+\newcommand{\rrr}{\bm{r}}
+\newcommand{\uuu}{\bm{u}}
+\newcommand{\FFF}{\bm{F}}
+\newcommand{\gggg}{\bm{g}}
+\DeclareMathOperator{\Tr}{Tr}
+\def\pd{\partial}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Hands-on exercises 10 solution: Gravity waves}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+{\bf Problem 1:} Add gravity to the system that was used to
+demonstrate sound waves on the lectures and derive the equations
+governing internal gravity waves or g modes.
+
+{\bf Solution:} We first recall that we still have the pressure
+gradient which led to the sound waves. We will also assume that the
+gradients of the 0-quantities are negligible compared to the gradients
+of the fluctuations. The fluctuating contribution to the gravitational
+potential is also omitted.
+
+Then the linearized equations read:
+\begin{equation}
+\rho' + \bm\nabla\bm\cdot (\rho_0\delta\rrr') = 0,\label{equ:cont}
+\end{equation}
+\begin{equation}
+\rho_0 \frac{\pd \uuu'}{\pd t} = -\bm\nabla p' + \rho_0'\gggg.\label{equ:mom}% + \rho'\gggg'.
+\end{equation}
+We assume from the start that the solution is a plane wave:
+\begin{equation}
+\exp [i(\kkk\bm\cdot\rrr - \omega t)].
+\end{equation}
+Let the $r$ coordinate increase outwards so that $\gggg_0 = -g_0
+\hat{\bm e}_r$, and
+\begin{equation}
+\bm\nabla p_0 = \frac{{\rm d}p_0}{{\rm d}r} \hat{\bm e}_r,\ \ \mbox{and}\ \ \bm\nabla \rho_0 = \frac{{\rm d}\rho_0}{{\rm d}r} \hat{\bm e}_r.
+\end{equation}
+Let us further separate the directions along (radial) and
+perpendicular (horizontal) to the gravity:
+\begin{eqnarray}
+\delta\rrr &=& \xi_r \hat{\bm e}_r + \bm\xi_{\rm h},\\
+\kkk &=& k_r \hat{\bm e}_r + \kkk_{\rm h}.
+\end{eqnarray}
+Inserting these into Eq.~(\ref{equ:mom}) give:
+\begin{eqnarray}
+-\rho_0 \omega^2 \xi_r &=& -ik_rp' - \rho' g_0,\label{equ:rad}\\
+-\rho_0 \omega^2 \bm\xi_{\rm h} &=& -i \kkk_{\rm h} p'.
+\end{eqnarray}
+The continuity equation (\ref{equ:cont}) gives:
+\begin{equation}
+\rho' + \rho_0 i k_r \xi_r + \rho_0 i \kkk_{\rm h}\bm\cdot\bm\xi_{\rm h} = 0.
+\end{equation}
+The two previous equations combine to:
+\begin{equation}
+p' = \frac{\omega^2}{k_{\rm h}^2} (\rho' + \rho_0 i k_r \xi_r).\label{equ:pprime}
+\end{equation}
+Using this in Eq.~(\ref{equ:rad}) yields:
+\begin{equation}
+-\rho_0 \omega^2 \xi_r = -i \frac{k_r}{k_{\rm h}^2}\omega^2 \rho' + \omega^2 \rho_0 \frac{k_r^2}{k_{\rm h}^2}\xi_r -\rho' g_0.
+\end{equation}
+For very small frequencies $\omega$ the first term proportional to
+$\rho'$ is small compared to the buoyancy term and we therefore omit
+it. Then the equation reduces to:
+\begin{equation}
+\rho_0 \omega^2 \left(1 - \frac{k_r^2}{k_{\rm h}^2} \right)\xi_r = \rho' g_0.\label{equ:rhoom}
+\end{equation}
+The term on the right hand side is the driving of density
+perturbations by the buoyancy force, whereas the left hand side gives
+the vertical acceleration. Note the term with the wavenumbers: this
+arises from the pressure force because a radial displacement means
+that matter has to be pushed aside horizontally which adds up to the
+total inertia. This effect is particularly large for large horizontal
+length scales with $k_{\rm h} \ll k_r$.
+
+To arrive at the dispersion relation we again make use of the
+adiabatic relation:
+\begin{equation}
+\delta p = \gamma_{1,0} \frac{p_0}{\rho_0} \delta \rho.
+\end{equation}
+Note that the fluctuations are Lagrangian, i.e., they follow the fluid
+elements and in Eulerian form where we sit in a fixed position they
+read $\delta p = p' + \delta\rrr\bm\cdot\bm\nabla p_0$ and $\delta
+\rho = \rho' + \delta\rrr\bm\cdot\bm\nabla\rho_0$. Therefore,
+\begin{equation}
+\rho' = c_0^{-2} p' + \rho_0 \delta\rrr\bm\cdot \left( \frac{1}{\gamma_{1,0} p_0}\bm\nabla p_0 - \frac{1}{\rho_0}\bm\nabla \rho_0 \right).\label{equ:rhoprime}
+\end{equation}
+Using Eq.~(\ref{equ:pprime}) we find that
+\begin{equation}
+\frac{c_0^{-2}p'}{\rho'} \approx \frac{\omega^2}{c_0^2k_{\rm h}},
+\end{equation}
+where $c_0^2k_{\rm h}$ is the frequency corresponding to sound
+waves. The frequencies $\omega$ that we are interested in are much
+lower so we can therefore omit the term proportional to $p'$.
+Substitution of Eq.~(\ref{equ:rhoprime}) without this term to
+Eq.~(\ref{equ:rhoom}) yields:
+\begin{equation}
+\omega^2 \left( 1 + \frac{k_r^2}{k_{\rm h}^2} \right) \xi_r = N^2 \xi_r,
+\end{equation}
+where
+\begin{equation}
+N^2 = g_0 \left( \frac{1}{\gamma_{1,0}} \frac{{\rm d}\ln p_0}{{\rm d}r} - \frac{{\rm d}\ln \rho_0}{{\rm d}r} \right),
+\end{equation}
+is the squared \emph{Brunt-V\"ais\"al\"a} frequency. The
+Brunt-V\"ais\"al\"a frequency related to the convective stability of
+the fluid: for $N^2>0$ the stratification is stable and for $N^2<0$ it
+is unstable. This is more clearly seen from the dispersion relation of
+gravity waves:
+\begin{equation}
+\omega^2 = \frac{N^2}{1 + k_r^2/k_{\rm h}^2}.
+\end{equation}
+The frequency of the gravity waves coincides with $N^2$ ($>0$) when
+$k_{\rm h} \rightarrow \infty$. For larger $k_{\rm h}$ the frequency is
+decreased. If $N^2<0$, the solution grows exponentially in time
+corresponding to the convective instability.
+
+
+%% {\bf Problem 2:} Consider an infinitely deep fluid with density
+%% $\rho_0$ with a free surface. Assume incopressibility and that the
+%% pressure at the surface is constant. Derive the equations governing
+%% surface gravity waves or the f mode.
+
+
+%% {\bf Solution:} Incompressibility means that the density is constant,
+%% i.e., $\rho = \rho_0$. Then the continuity equation reads:
+%% \begin{equation}
+%%   \bm\nabla\bm\cdot\uuu = 0.
+%% \end{equation}
+%% Assume a constant downward-pointing gravity and note that because
+%% $\rho'=0$, also $\Phi'=0$. The equation of motion reduces to
+%% \begin{equation}
+%% \rho_0 \frac{\pd \uuu}{\pd t} = - \bm\nabla p',
+%% \end{equation}
+%% which reduces further to
+%% \begin{equation}
+%% \nabla^2 p' =0,\label{equ:del2p}
+%% \end{equation}
+%% after taking the divergence. Introduce horizontal coordinate $x$ and
+%% vertical coordinate $z$. The latter increases downward and the surface
+%% is at $z=0$. We seek a solution for a wave propagating along the
+%% surface in the horizontal direction. It has the general form:
+%% \begin{equation}
+%% p' = f(z) \cos(k_{\rm h}x - \omega t),\label{equ:pprime2}
+%% \end{equation}
+%% where $f$ needs to be determined. Substituting (\ref{equ:pprime2})
+%% into (\ref{equ:del2p}) gives:
+%% \begin{equation}
+%% \frac{\pd^2 f}{\pd z^2} = k_{\rm h}^2 f,
+%% \end{equation}
+%% or
+%% \begin{equation}
+%% f = a \exp(-k_{\rm h}z) + b \exp(k_{\rm h}z),
+%% \end{equation}
+%% where $b$ has to be zero (\blue{Why?}).
+
+%% The boundary condition at the surface is that the pressure is
+%% constant. This means that the Lagrangian pressure perturbation
+%% vanishes, or
+%% \begin{equation}
+%% 0 = \delta p = p' + \delta\rrr\bm\cdot\bm\nabla p_0 = p' + \xi_z \rho_0 g_0,
+%% \end{equation}
+%% where $\xi_z$ is the vertical component of the displacement.
+
+%\newpage
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm e} = 9.11\cdot10^{-31}$~kg
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+\end{itemize}
+
+\end{document}

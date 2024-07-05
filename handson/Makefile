@@ -7,3 +7,5 @@ default:
 #	pdflatex handson6
 	pdflatex handson7
 	pdflatex handson7_solutions
+	pdflatex handson10
+	pdflatex handson10_solutions
