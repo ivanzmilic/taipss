@@ -42,7 +42,11 @@ Michael Stix, The Sun: an Introduction, 2002, Springer
 
 25/06 - Lecture 10: The Sun (online) https://youtu.be/kaVqsGRmX7c 
 
-29/06 - Handson 11: No exercise
+29/06 - Handson 10: No exercise
+
+02/07 - Lecture 11: Helioseismology
+
+05/07 - Handson 11: Various Problems 
 
 ## Git Repo Organization:
 
