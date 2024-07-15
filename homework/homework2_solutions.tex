@@ -45,6 +45,8 @@
 \newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
 \newcommand{\orange}[1]{\textcolor{orange}{#1}}
 %%%% mathematical definitions
+\def\onethird{{\textstyle{1\over3}}}
+\def\onesixth{{\textstyle{1\over6}}}
 \DeclareMathOperator{\Tr}{Tr}
 \def\npab{\noindent \textbullet ~}
 \def\npa{\noindent}
@@ -63,6 +65,7 @@
 \def\pgc{\textcolor{red}{P_{\rm g}}}
 \newcommand{\ve}[1]{{\rm\bf {#1}}}
 \newcommand{\Fconv}{F_{\rm conv}}
+\def\dd{{\rm d}}
 \def\ez{\ve{e}_z}
 \def\ey{\ve{e}_y}
 \def\ex{\ve{e}_x}
@@ -203,11 +206,11 @@ and we would expect $\Delta\nabla$ to be much larger there.
 {\bf Problem 3:} Use the equations of hydrostatic equilibrium and mass
 conservation:
 \begin{eqnarray}
-  \frac{dp}{dr} = -\rho \frac{Gm}{r^2},\ \ \frac{dm}{dr} = 4\pi r^2\rho, 
+  \frac{dp}{dr} = -\rho \frac{Gm}{r^2},\ \ \frac{dm}{dr} = 4\pi r^2\rho, \label{equ:dpdm}
 \end{eqnarray}
 assuming a polytropic equation of state
 \begin{equation}
-p = K \rho^\gamma,
+p = K \rho^\gamma, \label{equ:ppoly}
 \end{equation}
 where $\gamma = 1 + \frac{1}{n}$ is the polytropic exponent and $n$ is
 the polytropic index, to derive the Lane-Emden equation:
@@ -217,25 +220,129 @@ the polytropic index, to derive the Lane-Emden equation:
 Here $\theta$ and $\xi$ are the non-dimensional density and radius
 defined as
 \begin{equation}
-\rho = \rho_{\rm c} \theta^n, \ \ \mbox{and}\ \ r = \alpha\xi,
+\rho = \rho_{\rm c} \theta^n, \ \ \mbox{and}\ \ r = \alpha\xi, \label{equ:rrho}
 \end{equation}
 and where $\alpha^2$ equals a constant that arises in the derivation
 of Eq.(\ref{equ:LaneEmden}).
+
+
+{\bf Solution:} Start from equations~(\ref{equ:dpdm}) to find that:
+\begin{eqnarray}
+\frac{r^2}{\rho} \frac{\dd p}{\dd r} &=& -Gm, \\
+\frac{\dd}{\dd r} \left( \frac{r^2}{\rho} \frac{\dd p}{\dd r} \right) &=& -G \frac{\dd m}{\dd r} = -4\pi G \rho r^2, \\
+\frac{1}{r^2 }\frac{\dd}{\dd r} \left( \frac{r^2}{\rho} \frac{\dd p}{\dd r} \right) &=& -4\pi G \rho.\label{equ:poisson}
+\end{eqnarray}
+Make use of Eqs.(\ref{equ:ppoly}) and (\ref{equ:rrho}) to write out
+the pressure and its gradient:
+\begin{eqnarray}
+p &=& K \rho^{1+\frac{1}{n}} = K \rho_c^{1+\frac{1}{n}}\theta^{n+1}, \\
+\frac{\dd p}{\dd r} = \frac{\dd p}{\alpha \dd\xi} &=& K \rho_c^{1+\frac{1}{n}} (n+1) \theta^n \frac{\dd\theta}{\alpha\dd\xi},
+\end{eqnarray}
+where we used $\dd r = \alpha\dd\xi$. Now we can further see that
+\begin{eqnarray}
+\frac{r^2}{\rho} \frac{\dd p}{\dd r} = \frac{\alpha^2 \xi^2}{\rho_c \theta^n} K \rho_c^{1+\frac{1}{n}} (n+1) \theta^n \frac{\dd\theta}{\alpha\dd\xi} = \alpha K (n+1) \rho_c^{\frac{1}{n}}\xi^2 \frac{\dd\theta}{\dd\xi}.
+\end{eqnarray}
+Now we are in a position to write Eq.~(\ref{equ:poisson}) with the new
+variables:
+\begin{eqnarray}
+  \frac{1}{\alpha^2 \xi^2} \frac{1}{\alpha} \frac{\dd}{\dd\xi} \left[ \alpha K(n+1)\rho_c^{\frac{1}{n}} \xi^2 \frac{\dd\theta}{\dd\xi} \right] &=& - 4\pi G \rho_c \theta^n,\\
+  \frac{K(n+1)}{4\pi G \alpha ^2} \rho_c^{\frac{1}{n}-1} \frac{1}{\xi^2} \frac{\dd}{\dd\xi}\left(\xi^2 \frac{\dd\theta}{\dd\xi} \right) &=& -\theta^n.
+\end{eqnarray}
+With the choice:
+\begin{equation}
+\alpha^2 = \frac{K(n+1)}{4\pi G} \rho_c^{\frac{1}{n}-1}
+\end{equation}
+we recover the Lane-Emden equation:
+\begin{eqnarray}
+ \frac{1}{\xi^2} \frac{\dd}{\dd\xi}\left(\xi^2 \frac{\dd\theta}{\dd\xi} \right) &=& -\theta^n.
+\end{eqnarray}
+
+
 
 The boundary conditions at $\xi=0$ for the Lane-Emden equation are:
 \begin{equation}
 \theta = 1,\ \mbox{and}\ \frac{d\theta}{d\xi} = 0.
 \end{equation}
-%Explain why we are choosing these specific boundary conditions. (As a
-%question for students).
 What do these boundary conditions correspond to?
+
+{\bf Solution:} The first condition simply states that the density is
+non-dimensionalized by the central density, i.e.,
+\begin{equation}
+\theta = \left(\frac{\rho}{\rho_c}\right)^{\frac{1}{n}}.
+\end{equation}
+The latter condition indicates that there is no density or pressure
+gradients at $r=\xi=0$. This means that the gravity must also vanish
+at $r=\xi=0$.
+
 
 Solve the Lane-Emden equation for $n=0,1$, and $5$. For these values
 the equation can be solved \emph{analytically}.
 
-{Solve the Lane-Emden equation for $n=1.5$ and $n=3$, and compare the
-  resuls with the ones found in the textbook by D.\ Prialnik. For this
-  you will have to solve the equation \emph{numerically}.
+{\bf Solution:} Case $n=0$: The Lane-Emden equation reduces to:
+\begin{eqnarray}
+ \frac{1}{\xi^2} \frac{\dd}{\dd\xi}\left(\xi^2 \frac{\dd\theta}{\dd\xi} \right) = -1.
+\end{eqnarray}
+Integrating once gives:
+\begin{eqnarray}
+ \xi^2 \frac{\dd\theta}{\dd\xi} = -\onethird \xi^3 - C.
+\end{eqnarray}
+Second integration gives:
+\begin{eqnarray}
+ \theta = D - \frac{C}{\xi} - \onesixth \xi^2.
+\end{eqnarray}
+We want a finite solution at $\xi=0$ and therefore we need to have
+$C=0$. Furthermore, the condition $\theta=1$ at $\xi$ requires that $D
+=1$. Therefore the solution for $n=0$ reads
+\begin{eqnarray}
+ \theta_0 = 1 - \onesixth \xi^2.
+\end{eqnarray}
+
+\noindent
+Case $n=1$: Make first a transformation:
+\begin{equation}
+  \theta = \frac{\chi}{\xi},\label{equ:thetat}
+\end{equation}
+so that the Lane-Emden equation reduces to:
+\begin{equation}
+\frac{\dd^2 \chi}{\dd \xi^2} = - \frac{\chi^n}{\xi^{n-1}}.
+\end{equation}
+For $n=1$ this reduces further to:
+\begin{equation}
+\frac{\dd^2 \chi}{\dd \xi^2} = - \chi.
+\end{equation}
+General solution of this equation is
+\begin{equation}
+\chi = C \sin(\xi - \delta),
+\end{equation}
+where $C$ and $\delta$ are integration constants. From
+Eq.~(\ref{equ:thetat}) we get
+\begin{equation}
+\theta = \frac{C \sin(\xi - \delta)}{\xi}.
+\end{equation}
+If $\delta\neq 0$ we again have a singularity at $\xi=0$ and therefore
+we put $\delta=0$. Furthermore, the boundary condition $\theta=1$ at
+$\xi=0$ stipulates that $C=1$ because at the limit of small $\xi$,
+$\sin\xi/\xi \longrightarrow 1$. Therefore,
+\begin{equation}
+\theta_1 = \frac{\sin\xi}{\xi}.
+\end{equation}
+
+\noindent
+Case $n=5$: We simply state the final result here:
+\begin{equation}
+\theta_5 = \frac{1}{(1+\onethird \xi^2)^{1/2}}.
+\end{equation}
+Detailed derivation can be found, e.g., in Chandrasekhar, S. (1939):
+``An Introduction to the Study of Stellar Structure'' (Dover
+Publications), p.\ 93.
+
+
+Solve the Lane-Emden equation for $n=1.5$ and $n=3$, and compare the
+resuls with the ones found in the textbook by D.\ Prialnik. For this
+you will have to solve the equation \emph{numerically}.
+
+{\bf Solution:} See script in the \texttt{homework/python} folder.
+
 
 {\bf Useful physical constants}
 \begin{itemize}
