@@ -1,0 +1,160 @@
+\documentclass[aspectratio=169]{beamer}
+\geometry{paperwidth=160mm,paperheight=100mm}
+\usepackage{beamerthemesidebar}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{multimedia}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{bm}
+
+\setbeamersize{sidebar width right=0pt}
+\setbeamertemplate{footline}[frame number]
+%
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\q}[1]{\textcolor{blue}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\definecolor{burlywood}{RGB}{255,211,155}
+\definecolor{chocolate}{RGB}{255,127,36}
+\definecolor{tan}{RGB}{210,180,140}
+%
+\def\onethird{{\textstyle{1\over3}}}
+\def\twothirds{{\textstyle{2\over3}}}
+\def\fourthirds{{\textstyle{4\over3}}}
+\def\onehalf{{\textstyle{1\over2}}}
+\def\threehalfs{{\textstyle{3\over2}}}
+%
+\newcommand{\pd}{\partial}
+\newcommand{\aMLT}{\alpha_{\rm MLT}}
+\newcommand{\Fconv}{F_{\rm conv}}
+\newcommand{\Frad}{F_{\rm rad}}
+\newcommand{\Ftot}{F_{\rm tot}}
+\newcommand{\Hp}{H_p}
+\newcommand{\prad}{p_{\rm rad}}
+\newcommand{\pgas}{p_{\rm gas}}
+%
+\title{Theoretical Astrophysics I: Physics of Sun and Stars\\
+Lecture 5: Convection in stars versus convection simulations}
+\author{\texorpdfstring{\sepia{Petri K\"{a}pyl\"{a} Ivan Mili\'{c}}\newline\blue{\url{pkapyla, milic@leibniz-kis.de}}}{}}
+\institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
+\date{\today}
+%
+\begin{document}
+\frame{\titlepage}
+
+% Convective conundrum: velocity amplitudes in the Sun vs. simulations
+% Influence of rotation on convection
+% Differential rotation.
+% Driving on convection: local or non-local?
+% Effects of magnetic fields?
+% Induction equation
+% Dynamo problem.
+% Large-scale and small-scale dynamos.
+
+
+\section{Convection}
+%
+%
+\frame{
+\frametitle{Radiative Transfer Equation}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\item Now, it makes sense that the absorption and emission properties of the medium depend on two things:
+\item Amount of matter capable of absorbing/emitting
+\item The inherent properties of the matter at the given temperature ($T$ is very important!)
+\item So we define: 
+\begin{align}
+\kappa_\nu = \chi_\nu / \rho \\
+j_\nu = \eta_\nu / \rho
+\end{align}
+\item So our equation becomes: 
+\begin{equation}
+\rho \frac{dI_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu
+\end{equation}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/rte.jpg}
+%\caption*{Solar supergranulation from SOHO MDI.}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Few remarks}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\begin{equation}
+\frac{1}{\rho} \frac{dI_\nu}{ds} = -\kappa_\nu I_\nu + j_\nu
+\end{equation}
+\item This equation does not involve any new physical laws, it is basically a Boltzmann transport equation. It is a mathematical tool. 
+\item $ds$ is a so-called ``ray'', its relationship to $dx, dy, dz$ will depend on the geometry we choose and the context. 
+\item We will assume that coefficients of absorption and emission are isotropic, but that they do depend on the frequency / wavelength. 
+\item \textbf{However - the amount of absorbed intensity is not isotropic as it depends on the intensity itself}.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/rte.jpg}
+%\caption*{Solar supergranulation from SOHO MDI.}
+\end{figure}
+\end{minipage}
+}
+
+\frame{
+\frametitle{Optical depth and Source function}
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}
+\item As we like dimensionless quantities, we often do the following: 
+\begin{equation}
+\frac{dI_\nu}{-\rho \kappa_nu ds} = I_\nu - j_\nu / \kappa_\nu
+\end{equation}
+\item And we get: 
+\begin{equation}
+\frac{dI_\nu}{-\rho \kappa_nu ds} = I_\nu - j_\nu / (\rho \kappa_\nu)
+\end{equation}
+
+\begin{align}
+\kappa_\nu = \chi_\nu / \rho \\
+j_\nu = \eta_\nu / \rho
+\end{align}
+\item So our equation becomes: 
+\begin{equation}
+\rho \frac{dI_\nu}{d\tau_\nu} = I_\nu - S_\nu
+\end{equation}
+\item A lot of interesting solutions will involve exponents of $\tau_\nu$ - nice that $\tau$ is exponential!
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{figure}
+\includegraphics[width=6cm]{figures/rte.jpg}
+%\caption*{Solar supergranulation from SOHO MDI.}
+\end{figure}
+\end{minipage}
+}
+
+\end{document}
+
+
+

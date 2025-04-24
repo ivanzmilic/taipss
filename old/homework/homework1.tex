@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+% Usual packages
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Theoretical Astrophysics: Physics of Sun and Stars\\
+Homework 1}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+\textbf{Deadline for this homework is 14/05 23:59}
+
+
+
+{\bf Problem 1:} Following the exercise we did at the introductory hands-on, where we created our own Herzschprung-Russel (HR) diagram, calculate the radii of the stars in the database, assuming a star is radiating like blackbodies of the temperature equal to the effective temperature of the star. The file and the meaning of its contents can be found in the hands-on notebook.
+
+For this you will have to: 
+\begin{enumerate}
+  \item Transform the absolute magnitude of the star to its luminosity. For that you can use: 
+  \begin{equation}
+  M - M_{\odot} = 2.5\log\frac{L_{\odot}}{L}
+  \end{equation}
+
+  \item Transform the stars \emph{color index} into the temperature. For this, wikipedia as an excellent article that we suggest having a look at \href{https://en.wikipedia.org/wiki/Color_index}{here}.
+
+\end{enumerate}
+
+{\bf Problem 2:} For a gas in hydrostatic equilibrium with a constant mean molecular mass and mean temperature, in a constant gravitational field, show that the pressure falls off exponentially with height: 
+\begin{equation}
+p = p_0 e^{-z/H}
+\end{equation}
+where $H$ is the so-called scale height. Find the expression for the scale height and calculate its value for the Earth's atmosphere and the solar atmosphere (for the moment, assume the Sun is composed of pure neutral hydrogen atoms).
+
+{\bf Problem 3:} Stefan-Boltzmann law describes the emergent flux from a blackbody. That is, total energy per unit surface in unit time, emitted into the $2\pi$ solid angle (full sphere is $4\pi$ but we are only looking at the outgoing half).
+
+Planck law describes the intensity of radiation in a blackbody, intensity is defined as: 
+
+\begin{equation}
+I_\lambda = \frac{dE}{dt dS d\Omega d\lambda \cos \theta}
+\end{equation}
+where $\Omega$ is the solid angle $d\Omega = \sin \theta d\theta d\phi$, and $\theta$ and $\phi$ describe the direction of propagation of radiation. For Planck's law:
+\begin{equation}
+I_\lambda = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k T} - 1}.
+\end{equation}
+
+Using the Planck's law, derive Stefan-Boltzmann law:
+
+\begin{equation}
+F = \frac{dE}{dt dS} = \sigma T^4
+\end{equation}
+
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+  \item $h=6.626 \times 10^{-34}$~J~s.
+  \item $k=1.38 \times 10^{-23}$~J/K.
+\end{itemize}
+\end{document}

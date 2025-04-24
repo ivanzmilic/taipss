@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+% Usual packages
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{colortbl}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\Fconv}{F_{\rm conv}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Theoretical Astrophysics: Physics of Sun and Stars\\
+Homework 4}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+\textbf{Deadline for this homework is \textbf{28}/07 23:59}
+
+{\bf Problem 1:} Following the numerical exercise that we did on the
+handson number 9, related to stellar atmospheres, calculate the
+emergent flux from a given atmospheric model. You can assume that the
+optical depth given in the atmospheric model is representative of the
+average optical depth over all wavelengths (so-called gray
+atmosphere). This means that you do not have to worry about wavelengt
+dependence of opacity and thus optical depth.
+
+For the same atmosphere, check whether the flux is constant with
+height/depth, and what is the ratio of the K-integral and the mean
+intensity with depth.
+
+For this you will need to solve radiative transfer equation
+numerically in different directions (you specify a grid of directions)
+and to integrate, numerically, intensity over the angle.
+
+{\bf Problem 2:} For a gas of given pressure and temperature, assuming
+it only consists of hydrogen in neutral and ionized state, find the
+electron density (you will need Saha equation for this, follow
+exercise 8).
+
+Assuming that the number density of negative ion of Hydrogen is
+much smaller than the number densities of neutral hydrogen and protons, use Saha
+equation to estimate the number density of negative ions of hydrogen. By ``much smaller'' we mean that consideration of negative hydrogen ion, does not ``spoil'' the solution of the previous part. 
+
+Now, using Boltzmann equation, estimate the number density of neutral
+Hydrogen in state $i=3$ of neutral Hydrogen. Recall that the energy of
+the hydrogen states scales like:
+\begin{equation}
+E_i = \frac{-E_{ion}}{i^2}
+\end{equation}
+where $i$ is the principal quantum number, $E_i$ is the energy of the
+level (negative, because we need to add the energy to break up the
+bound state), and $E_{\rm ion}$ is the ionization energy of Hydrogen,
+which is equal to 13.6\,eV. Ioniozation energy of the negative ion of
+Hydrogen is 0.75\,eV.
+
+Finally, compare the number densities of neutral hydrogen in state
+$i=3$ and the negative ion of hydrogen in the model atmosphere you
+used in the problem 1. For this problem you will need temperature
+(third column) and total gas pressure (fourth column). Keep in mind
+the model is given in CGS units! :-)
+
+{\bf Problem 3:} Compute the speed of sound using the formula derived
+on lecture 11 in the solar photosphere and at the base of the solar
+convection zone. Hint: make use of tabulated values on lecture
+4. Compute the Mach number
+\begin{equation}
+  {\rm Ma} = \frac{u}{c_{\rm s}},
+\end{equation}
+where $u$ is a typical flow velocity for the same cases. Use $u =
+2$~km~s$^{-1}$ in the photosphere and $u=10$~m~s$^{-1}$ at the base of
+the convection zone and where $c_{\rm c}$ is the sound speed. Assume
+that the gas obeys the ideal gas law.
+
+Do the same analysis for the Earth's atmosphere at sea level. What is
+the Mach number in a hurricane with winds $300$~km~h$^{-1}$?
+
+
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+  \item $h=6.626 \times 10^{-34}$~J~s.
+  \item $k=1.38 \times 10^{-23}$~J/K.
+\end{itemize}
+\end{document}

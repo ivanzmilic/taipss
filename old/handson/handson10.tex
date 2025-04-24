@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\pd{\partial}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Hands-on exercises 10: Mixed problems from stellar and solar physics}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+{\bf Problem 1:} Add gravity to the system that was used to
+demonstrate sound waves on the lectures and derive the equations
+governing internal gravity waves or g modes.
+
+{\bf Problem 2:} Estimate the number density of electrons in the
+corona assuming that the brigthness of the corona is $10^{-6}$ smaller
+than the solar disk and that the corona emits light by scattering
+photospheric photons via Thomson scattering, where effective
+cross-section is $6.65\times10^{-29} {\rm m}^2$.
+
+{\bf Problem 3:} Estimate the equipartition magnetic field in the
+solar photosphere, that is the field for which magnetic pressure is
+equal to the gas pressure. Typical gas pressure in the solar
+atmosphere is of the order of 0.01 bar. How do these pressures compare
+to radiation pressure?
+
+%\newpage
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm e} = 9.11\cdot10^{-31}$~kg
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}
