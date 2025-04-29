@@ -6,7 +6,7 @@
 
 ### Lecturers: Petri Käpylä, Ivan Milic (Institute for Solar Physics - KIS, Freiburg)
 
-### University of Freiburg, Summer Semester 2024
+### University of Freiburg, Summer Semester 2025
 
 This course will cover the physical concepts of stellar structure - going from the core where the energy is generated, to the outermost layers (atmospheres) where that same energy is being radiated away and ultimately captured by our telescopes. We will also study the Sun, as a special case of star that can be observed with a very high spatial and temporal resolution and thus help us understand how stars in general function. 
 
