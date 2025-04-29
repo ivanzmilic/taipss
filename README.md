@@ -1,4 +1,4 @@
-## Theoretical Astrophysics I: Physics of Sun and stars
+## Theoretical Astrophysics I: Solar Structure and Evolution
 
 ### New: Recording of our Lecture 10 is here: https://youtu.be/kaVqsGRmX7c
 
