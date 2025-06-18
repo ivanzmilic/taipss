@@ -94,23 +94,19 @@ Homework 2}
 
 \textbf{Deadline for this homework is \textbf{01/07 23:59}}
 
-{\bf Problem 1:} The solar luminosity is $L_\odot = 3.83\cdot
-10^{26}$~W. Assume that all of the energy for this luminosity is
-provided by the ${\rm p-p\,1}$ chain, and that neutrinos carry off 3\% of the
-energy. How many neutrinos are produced per second? What is the
-neutrino flux (i.e.\ the number of neutrinos per second per cm$^2$) at
-Earth?
-
-The ${\rm p-p\,1}$ chain is comprised of the reactions:
-\begin{eqnarray}
-  p + p &\rightarrow& ^2{\rm D} + e^+ + \nu,\ (1.18~{\rm MeV})\nonumber \\
-  ^2{\rm D} + p &\rightarrow& ^3{\rm He} + \gamma,\ \ \ \ \ \ (5.49~{\rm MeV}) \nonumber \\
-  ^3{\rm He} + ^3{\rm He} &\rightarrow& ^4{\rm He} + 2p.\ \ \ \ \ (12.86~{\rm MeV})
-\end{eqnarray}
-where the first two reactions need to happen twice for the last
-reaction to occur, and where $\nu$ signifies an emitted
-neutrino. Energy released (in MeV = $10^6$~eV) is given in brackets
-after each reaction.
+{\bf Problem 1:} Use the Navier-Stokes equation
+\begin{equation}
+\rho\frac{\partial {\bm u}}{\partial t} = - \rho{\bm u}\bm\cdot\nabla{\bm u} - \rho {\bm g} + \bm\nabla p + {\bm F}_{\rm visc},
+\end{equation}
+and the definition of the convective enthalpy flux (unit W/m$^2$)
+\begin{equation}
+F_{\rm conv} = c_p \rho u T',
+\end{equation}
+to estimate the convective velocity and temperature fluctuations at
+the middle of the convection zone of the Sun ($r=0.85R_\odot$). Hint:
+assume a hydrostatic stationary state, use the tabulated mixing length
+model from previous lecture and $c_p =
+2.07\cdot10^4$~J~K$^{-1}$~kg$^{-1}$.
 
 
 {\bf Problem 2:} 
