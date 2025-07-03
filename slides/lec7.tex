@@ -190,10 +190,9 @@ So, now we have closed the system of equations, and we can go to town! :-)
 
 The ensuing models are called \textbf{polytropes}, and can be solved analytically only in a handful of cases (for specific $n$'s) - as you have seen in your homework.
 }
-
+%
 \frame{
 \frametitle{Sketching the solution}
-\q{What would I need to close the system?} 
 
 \begin{align} 
 	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
@@ -214,6 +213,287 @@ Multiply first equation by $\frac{r^2}{\rho}$, differentiate with respect to $dr
 \end{equation}
 And good old: $P = K \rho^\gamma$
 }
+%
+\frame{
+\frametitle{Sketching the solution}
+Now, $\rho$ is the only unknown!
+
+\begin{align} 
+	\frac{(n+1)K}{4\pi G n} \frac{1}{r^2} \frac{d}{dr} (\frac{r^2}{\rho^{(n-1)/n}}\frac{d\rho}{dr}) = -\rho
+\end{align}
+
+We have a second order differential equation, with only one unknown (need two boundary conditions)!
+
+\q{This is where the problem lies, discuss!}
+}
+%
+\frame{
+\frametitle{Sketching the solution}
+Now, $\rho$ is the only unknown!
+
+\begin{align} 
+	\frac{(n+1)K}{4\pi G n} \frac{1}{r^2} \frac{d}{dr} (\frac{r^2}{\rho^{(n-1)/n}}\frac{d\rho}{dr}) = -\rho \nonumber
+\end{align}
+
+We have a second order differential equation, with only one unknown (need two boundary conditions)!
+
+This is a two-point boundary problem, these often arise in stellar physics. Namely, we have two different boundary conditions at two different points. 
+
+For example: $(\frac{d\rho}{dr})_{r=0} = 0$ and $(\rho)_{r=R} = 0$.
+
+This gives rise to additional complications. But today we will not actually work on the solution.
+}
+
+%
+\frame{
+\frametitle{Sketching the solution}
+
+\begin{align} 
+	\frac{(n+1)K}{4\pi G n} \frac{1}{r^2} \frac{d}{dr} (\frac{r^2}{\rho^{(n-1)/n}}\frac{d\rho}{dr}) = -\rho \nonumber
+\end{align}
+
+We have a second order differential equation, with only one unknown (need two boundary conditions)!
+
+The complete solution is determined by $K,n, R$ ($R$ is not ideal, but we can ``tune'' it so that $R$ reproduces desired mass). Once we solve the problem we can calculate everything from $\rho$. Even the equations that we did not start from (e.g. Flux).
+
+}
+%
+\frame{
+\frametitle{Sketching the solution}
+
+Additional steps in the solution are, we define $\theta$, which serves as a scaling factor:
+\begin{equation}
+\rho = \rho_c \theta^n
+\end{equation}
+and
+\begin{equation}
+\left [ \frac{(n+1)K}{4\pi G \rho_c^{(n-1)/n}} \right ] = \alpha ^2
+\end{equation}
+which defines: 
+\begin{equation}
+r = \alpha \xi
+\end{equation}
+And leads to the \textbf{Lane - Emden equation of index $n$}:
+\begin{equation}
+\frac{1}{\xi^2} \frac{d}{d\xi} (\xi^2 \frac{d\theta}{d \xi}) = -\theta ^ n
+\end{equation}
+With boundaries: $\theta =1$, $\frac{d\theta}{d\xi} =0$ at $\xi=0$. 
+
+
+}
+%
+\frame{
+\frametitle{Lane - Emden equation}
+
+\begin{minipage}{0.48\linewidth}
+\textbf{Lane - Emden equation of index $n$}:
+\begin{equation}
+\frac{1}{\xi^2} \frac{d}{d\xi} (\xi^2 \frac{d\theta}{d \xi}) = -\theta ^ n
+\end{equation}
+With boundaries: $\theta =1$, $\frac{d\theta}{d\xi} =0$ at $\xi=0$. 
+
+Now, we can integrate numerically from the center outwards. Solutions with $n<5$ decrease monotonically and have zero at a finite $\xi$ (not guaranteed), which then defines the stellar radius.
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=7.2cm]{../figures/le_solutions.png}
+\caption*{Credits: Sanchez Almeida et al 2020}
+\end{figure}
+\end{minipage}
+}
+%
+\frame{
+\frametitle{Mass-Radius relationship}
+
+After solving for given $n$, we can integrate what we need to find the total mass radius, etc. 
+
+Important ensuing relationship is:
+\begin{equation}
+\frac{GM}{M_n}^{n-1} \frac{R}{R_n}^{3-n} = \frac{[(n+1) K]^n}{4\pi G}
+\end{equation}
+Where $R_n$ and $M_n$ are constants for given $n$ (see table 5.1 in the book).
+
+Two special cases $n=3$ and $n=1$. 
+
+\q{Why? Discuss!}
+}
+%
+\frame{
+\frametitle{Mass-Radius relationship}
+
+\begin{equation}
+\frac{GM}{M_n}^{n-1} \frac{R}{R_n}^{3-n} = \frac{[(n+1) K]^n}{4\pi G}
+\end{equation}
+
+Two special cases $n=3$ and $n=1$. 
+
+For $n=3$ mass is independent of radius of the star and only depends on K. 
+
+For $n=1$ radius is independent of mass of the star and only depends on K. 
+
+But in between, we have the following:
+\begin{equation}
+R^{3-n} \propto \frac{1}{M^{n-1}}
+\end{equation}
+
+Both exponents are positive, so more massive stars are smaller!
+
+They also then have higher central pressures, burn faster, and eventually live shorter (need some imagination, but it's true).
+}
+%
+\frame{
+\frametitle{Pressure - density relationship in the center}
+
+For completeness (look at the book for details).
+
+If we now express $K$ through $M$ and $R$, and ``compress' some constants, we can get:
+\begin{equation}
+P_c = {\rm const} B_n M^{2/3} \rho_c^{4/3}
+\end{equation}
+$B_n$ itself turns out to vary slowly with $n$, so the relationship is almost universal. We will use it soon to discuss the stellar evolution. 
+}
+%
+\section{Chandrasekhar limit}
+\frame{
+\frametitle{Degenerate gas}
+
+Polytropes with $n=1.5$ do exist. These are the stars supported by degenerate pressure of electrons. So called white dwarves. They are extremely dense: $10^5 \times$ solar density.
+
+For $n=1.5$, we get:
+\begin{equation}
+R \propto M^{-1/3}
+\end{equation}
+implying:
+\begin{equation}
+\overline{\rho} \propto M^2
+\end{equation}
+Meaning that some average density of the star increases quadratically with mass. 
+
+This compression eventually causes the gas to become \emph{relativistic}, and the polytrope to shift to $n=3$.
+}
+\frame{
+\frametitle{Relativistic degenerate gas}
+
+This compression eventually causes the gas to become \emph{relativistic}, and the polytrope to shift to $n=3$.
+
+But for $n=3$ we have had, according to:
+
+\begin{equation}
+\frac{GM}{M_n}^{n-1} \frac{R}{R_n}^{3-n} = \frac{[(n+1) K]^n}{4\pi G}
+\end{equation}
+
+$M$ has only one value, independent of $R$. 
+
+The interpretation for this is tricky.
+
+We can say that there is an upper limit for the mass at which the gas can reach $n=3$. Smaller masses do not reach exactly $n=3$, but higher masses are \emph{impossible}.
+
+\q{Are they really impossible?}
+}
+%
+\frame{
+\frametitle{Relativistic degenerate gas}
+
+This compression eventually causes the gas to become \emph{relativistic}, and the polytrope to shift to $n=3$.
+
+But for $n=3$ we have had, according to:
+
+\begin{equation}
+\frac{GM}{M_n}^{n-1} \frac{R}{R_n}^{3-n} = \frac{[(n+1) K]^n}{4\pi G}
+\end{equation}
+
+$M$ has only one value, independent of $R$. 
+
+The interpretation for this is tricky.
+
+We can say that there is an upper limit for the mass at which the gas can reach $n=3$. Smaller masses do not reach exactly $n=3$, but higher masses are \emph{impossible}.
+
+\textbf{Not quite - they are impossible for the assumed equation of state. More dense structures exist, these are named neutron stars.}
+}
+%
+\frame{
+\frametitle{Chandraksehar}
+
+\begin{minipage}{0.48\linewidth}
+Subrahmanyan Chandrasekhar (1910 - 1985), was Indian-American astrophysicist, one of the fathers of this theory and a nobel laureate (shared with Fowler).
+
+He did the derivation above (more or less), and finally concluded that the limiting mass is, in physical units:
+\begin{equation}
+M_{\rm Ch} = 5.83 \mu_e^{-2} M_{\odot}
+\end{equation}
+Now for a star consisting of He, C, O, purely ionized $\mu_e = 2$, and limiting mass is 1.46 solar masses. 
+
+For iron, $\mu_e = 2.15$, and the mass is 1.26 solar masses. 
+
+\q{Discuss a bit the values of $\mu$ and these masses. How can we verify Chandrasekhar's finding?}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5.5cm]{../figures/chandrabook.jpg}
+%\caption*{Credits: Sanchez Almeida et al 2020}
+\end{figure}
+\end{minipage}
+}
+\section{Standard model}
+%
+\frame{
+\frametitle{Including radiative energy transport}
+
+In the starting days of stellar structure theory, it was commonly assumed that transport is purely radiative. It was hard to model convection, even with mixing-length theory. We will now include radiative transport in our modeling:
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	q &= q_0 \rho^m T^n \nonumber
+\end{align}
+}
+%
+\frame{
+\frametitle{Including radiative energy transport}
+
+We will now include radiative transport in our modeling:
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	%\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	%\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	%P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	%\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	%q &= q_0 \rho^m T^n \nonumber
+	P_{\rm rad} &= \frac{1}{3} a T^4
+\end{align}
+leads to: 
+\begin{equation}
+\frac{dP_{\rm rad}}{dP} = \frac{\kappa F}{4 \pi c G m}
+\end{equation}
+}
+As radiation pressure cannot be larger than the total pressure - it means there is a limit to the radiative flux of the star!
+%
+\frame{
+\frametitle{Eddington Luminosity}
+
+ \begin{equation}
+\frac{dP_{\rm rad}}{dP} = \frac{\kappa F}{4 \pi c G m}
+\end{equation}
+}
+As radiation pressure cannot be larger than the total pressure - it means there is a limit to the radiative flux of the star, that is:
+\begin{equation}
+k F < 4 \pi c G m
+\end{equation}
+Or at the surface: 
+\begin{equation}
+L < \frac{4 \pi c G M}{\kappa}
+\end{equation}
+which leads to definition of so called Eddington luminosity:
+\begin{equation}
+L_{\rm Edd} = 3.2 \times 10^4 \frac{M}{M_{\odot}} (\frac{\kappa_{es}}{\kappa}) L_{\odot}
+\end{equation}
+\textbf{Important:} As there is another connection between $L$ and $M$, this puts a limit on the maximum ass of the star. It is indeed the case. Very massive stars can exist, but live shortly and lose \textbf{a lot} of mass through stellar wind.
 
 \end{document}
 
