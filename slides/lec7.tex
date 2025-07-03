@@ -1,0 +1,170 @@
+\documentclass[aspectratio=169]{beamer}
+\geometry{paperwidth=160mm,paperheight=100mm}
+\usepackage{beamerthemesidebar}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{multimedia}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{caption}
+
+\setbeamersize{sidebar width right=0pt}
+\setbeamertemplate{footline}[frame number]
+%
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\q}[1]{\textcolor{blue}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\definecolor{burlywood}{RGB}{255,211,155}
+\definecolor{chocolate}{RGB}{255,127,36}
+\definecolor{tan}{RGB}{210,180,140}
+%
+%
+\title{Theoretical Astrophysics I: Stellar Structure and Evolution\\
+Lecture 7: Simple models of stellar structure}
+\author{\texorpdfstring{\sepia{Petri K\"{a}pyl\"{a}, Ivan Mili\'{c}}\newline\blue{\url{pkapyla, milic@leibniz-kis.de}}}{}}
+\institute{Institut f\"ur Sonnenphysik - KIS, Freiburg}
+\date{\today}
+%
+\begin{document}
+\frame{\titlepage}
+
+\section{Intro}
+
+\frame{
+	\frametitle{Recap}
+	\begin{itemize}
+		\item Now, we understand the main processes that govern stellar structure \emph{(not yet evolution!)}.
+		\item To recap our main assumptions: 
+		\item Stars are in hydrostatic equilibrium. 
+		\item Energy is transported either by radiation or convection
+		\item Hopefully we understand equation of state (connection between $T, \rho, P$)
+		\item Hopefully we can calculate the opacity from there
+		\item And hopefully we can calculate the rate of energy production.
+	\end{itemize}
+}
+
+\frame{
+\frametitle{Equations of stellar structure}
+Here they are,  written in terms of $r$ as independent variable:
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \\
+	\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \\
+	\frac{dF}{dr} &= 4\pi r^2 \rho q \\
+	P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \\
+	\kappa &= \kappa_0 \rho^a T^b \\
+	q &= q_0 \rho^m T^n 
+\end{align}
+}
+%
+\frame{
+\frametitle{Equations of stellar structure}
+Count the unknowns, count the equations, is the system, in principle, solvable? 
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	q &= q_0 \rho^m T^n \nonumber
+\end{align}
+}
+%
+\frame{
+\frametitle{Equations of stellar structure}
+Four of these equations are differential equations. Three are algebraic. Differential equations are of the first order, so each one needs one boundary condition. 
+These are, generally speaking. 
+\begin{itemize} 
+	\item At $r=0$ (center), $m=0$, $F=0$. 
+	\item At $m=M$, $P=0$ and $F=L$.
+\end{itemize}
+It turns out that two physical parameters that govern the structure a so-called ZAMS (zero age main sequence star) star are the \textbf{total mass} and \textbf{chemical composition}. More about that in the next class.
+
+\q{Can someone tell me why we could not say at $r=R$, $m=M$ and $P=0$ and be done with it?}
+}
+%
+\frame{
+\frametitle{Equations of stellar structure}
+Four of these equations are differential equations. Three are algebraic. Differential equations are of the first order, so each one needs one boundary condition. 
+These are, generally speaking. 
+\begin{itemize} 
+	\item At $r=0$ (center), $m=0$, $F=0$. 
+	\item At $m=M$, $P=0$ and $F=L$.
+\end{itemize}
+It turns out that two physical parameters that govern the structure a so-called ZAMS (zero age main sequence star) star are the \textbf{total mass} and \textbf{chemical composition}. More about that in the next class.
+
+\q{Can someone tell me why we could not say at $r=R$, $m=M$ and $P=0$ and be done with it?}
+Because we do not know what $R$ is? When solving the equations of stellar structure, we don't know in advance how big the star will be!!!
+}
+%
+\frame{
+\frametitle{Some simple assumptions that can be made}
+To ease our job, some simple things can, generally be assumed
+\begin{itemize} 
+	\item Constant $\mu$, either for ZAMS or completely evolved stars. 
+	\item When $q=$, $F$ is constant. 
+	\item $P$ and $\rho$ and $T$ can all be safely assumed to monotoneously decrease with $r$ ($m$).
+	\item It is super helpful if we can find combinations of quantities that stay approximately constant over the stellar radius. 
+\end{itemize}
+Now - be mindful that the situation can be even more dire - as the opacity and nuclear rate production can be very complicated and no analytical solution is possible.
+
+\textbf{In modeling, in general, we solve everything by numerics.}
+}
+%
+\frame{
+\frametitle{Our end goal}
+\begin{minipage}{0.48\linewidth}
+\begin{itemize}
+\item Ideally, if we manage to calculate the stelar model, and repeat the calculation for the stellar 
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\begin{figure}
+\includegraphics[width=5.2cm]{../figures/hr_simple.jpg}
+\caption*{Credits: the Open University}
+\end{figure}
+\end{minipage}
+}
+%
+
+\section{Polytropic models}
+
+\frame{
+\frametitle{Some simple assumptions that can be made}
+To ease our job, some simple things can, generally be assumed
+\begin{itemize} 
+	\item Constant $\mu$, either for ZAMS or completely evolved stars. 
+	\item When $q=$, $F$ is constant. 
+	\item $P$ and $\rho$ and $T$ can all be safely assumed to monotoneously decrease with $r$ ($m$).
+	\item It is super helpful if we can find combinations of quantities that stay approximately constant over the stellar radius. 
+\end{itemize}
+Now - be mindful that the situation can be even more dire - as the opacity and nuclear rate production can be very complicated and no analytical solution is possible.
+
+\textbf{In modeling, in general, we solve everything by numerics.}
+}
+
+\end{document}
+
+
+
