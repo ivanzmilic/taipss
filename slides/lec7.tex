@@ -471,8 +471,8 @@ leads to:
 \begin{equation}
 \frac{dP_{\rm rad}}{dP} = \frac{\kappa F}{4 \pi c G m}
 \end{equation}
-}
 As radiation pressure cannot be larger than the total pressure - it means there is a limit to the radiative flux of the star!
+}
 %
 \frame{
 \frametitle{Eddington Luminosity}
@@ -494,6 +494,100 @@ which leads to definition of so called Eddington luminosity:
 L_{\rm Edd} = 3.2 \times 10^4 \frac{M}{M_{\odot}} (\frac{\kappa_{es}}{\kappa}) L_{\odot}
 \end{equation}
 \textbf{Important:} As there is another connection between $L$ and $M$, this puts a limit on the maximum ass of the star. It is indeed the case. Very massive stars can exist, but live shortly and lose \textbf{a lot} of mass through stellar wind.
+
+%
+\frame{
+\frametitle{Standard model}
+
+Standard (or Eddington) model, assumes the energy transport via radiation, and identifies a quantity that is assumed to vary slowly with radius. First we define a function $\eta (r)$ as: 
+\begin{equation}
+\frac{F(r)}{m(r)} = \eta(r) \frac{L}{M}
+\end{equation}
+Then we recall the relationship between radiation pressure and total pressure and cast it using $\eta$:
+\begin{equation}
+\frac{dP_{\rm rad}}{dP} = \frac{L}{4 \pi c G M} \kappa \eta
+\end{equation}
+Then we make a bold argument! $\eta = 1$ at the surface and increases inward. $\kappa$ is largest at the surface (recall plots of opacity from the last class) and decreases inwards. \textbf{Eddington assumed $\kappa \eta = {\rm const}$.}
+}
+%
+\frame{
+\frametitle{Standard model}
+
+\begin{equation}
+\frac{dP_{\rm rad}}{dP} = \frac{L}{4 \pi c G M} \kappa \eta
+\end{equation}
+\textbf{Eddington assumed $\kappa \eta = {\rm const}$.}
+Integration of the above equation from the center to the surface leads to:
+\begin{equation}
+P_{\rm rad} = \frac{\kappa_s L}{4 \pi c G M} P.
+\end{equation}
+Let's recall the definition of the parameter $\beta$:
+$P_{\rm rad} = (1-\beta) P.$
+
+Here $\beta = 0$ for radiation dominated pressure and $\beta=1$ for gas dominated pressure.
+Now, assumption of a constant $\beta$ allows us to cast everything in terms of radiation pressure \emph{even though the star is not dominated by the radiation pressure!}.
+}
+%
+\frame{
+\frametitle{Standard model}
+
+Now we assume ideal gas and get:
+\begin{equation}
+\frac{\mathcal R}{\beta \mu} \rho T = \frac{aT^4}{3(1-\beta)}
+\end{equation}
+which gives us relationship between $T$ and $\rho$:
+\begin{equation}
+T = \left [ \frac{3 {\mathcal R} (1-\beta)}{a \mu \beta} \right ] \rho^{1/3}
+\end{equation}
+which immediately leads to:
+\begin{equation}
+P = K \rho^{4/3}
+\end{equation}
+where K depends on physical constants, $\mu$ and $\beta$. Here we go, another polytrope with $n=3$!!!
+
+}
+%
+\frame{
+\frametitle{Standard model}
+
+Recall that in this case the mass is constant and uniquely determined by $K$:
+\begin{equation}
+M = 4\pi M_3 (\frac{K}{\pi G})^{3/2}
+\end{equation}
+Which means the mass depends on $\beta$, which in turn depends on luminosity of the star relative to Eddington luminosity. We have reached somehow the \textbf{mass - luminosity relationship!}
+
+But before, we will reach the famous \emph{Eddintgon quartic equation}:
+\begin{equation}
+1-\beta = 0.003 (\frac{M}{M_{\odot}})^2 \mu ^2 \beta^4.
+\end{equation}
+It turns out that the stars exist in the regime where $\beta$ is somewhere between $0$ and $1$.
+\q{Let's read Eddington's statement from the book}.
+}
+%
+\frame{
+\frametitle{Mass-Luminosity Relationship}
+
+Finally, substituting the $1-\beta$ we just found into: 
+\begin{equation}
+L = \frac{4\pi c G M}{\kappa_s} (1-\beta)
+\end{equation}
+we get the classic \textbf{mass - luminosity relationship:}
+\begin{equation}
+\frac{L}{L_{\odot}} = \frac{4\pi c G M_{\odot}}{\kappa_s L_{\odot}} 0.003 \mu^4 \beta (M,\mu)^4 (\frac{M}{M_{\odot}})^3
+\end{equation}
+which shows that the luminosity scales as mass to the power of three, plus some scaling due to the $\beta$.
+
+}
+%
+\frame{
+\frametitle{Mass-Luminosity Relationship}
+
+\begin{figure}
+\includegraphics[width=9.2cm]{../figures/evoltracks.jpg}
+%\caption*{Credits: the Open University}
+\end{figure}
+
+}
 
 \end{document}
 
