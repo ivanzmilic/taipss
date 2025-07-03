@@ -114,11 +114,12 @@ These are, generally speaking.
 It turns out that two physical parameters that govern the structure a so-called ZAMS (zero age main sequence star) star are the \textbf{total mass} and \textbf{chemical composition}. More about that in the next class.
 
 \q{Can someone tell me why we could not say at $r=R$, $m=M$ and $P=0$ and be done with it?}
-Because we do not know what $R$ is? When solving the equations of stellar structure, we don't know in advance how big the star will be!!!
+
+Because we do not know what $R$ is. When solving the equations of stellar structure, we don't know in advance how big the star will be!
 }
 %
 \frame{
-\frametitle{Some simple assumptions that can be made}
+\frametitle{General assumptions}
 To ease our job, some simple things can, generally be assumed
 \begin{itemize} 
 	\item Constant $\mu$, either for ZAMS or completely evolved stars. 
@@ -135,7 +136,9 @@ Now - be mindful that the situation can be even more dire - as the opacity and n
 \frametitle{Our end goal}
 \begin{minipage}{0.48\linewidth}
 \begin{itemize}
-\item Ideally, if we manage to calculate the stelar model, and repeat the calculation for the stellar 
+\item Ideally, if we manage to calculate the stelar model, and repeat the calculation for the models of different mass and luminosity, we should get something like HR diagram. 
+\item It should also give us some very basic insights into the stellar evolution, even if we do not numerically \emph{evolve} the star.
+\item Remember once again, that equations of stellar structure, in a way, tell us what kinds of stars are permitted to exist by physical laws! 
 \end{itemize}
 \end{minipage}
 \hfill
@@ -151,17 +154,65 @@ Now - be mindful that the situation can be even more dire - as the opacity and n
 \section{Polytropic models}
 
 \frame{
-\frametitle{Some simple assumptions that can be made}
-To ease our job, some simple things can, generally be assumed
-\begin{itemize} 
-	\item Constant $\mu$, either for ZAMS or completely evolved stars. 
-	\item When $q=$, $F$ is constant. 
-	\item $P$ and $\rho$ and $T$ can all be safely assumed to monotoneously decrease with $r$ ($m$).
-	\item It is super helpful if we can find combinations of quantities that stay approximately constant over the stellar radius. 
-\end{itemize}
-Now - be mindful that the situation can be even more dire - as the opacity and nuclear rate production can be very complicated and no analytical solution is possible.
+\frametitle{Further simplifications}
+These equations were written more than 100 years ago. Back then we could not calculate anything numerically (well, almost anything). Now, let's look at the differential equations again:
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	%P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	%\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	%q &= q_0 \rho^m T^n \nonumber
+\end{align}
+First two equations only involve $m,P,\rho$.
+\q{What would I need to close the system?} 
+}
 
-\textbf{In modeling, in general, we solve everything by numerics.}
+\frame{
+\frametitle{Further simplifications}
+\q{What would I need to close the system?} 
+
+Equation of state! But such an equation of state, where $T$ does not appear, that is where $P$ depends only on $\rho$ ($\mu$ can also appear as it is a given constant, but discuss this for a sec).
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	%\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	%\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	%P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	%\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	%q &= q_0 \rho^m T^n \nonumber
+	P &= K \rho^\gamma
+\end{align}
+Where we typically define $n$ as $\gamma = 1+1/n$.
+
+So, now we have closed the system of equations, and we can go to town! :-)
+
+The ensuing models are called \textbf{polytropes}, and can be solved analytically only in a handful of cases (for specific $n$'s) - as you have seen in your homework.
+}
+
+\frame{
+\frametitle{Sketching the solution}
+\q{What would I need to close the system?} 
+
+\begin{align} 
+	\frac{dP}{dr} &= -\rho \frac{Gm}{r^2} \nonumber\\
+	\frac{dm}{dr} &= 4\pi r^2 \rho \nonumber \\
+	%\frac{dT}{dr} &= -\frac{3}{4ac}\frac{\kappa \rho}{T^3} \frac{F}{4\pi r^2} \nonumber \\
+	%\frac{dF}{dr} &= 4\pi r^2 \rho q \nonumber \\
+	%P &= \frac{{\mathcal R}}{\mu_I} \rho T + P_e + \frac{1}{3}a T^4 \nonumber \\
+	%\kappa &= \kappa_0 \rho^a T^b \nonumber \\
+	%q &= q_0 \rho^m T^n \nonumber
+	%P &= K \rho^\gamma
+\end{align}
+
+
+Multiply first equation by $\frac{r^2}{\rho}$, differentiate with respect to $dr$ and substitute into the equation two, you will get:
+
+\begin{equation}
+\frac{1}{r^2} \frac{d}{dr} (\frac{r^2}{\rho} \frac{dP}{dr}) = - 4 \pi G \rho
+\end{equation}
+And good old: $P = K \rho^\gamma$
 }
 
 \end{document}
