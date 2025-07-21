@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+\special{papersize=210mm,297mm}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
+
+% Usual packages
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotate}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{braket}
+\usepackage[shortcuts]{extdash}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhf{}
+%%%% colors
+\definecolor{orange}{RGB}{250,167,12}
+\definecolor{yellow}{RGB}{246,250,12}
+\definecolor{green}{RGB}{128,238,1}
+\definecolor{green2}{RGB}{0,250,154}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{burlywood1}{RGB}{255,211,155}
+\definecolor{chocolate1}{RGB}{255,127,36}
+\definecolor{sepia}{RGB}{94,38,18}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\sepia}[1]{\textcolor{sepia}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+%%%% mathematical definitions
+\DeclareMathOperator{\Tr}{Tr}
+\def\npab{\noindent \textbullet ~}
+\def\npa{\noindent}
+\def\npat{\noindent \textcolor{blue}{$\blacktriangleright$} ~}
+\def\npac{\noindent $\circledast$ ~}
+\def\nn{{\bf \nabla}}
+\def\df{{\rm d}}
+\def\cro{\times}
+\def\ip{i^{'}}
+\def\jp{j^{'}}
+\def\kp{k^{'}}
+\def\deg{$^{\circ}$}
+\def\rhoc{\textcolor{red}{\rho}}
+\def\uic{\textcolor{red}{u_i}}
+\def\ujc{\textcolor{red}{u_j}}
+\def\pgc{\textcolor{red}{P_{\rm g}}}
+\newcommand{\ve}[1]{{\rm\bf {#1}}}
+\newcommand{\Fconv}{F_{\rm conv}}
+\def\ez{\ve{e}_z}
+\def\ey{\ve{e}_y}
+\def\ex{\ve{e}_x}
+\def\ezero{\ve{e}_{0}}
+\def\eplu{\ve{e}_{+1}}
+\def\emin{\ve{e}_{-1}}
+\def\definition{:=^{\!\!\!\!\!\!\!\textrm{def}}}
+\newcommand{\bg}[1]{{\boldsymbol {#1}}}
+\newcommand*\tavg[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.5ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.1em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.1em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+\title{Theoretical Astrophysics: Stellar Structure and Evolution\\
+Homework 4}
+\author{P. K\"{a}pyl\"{a}, I. Mili\'{c}}
+\date{\today}
+%%%%
+\begin{document}
+\maketitle
+
+\textbf{Deadline for this homework is \textbf{14/08 23:59}}
+
+\emph{Important:} Please do not turn in jupyter notebook, but rather a textual report, in pdf format or similar.
+
+{\bf Problem 1:} Building on the hands-on 6\&7, conduct the following numerical calculations/experiments, to investigate 3D simulation of convection in more detail (\emph{Note:} some of these calculations were already covered in the lecture).
+
+  
+
+\begin{itemize}
+  \item Try to define the surface of the simulated atmosphere. Discuss the result. 
+
+  \item Assuming the atmosphere is composed of pure hydrogen (it is not, but for simplicity assume this), solve the equation of state for one fixed $x$ and $y$, and different $z$. That is, using Saha equation and results of hands-on 5, estimate the mass density from the values of temperature and pressure. Note that the pressure provided in the simulation is in CGS units!
+
+
+  \item Repeat this calculation for the whole atmosphere. \emph{Alternatively: choose a reasonable number of mean molecular mass to find mass density from the pressure and temperature without solving for equation of state expliclty}.
+
+  \item Calculate the kinetic energy flux density, and mean kinetic energy flux density (averaged over $x$ and $y$). Plot mean kinetic energy flux density as a function of $z$. Recall that kinetic energy flux density is: 
+
+  \begin{equation}
+  F_kin = \frac{\rho v^2}{2} v_z
+  \end{equation}
+
+  \item From the fluctuations of temperature and momentum density, calculate the entalphy flux density and mean enthalpy flux density
+
+  \begin{equation}
+  F_{ent} = (\rho v_z - <\rho v_z>_{x,y}) C_P (T-<T>_{x,y})
+  \end{equation}
+
+  Where for $C_P$ you can take the value 21 kJ / kg/ K.
+
+  \item Analyze the behavior of mean enthalpy flux density and mean kinetic flux density, as well as their sum , with height. What can you conclude? 
+
+\end{itemize}
+
+{\bf Useful physical constants}
+\begin{itemize}
+  \item $R_{\odot} = 696 \times 10^6\,{\rm m}$
+  \item $M_{\odot} = 1.989 \times 10^{30}\,{\rm kg}$
+  \item $L_{\odot} = 3.83 \times 10^{26}$~W
+  \item $T^{\rm eff}_{\odot} = 5777\,{\rm K}$
+  \item $1\,{\rm AU} = 1.496 \times 10^8\,{\rm km}$
+  \item $c = 2.997 \times 10^8\,{\rm m/s}$
+  \item $G = 6.674 \times 10^{-11}$~Nm$^2$/kg$^2$
+  \item $k = 1.38\cdot10^{-23}$~J/K
+  \item $m_{\rm H} = 1.67\cdot10^{-27}$~kg
+  \item $h=6.626 \times 10^{-34}$~J~s.
+  \item $k=1.38 \times 10^{-23}$~J/K.
+\end{itemize}
+\end{document}
