@@ -92,39 +92,27 @@ Homework 4}
 \begin{document}
 \maketitle
 
-\textbf{Deadline for this homework is \textbf{14/08 23:59}}
+\textbf{Deadline for this homework is \textbf{31/08 23:59}}
 
 \emph{Important:} Please do not turn in jupyter notebook, but rather a textual report, in pdf format or similar.
 
-{\bf Problem 1:} Building on the hands-on 6\&7, conduct the following numerical calculations/experiments, to investigate 3D simulation of convection in more detail (\emph{Note:} some of these calculations were already covered in the lecture).
+{\bf Problem 1:} Show that, for a blackbody radiation, radiation pressure is equal to: 
+\begin{equation}
+p_{\rm rad} = \frac{u}{3} = \frac{4 \sigma}{3c} T^4.
+\end{equation}
 
-  
+\emph{Hint: } One of the ways to solve this is to consider that the radiation is impinging on a perfectly absorbing wall and that the intensity of the radiation is given by the Planck function (recall the first homework). Then relate the intensity of the radiation to the number of photons, and that number of photons to the momentum the photonos are transferring to the wall. 
 
-\begin{itemize}
-  \item Try to define the surface of the simulated atmosphere. Discuss the result. 
+{\bf Problem 2:} Following sketches from the lecture on helioseismology, derive the equation for the soundspeed, i.e. for the so called ``p-modes''. 
 
-  \item Assuming the atmosphere is composed of pure hydrogen (it is not, but for simplicity assume this), solve the equation of state for one fixed $x$ and $y$, and different $z$. That is, using Saha equation and results of hands-on 5, estimate the mass density from the values of temperature and pressure. Note that the pressure provided in the simulation is in CGS units!
+{\bf Problem 3:} Add gravity to the system that was used to demonstrate sound waves on the lectures and in the previous problem and derive the equations governing internal gravity waves or ``g-modes''.
 
+{\bf Problem 4 (Bonus problem!!!):} Run a MESA model for a desired stellar mas and metallicity: \href{http://user.astro.wisc.edu/~townsend/static.php?ref=mesa-web-submit}{http://user.astro.wisc.edu/~townsend/static.php?ref=mesa-web-submit}
 
-  \item Repeat this calculation for the whole atmosphere. \emph{Alternatively: choose a reasonable number of mean molecular mass to find mass density from the pressure and temperature without solving for equation of state expliclty}.
+And visualize the evolution of the fundamental stellar parameters with time (mass, radius, luminosity). 
 
-  \item Calculate the kinetic energy flux density, and mean kinetic energy flux density (averaged over $x$ and $y$). Plot mean kinetic energy flux density as a function of $z$. Recall that kinetic energy flux density is: 
+Then, plot and discuss stellar structure for a chosen moment from stellar life on the main sequence. 
 
-  \begin{equation}
-  F_kin = \frac{\rho v^2}{2} v_z
-  \end{equation}
-
-  \item From the fluctuations of temperature and momentum density, calculate the entalphy flux density and mean enthalpy flux density
-
-  \begin{equation}
-  F_{ent} = (\rho v_z - <\rho v_z>_{x,y}) C_P (T-<T>_{x,y})
-  \end{equation}
-
-  Where for $C_P$ you can take the value 21 kJ / kg/ K.
-
-  \item Analyze the behavior of mean enthalpy flux density and mean kinetic flux density, as well as their sum , with height. What can you conclude? 
-
-\end{itemize}
 
 {\bf Useful physical constants}
 \begin{itemize}
